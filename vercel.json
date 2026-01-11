@@ -1,8 +1,40 @@
 {
   "rewrites": [
     {
-      "source": "/:path*",
+      "source": "/",
       "destination": "/index.html"
+    },
+    {
+      "source": "/events",
+      "destination": "/event.html"
+    },
+    {
+      "source": "/rent",
+      "destination": "/rent.html"
+    },
+    {
+      "source": "/login",
+      "destination": "/login.html"
+    },
+    {
+      "source": "/gallery",
+      "destination": "/gallery2.html"
+    },
+    {
+      "source": "/viewer",
+      "destination": "/viewer.html"
+    },
+    {
+      "source": "/flyer",
+      "destination": "/flyer.html"
+    },
+    {
+      "source": "/flyer3",
+      "destination": "/flyer3.html"
+    },
+    {
+      "source": "/404",
+      "destination": "/404.html"
     }
   ]
 }

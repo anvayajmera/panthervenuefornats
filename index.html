@@ -1,24 +1,4861 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PantherVenue</title>
-    <link href="logo.jpg" rel="icon" type="image/png">
-    
 
+<head>
+  <link rel="prefetch" href="/">
+<!-- Google analytics tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G1N2QCDNHH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G1N2QCDNHH');
+</script>
+
+<script>
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+document.onkeydown = function(e) {
+
+  if (e.metaKey && e.altKey && e.key.toLowerCase() === 'i') {
+    e.preventDefault();
+  }
+
+  if (e.metaKey && e.shiftKey && e.key.toLowerCase() === 'c') {
+    e.preventDefault();
+  }
+
+
+  if (e.metaKey && e.shiftKey && e.key.toLowerCase() === 'j') {
+    e.preventDefault();
+  }
+
+
+  if (e.metaKey && e.altKey && e.key.toLowerCase() === 'u') {
+    e.preventDefault();
+  }
+
+
+  if (e.key === 'F12') {
+    e.preventDefault();
+  }
+};
+</script>
+
+  <meta charset="utf-8">
+  <title>PantherVenue</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+  <meta name="description" content="PantherVenue is a state-of-the-art gymnasium offering top-tier fitness facilities, personalized training, and a community-focused atmosphere.">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/105/three.min.js" integrity="sha512-uWKImujbh9CwNa8Eey5s8vlHDB4o1HhrVszkympkm5ciYTnUEQv3t4QHU02CUqPtdKTg62FsHo12x63q6u0wmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+ 
+</a>
+
+
+
+<link rel="prefetch" href="/viewer">
+<link rel="prefetch" href="js/panolens.min.js">
+<link rel="prefetch" href="images/image1.jpeg" as="image"> 
+
+<link rel="prefetch" href="/events" as="document">
+<link rel="prefetch" href="/rent" as="document">
+<link rel="prefetch" href="/login" as="document">
+
+
+
+
+  <!-- our favicon -->
+  <link href="logo.jpg" rel="icon" type="image/png">
+
+  <!-- icons and stuff (Font Awesome for decos) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+  <!-- bootstrap 5 css -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- other css libs -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/venobox/venobox.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- my main stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <link href="assets/img/favicon.png" rel="icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets2/css/main.css" rel="stylesheet">
+  
+
+ 
     <style>
-        #page-wrapper { transition: opacity 0.25s ease-in-out; }
-        body.loading #page-wrapper { opacity: 0; }
+      /* makes the FAQ section a container for its decorations */
+      #faq {
+        position: relative;
+        background: #f8f9fa; /* Fallback for when decos are hidden */
+      }
+      
+      /* HERO IMAGE PARALLAX - desktop only */
+      #intro {
+        background-attachment: fixed; /* this creates the parallax effect */
+        
+      }
+      
+      /* DECORATIVE STYLES - desktop only */
+      @media (min-width: 1200px) {
+
+        /* setup for sections with decorations */
+        #about, #seating, #team, #contact, #hotels, #services, #schedule {
+            position: relative;
+            overflow: hidden;
+            z-index: 1; 
+        }
+
+        /* new blob for the Policies section */
+        #schedule .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Generic Blob Styling */
+        .decor-blob {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            background-repeat: no-repeat;
+            background-size: contain;
+            pointer-events: none;
+        }
+
+        /* Gray Blob for About Us */
+        #about::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            background-image: url('grayblob.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 700px;
+            height: 700px;
+            top: -150px;
+            left: -250px;
+            opacity: 0.35;
+            transform: rotate(-15deg);
+            pointer-events: none;
+        }
+        
+        /* Red Blobs for Amenities Section (#services) */
+        #services::before, #services::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            background-image: url('redblob.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+        #services::before { /* Top Right */
+            width: 450px;
+            height: 450px;
+            top: -150px;
+            right: -150px;
+            transform: rotate(30deg);
+        }
+        #services::after { /* Bottom Left */
+            width: 400px;
+            height: 400px;
+            bottom: -150px;
+            left: -150px;
+            transform: rotate(-45deg) scaleX(-1);
+        }
+
+        /* Gray Blobs for Hotel Section */
+        #hotels::before, #hotels::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            background-image: url('grayblob.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+        #hotels::before { /* top left */
+            width: 450px;
+            height: 450px;
+            top: -100px;
+            left: -150px;
+            transform: rotate(20deg);
+        }
+        #hotels::after { /* bottom right */
+            width: 550px;
+            height: 550px;
+            bottom: -220px;
+            right: -280px;
+            transform: rotate(-30deg) scaleX(-1);
+        }
+
+        /* Red Blobs for Seating Chart Section */
+        #seating::before, #seating::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            background-image: url('redblob.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        #seating::before { /* top right */
+            width: 500px;
+            height: 500px;
+            top: -150px;
+            right: -180px;
+            transform: rotate(45deg);
+        }
+        #seating::after { /* bottom left */
+            width: 400px;
+            height: 400px;
+            bottom: -150px;
+            left: -150px;
+            transform: rotate(-60deg) scaleX(-1);
+        }
+
+        /* Team Section Red Blobs */
+        #team::before, #team::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            background-image: url('redblob.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+        #team::before { /* top left */
+            width: 600px;
+            height: 600px;
+            top: -200px;
+            left: -250px;
+            transform: rotate(15deg);
+        }
+        #team::after { /* bottom right */
+            width: 700px;
+            height: 700px;
+            bottom: -300px;
+            right: -300px;
+            transform: rotate(-25deg);
+        }
+        
+        /* Contact Section Red Blobs */
+        #contact::before, #contact::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            background-image: url('redblob.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            pointer-events: none;
+        }
+        #contact::before { /* bottom right */
+            width: 600px;
+            height: 600px;
+            bottom: -200px;
+            right: -200px;
+            opacity: 0.4;
+            transform: rotate(30deg);
+        }
+        #contact::after { /* top left */
+            width: 500px;
+            height: 500px;
+            top: -180px;
+            left: -200px;
+            opacity: 0.3;
+            transform: rotate(-25deg) scaleX(-1);
+        }
+        
+        /* Policies Section Three Gray Blobs */
+        #schedule::before, #schedule::after, #schedule .container::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            background-image: url('grayblob.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            opacity: 0.25;
+            pointer-events: none;
+        }
+        #schedule::before { /* top right */
+            width: 500px;
+            height: 400px;
+            top: -100px;
+            right: -150px;
+            transform: rotate(50deg);
+        }
+        #schedule::after { /* bottom right */
+            width: 500px;
+            height: 500px;
+            bottom: -200px;
+            right: -240px;
+            transform: rotate(-30deg);
+        }
+        #schedule .container::before { /* middle left */
+            width: 450px;
+            height: 450px;
+            top: 50%;
+            left: -270px;
+            transform: translateY(-50%) rotate(10deg);
+            opacity: 0.2;
+        }
+
+
+        #team-line-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; 
+            z-index: 0;
+        }
+        #team .container {
+            position: relative;
+            z-index: 2;
+        }
+        #team-scroll-line {
+            stroke-width: 5;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        
+        /* FAQ Section Background Icons */
+        #faq {
+          background: transparent !important;
+        }
+        .background-decorations {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+          overflow: hidden;
+          pointer-events: none;
+        }
+        .decor-icon {
+          position: absolute;
+          color: rgba(30, 30, 30, 0.07);
+          transition: all 0.3s ease;
+        }
+        .decor-icon.red {
+            color: rgba(224, 7, 47, 0.08);
+        }
+        
+        #decor1 { top: 2%; left: 13.5%; font-size: 60px; transform: rotate(-25deg); }
+        #decor2 { top: 12%; left: 2.7%; font-size: 50px; transform: rotate(15deg); }
+        #decor3 { top: 25%; left: 10.8%; font-size: 80px; transform: rotate(10deg); }
+        #decor4 { top: 40%; left: 3.6%; font-size: 70px; transform: rotate(-10deg); }
+        #decor5 { top: 55%; left: 12.6%; font-size: 55px; transform: rotate(20deg); }
+        #decor6 { top: 70%; left: 1.8%; font-size: 65px; transform: rotate(5deg); }
+        #decor7 { top: 85%; left: 16.2%; font-size: 45px; transform: rotate(-15deg); }
+        #decor8 { top: 3%; left: 0.9%; font-size: 40px; transform: rotate(10deg); }
+        #decor9 { top: 78%; left: 4.5%; font-size: 60px; transform: rotate(-20deg); }
+        #decor10 { top: 95%; left: 7.2%; font-size: 55px; transform: rotate(12deg); }
+        #decor21 { top: 58%; left: 9%; font-size: 50px; transform: rotate(30deg); }
+        #decor22 { top: 32%; left: 0.9%; font-size: 45px; transform: rotate(-18deg); }
+        #decor25 { top: 92%; left: 17.1%; font-size: 50px; transform: rotate(10deg); }
+        #decor11 { top: 5%; right: 10.8%; font-size: 90px; transform: rotate(15deg); }
+        #decor12 { top: 18%; right: 2.7%; font-size: 70px; transform: rotate(-20deg); }
+        #decor13 { top: 33%; right: 13.5%; font-size: 60px; transform: rotate(10deg); }
+        #decor14 { top: 50%; right: 3.6%; font-size: 80px; transform: rotate(5deg); }
+        #decor15 { top: 65%; right: 0.9%; font-size: 65px; transform: rotate(-15deg); }
+        #decor16 { top: 80%; right: 14.4%; font-size: 55px; transform: rotate(25deg); }
+        #decor17 { top: 93%; right: 7.2%; font-size: 70px; transform: rotate(-10deg); }
+        #decor18 { top: 1%; right: 0.9%; font-size: 60px; transform: rotate(-5deg); }
+        #decor19 { top: 72%; right: 5.4%; font-size: 50px; transform: rotate(18deg); }
+        #decor20 { top: 58%; right: 16.2%; font-size: 40px; transform: rotate(22deg); }
+        #decor23 { top: 25%; right: 18%; font-size: 50px; transform: rotate(-25deg); }
+        #decor24 { top: 98%; right: 2.7%; font-size: 45px; transform: rotate(15deg); }
+        #decor26 { top: 88%; right: 18%; font-size: 45px; transform: rotate(-10deg); }
+      }
     </style>
+
+
+  
 </head>
+
 <body>
 
+
+  <script>
+    (function() {
+      const path = window.location.pathname.toLowerCase();
+      const legacyRoutes = {
+        '/home.html': '/',
+        '/index.html': '/',
+        '/event.html': '/events',
+        '/rent.html': '/rent',
+        '/login.html': '/login',
+        '/gallery.html': '/gallery',
+        '/gallery2.html': '/gallery',
+        '/viewer.html': '/viewer',
+        '/flyer.html': '/flyer',
+        '/flyer3.html': '/flyer3',
+        '/404.html': '/404'
+      };
+
+      if (legacyRoutes[path]) {
+        const nextUrl = `${legacyRoutes[path]}${window.location.search}${window.location.hash}`;
+        window.history.replaceState(null, '', nextUrl);
+        return;
+      }
+
+      if (path.endsWith('.html')) {
+        window.location.replace('/404');
+      }
+    }());
+  </script>
+
+<body>
+<!-- Header -->
+  <header id="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <!-- use a text logo instead of img if I want -->
+        <!-- <h1><a href="#main">C<span>o</span>nf</a></h1>-->
+        <a href="logo2.png" class="scrollto">
+          <img src="logo2.png" alt="" title="">
+      </a>
+      
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="/">Home</a></li>
+          <li><a href="/#about">About</a></li> <!-- Instructions will be here -->
+          <li><a href="/events">Events</a></li> <!-- Seating will be here -->
+          <li><a href="/rent">Rent Venue</a></li>
+         <li class="buy-tickets"><a href="/login" id="loginButton">Log In</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+
+
+  <!-- Firebase and Auth Logic -->
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+<script>
+  // Your Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyC0BYFCxwgu3tHp_3oeLsxoMBpyDRnj8IA",
+    authDomain: "panthervenue.firebaseapp.com",
+    projectId: "panthervenue",
+    storageBucket: "panthervenue.appspot.com",
+    messagingSenderId: "15387964560",
+    appId: "1:15387964560:web:b9dbc68e3a97dd466b5415"
+  };
+
+  // Initialize Firebase
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  }
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+
+
+  auth.onAuthStateChanged(async (user) => {
+    const loginButton = document.getElementById('loginButton');
+    if (!loginButton) return; 
+
+    if (user) {
+
+      const userDoc = await db.collection('users').doc(user.uid).get();
+      if(userDoc.exists) {
+        loginButton.textContent = 'Dashboard';
+        loginButton.href = '/login'; 
+      }
+    } else {
+
+      loginButton.textContent = 'Log In';
+      loginButton.href = '/login';
+    }
+  });
+</script>
+
+
+  <style>
+
+    /* Nav Menu */
+/* nav menu basics */
+.nav-menu, .nav-menu * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-menu ul {
+  position: absolute;
+  display: none;
+  top: 100%;
+  left: 0;
+  z-index: 99;
+}
+
+.nav-menu li {
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav-menu > li {
+  float: left;
+}
+
+/* dropdown arrow thingy */
+.nav-menu li.menu-has-children > a:after {
+  content: "\f107";
+  font-family: FontAwesome;
+  padding-left: 10px;
+  position: relative;
+  top: -1px;
+}
+
+
+.nav-menu ul ul {
+  top: 0;
+  left: 100%;
+}
+
+.nav-menu ul li {
+  min-width: 200px;
+}
+
+
+.nav-menu .dropdown-menu {
+  padding: 10px;
+  border: 0;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+  margin-top: 10px;
+  opacity: 0;
+  visibility: hidden;
+  display: block;
+  transition: all 0.3s ease;
+  transform: translateY(10px);
+}
+
+.nav-menu > li:hover > .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Dropdown Items */
+.nav-menu .dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  color: #333;
+}
+
+.nav-menu .dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: #e0072f;
+}
+
+/* Icons in Dropdown */
+.nav-menu .dropdown-item i {
+  font-size: 20px;
+  margin-right: 15px;
+  width: 25px;
+  text-align: center;
+}
+
+/* Text in Dropdown */
+.nav-menu .dropdown-item span {
+  font-weight: 500;
+}
+  </style>
+
+  <!-- Intro Section -->
+<section id="intro">
+  <div class="intro-container wow fadeIn">
+    <h1 class="mb-4 pb-0">
+      <span id="typing-effect" style="color: white;"></span><br>
+      <span id="excellence" style="color: #e0072f;">&nbsp;</span>
+    </h1>
+    <p class="mb-4 pb-0">Bridgewater-Raritan High School, New Jersey</p>
+    <a href="#!" class="venobox play-btn mb-4" data-vbtype="iframe" data-autoplay="true" id="play-button" data-href="/viewer"></a>
+    <a href="/events" class="about-btn scrollto">See Events</a>
+  </div>
+</section>
+<script>
+  // --- Elements & State ---
+  const fullText = "Where Community Meets ";
+  const excellenceText = "Excellence";
+  const typingElement = document.getElementById("typing-effect");
+  const excellenceElement = document.getElementById("excellence");
+
+  let index = 0;
+  let typingTimeout = null; 
+
+
+
+ 
+  function type() {
+    if (index < fullText.length) {
+      typingElement.innerHTML += fullText.charAt(index);
+      index++;
+
+      typingTimeout = setTimeout(type, 70); 
+    } else {
+
+      typeExcellence();
+    }
+  }
+
+  // Types the second part: "Excellence"
+  function typeExcellence() {
+    let indexExcellence = 0;
+
+    function typeNextCharacter() {
+      if (indexExcellence < excellenceText.length) {
+        // For the first letter, REPLACE the placeholder ( ).
+        // For all others, APPEND the character.
+        if (indexExcellence === 0) {
+          excellenceElement.innerHTML = excellenceText.charAt(indexExcellence);
+        } else {
+          excellenceElement.innerHTML += excellenceText.charAt(indexExcellence);
+        }
+        indexExcellence++;
+        // Store the timeout so it can be cancelled
+        typingTimeout = setTimeout(typeNextCharacter, 150);
+      }
+    }
+    typeNextCharacter();
+  }
+
+ 
+
+
+  function restartTyping() {
+
+    if (typingTimeout) {
+      clearTimeout(typingTimeout);
+    }
+
+
+    typingElement.innerHTML = '';
+    index = 0;
+
+    excellenceElement.innerHTML = '&nbsp';
+
+    //sart the typing animation from the beginning.
+    type();
+  }
+
+
+  document.addEventListener('keydown', function(e) {
+    if (e.metaKey && e.key.toLowerCase() === 'h') {
+      e.preventDefault(); 
+      restartTyping();
+    }
+  });
+
+
+</script>
+
+
+
+
+
+
+
+  <!-- cool wave svg -->
+  <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none">
+    <defs>
+      <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+    </defs>
+    <g class="wave1">
+      <use xlink:href="#wave-path" x="50" y="3"></use>
+    </g>
+    <g class="wave2">
+      <use xlink:href="#wave-path" x="50" y="0"></use>
+    </g>
+    <g class="wave3">
+      <use xlink:href="#wave-path" x="50" y="9"></use>
+    </g>
+  </svg>
+</section>
+
+<style>
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero-waves {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  z-index: 2;
+}
+
+.wave1 use {
+  fill: #9e1a32;
+  opacity: 0.4;
+  animation: move-forever1 10s linear infinite;
+  animation-delay: -2s;
+}
+
+.wave2 use {
+  fill: #490b15;
+  opacity: 0.7;
+  animation: move-forever2 8s linear infinite;
+  animation-delay: -2s;
+}
+
+.wave3 use {
+  fill: #e0072f;
+  opacity: 0.3;
+  animation: move-forever3 6s linear infinite;
+  animation-delay: -2s;
+}
+#excellence {
+  min-height: 1.5em; /* Adjust based on your font size */
+}
+
+@keyframes move-forever1 {
+  0% { transform: translate(85px, 0%); }
+  100% { transform: translate(-90px, 0%); }
+}
+
+@keyframes move-forever2 {
+  0% { transform: translate(-90px, 0%); }
+  100% { transform: translate(85px, 0%); }
+}
+
+@keyframes move-forever3 {
+  0% { transform: translate(-90px, 0%); }
+  100% { transform: translate(85px, 0%); }
+}
+
+/* adjust content positioning */
+.hero h1 {
+  font-size: 3.5rem;
+  text-shadow: 2px 2px 4px rgba(211, 42, 42, 0.5);
+}
+
+.hero p {
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 2px rgba(173, 23, 23, 0.131);
+}
+</style>
+
+<style>
+  /* css animations */
+  @keyframes dramatic-appear {
+      from {
+          opacity: 0;
+          transform: translateY(100px) rotateZ(-5deg) scale(0.8);
+          filter: blur(0px);
+      }
+      to {
+          opacity: 1;
+          transform: translateY(0) rotateZ(0) scale(1);
+          filter: blur(0);
+      }
+  }
+  
+  @keyframes slide-up-3d {
+      from {
+          opacity: 0;
+          transform: translateY(150px) rotateX(60deg);
+          filter: hue-rotate(90deg);
+      }
+      to {
+          opacity: 1;
+          transform: translateY(0) rotateX(0);
+          filter: hue-rotate(0);
+      }
+  }
+  
+  @keyframes card-flip {
+      from {
+          opacity: 0;
+          transform: rotateY(90deg) scale(0.5);
+          filter: grayscale(100%);
+      }
+      to {
+          opacity: 1;
+          transform: rotateY(0) scale(1);
+          filter: grayscale(0);
+      }
+  }
+  
+
+  /* Schedule items animation */
+  .schedule-item {
+      view-timeline: --schedule-item;
+      animation: slide-up-3d cubic-bezier(0.4, 0, 0.2, 1) both;
+      animation-timeline: --schedule-item;
+      animation-range: entry 10% cover 20%;
+      transform-style: preserve-3d;
+  }
+  
+  /* Gallery animation */
+  .gallery-carousel img {
+      view-timeline: --gallery-item;
+      animation: dramatic-appear linear both;
+      animation-timeline: --gallery-item;
+      animation-range: entry 10% cover 20%;
+      transform-origin: center center;
+  }
+  
+  /* FAQ animation */
+  #faq-list li {
+      view-timeline: --faq-item;
+      animation: slide-up-3d ease-out both;
+      animation-timeline: --faq-item;
+      animation-range: entry 10% cover 20%;
+  }
+  
+  /* Ticket cards animation */
+  .card {
+      view-timeline: --ticket-card;
+      animation: card-flip cubic-bezier(0.4, 0, 0.2, 1) both;
+      animation-timeline: --ticket-card;
+      animation-range: entry 10% cover 20%;
+      transform-origin: center bottom;
+  }
+  
+  /* Contact form animation */
+  .contact-form {
+      view-timeline: --contact-form;
+      animation: dramatic-appear ease-out both;
+      animation-timeline: --contact-form;
+      animation-range: entry 10% cover 30%;
+  }
+  
+  /* Add perspective to parent elements */
+  #speakers .row,
+  #schedule .tab-content,
+  #hotels .row {
+      perspective: 1500px;
+  }
+  
+  /* Staggered animations with color effects */
+  .speaker:nth-child(odd) {
+      animation-delay: 0.2s;
+      animation-range: entry 15% cover 25%;
+  }
+  
+  .speaker:nth-child(even) {
+      animation-delay: 0.4s;
+      animation-range: entry 20% cover 30%;
+  }
+  
+  .schedule-item {
+      animation-delay: calc(var(--index) * 0.1s);
+  }
+  
+  /* Add shadow during animation */
+  @keyframes shadow-pulse {
+      50% {
+          box-shadow: 0 0 30px rgba(224, 7, 47, 0.3);
+      }
+  }
+  
+  .speaker,
+  .card {
+      animation: shadow-pulse 1.5s ease-in-out 1;
+  }
+  </style>
+  
+  <script>
+
+  document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.speaker, .schedule-item, .card').forEach((el, index) => {
+          if (el.classList.contains('schedule-item')) {
+              el.style.setProperty('--index', index);
+          }
+          
+          // restore hover effect
+          el.addEventListener('animationend', () => {
+              el.style.transform = 'none'; // Reset transform after animation
+          });
+      });
+  });
+
+  
+  </script>
+
+
+
+
+
+
+
+
+  <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+
+
+
+  <main class="main">
+
+
+
+    <!-- Clients Section -->
+    <section id="clients" class="clients section background: rgb(246, 247, 253);">
+
+      <div class="container" data-aos="fade-up">
+
+      <div class="row justify-content-center gy-4">
+
+  <div class="col-xl-2 col-md-3 col-6 client-logo">
+    <img src="img/sponsors/1.png" class="img-fluid" alt="">
+  </div>
+
+  <div class="col-xl-2 col-md-3 col-6 client-logo">
+    <img src="img/sponsors/2.png" class="img-fluid" alt="">
+  </div>
+
+  <div class="col-xl-2 col-md-3 col-6 client-logo">
+    <img src="img/sponsors/3.png" class="img-fluid" alt="">
+  </div>
+
+  <div class="col-xl-2 col-md-3 col-6 client-logo">
+    <img src="img/sponsors/7.png" class="img-fluid" alt="">
+  </div>
+
+</div>
+
+      </div>
+
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="section-header">
+        <h2>About Us</h2>
+        <p>Learn more about PantherVenue and its vision.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up">
+        <div class="row gy-5">
+          <div class="content col-xl-5 d-flex flex-column" data-aos="fade-up" data-aos-delay="100">
+            <h3>BRHS and PantherVenue</h3>
+            <p>
+              The Bridgewater-Raritan High School, established in 1957, plays a vital role in Somerset County of New Jersey. The PantherVenue, our premier gymnasium, seats up to 3,500 and boasts modern amenities, including a high-quality sound system, adjustable lighting, and a large video screen. It was renovated in 2024, and features updated bleachers, a resurfaced floor, and new scoreboards, making it the ideal choice for sports, graduations, and community events.
+            </p>
+            <a href="#seating" class="about-btn align-self-center align-self-xl-start"><span>See Seating Charts</span> <i class="bi bi-chevron-right"></i></a>
+          </div>
+          <div class="col-xl-7" data-aos="fade-up" data-aos-delay="200">
+            <div class="row gy-4">
+              <div class="col-md-6 icon-box position-relative">
+                <i class="bi bi-briefcase"></i>
+                <h4><a href="" class="stretched-link">Community Hub</a></h4>
+                <p>Serves as a central location for school and community events.</p>
+              </div>
+              <div class="col-md-6 icon-box position-relative">
+                <i class="bi bi-gem"></i>
+                <h4><a href="" class="stretched-link">Modern Facilities</a></h4>
+                <p>Equipped with cutting-edge technology for diverse events.</p>
+              </div>
+              <div class="col-md-6 icon-box position-relative">
+                <i class="bi bi-broadcast"></i>
+                <h4><a href="" class="stretched-link">Versatile Space</a></h4>
+                <p>Adaptable for sports, ceremonies, and more.</p>
+              </div>
+              <div class="col-md-6 icon-box position-relative">
+                <i class="bi bi-easel"></i>
+                <h4><a href="" class="stretched-link">Recently Renovated</a></h4>
+                <p>Updated in 2024 with new bleachers and scoreboards.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<section id="stats" class="stats section">
+
+  <!-- SVG for the animated line -->
+  <svg id="stats-line-svg" viewBox="0 0 1200 800" preserveAspectRatio="none">
+      <defs>
+          <linearGradient id="redGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#b01a35;" />
+              <stop offset="50%" style="stop-color:#e0072f;" />
+              <stop offset="100%" style="stop-color:#ff0936;" />
+          </linearGradient>
+      </defs>
+      
+      <!-- here's the custom path for the line -->
+      <path id="stats-scroll-line" stroke="url(#redGradient)" 
+            d="M -34 66 C 675 -6 378 1062 113 635 S 374 473 570 691 S 1250 650 1295 796" />
+
+  </svg>
+
+  <!-- original content goes on top of the line -->
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-4 align-items-center">
+      <div class="col-lg-5">
+        <img src="assets/img/stats-img.svg" alt="" class="img-fluid">
+      </div>
+      <div class="col-lg-7">
+        <div class="row gy-4">
+          <div class="col-lg-6">
+            <div class="stats-item d-flex">
+              <i class="bi bi-people-fill flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="3500" data-purecounter-duration="1.2" class="purecounter"></span>
+                <p><strong>Seating Capacity:</strong> <span>Up to 3,500 comfortable seats for attendees</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="stats-item d-flex">
+              <i class="bi bi-calendar-check flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="50" data-purecounter-duration="1.2" class="purecounter"></span>
+                <p><strong>Events Per Year:</strong> <span>Over 50 exciting events are hosted annually</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="stats-item d-flex">
+              <i class="bi bi-laptop flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1.2" class="purecounter"></span>
+                <p><strong>Electrical Ports:</strong> <span>More than 50 easily accessible ports are available</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="stats-item d-flex">
+              <i class="bi bi-building-up flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="75" data-purecounter-duration="1.2" class="purecounter"></span>
+                <p><strong>Business Connections:</strong> <span>Approximately 75 business owners have used this venue</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ <!-- FINAL CSS for the stats animation -->
+<style>
+  /* make the stats section a positioning container */
+  #stats {
+    position: relative;
+    overflow: hidden; 
+  }
+
+  /* the SVG canvas for the line must be at the very bottom layer */
+  #stats-line-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; 
+      z-index: 0; /* BOTTOM LAYER */
+  }
+
+  /* ensure both columns of your content are lifted above the line */
+  #stats .col-lg-5,
+  #stats .col-lg-7 {
+      position: relative;
+      z-index: 2; /* TOP LAYER */
+  }
+
+
+  #stats .col-lg-5 img {
+      /* this filter creates a solid white shape directly behind the image's content.
+         we stack multiple shadows to make it fully opaque. */
+      filter: drop-shadow(0px 0px 15px #ffffff) 
+              drop-shadow(0px 0px 15px #ffffff) 
+              drop-shadow(0px 0px 15px #ffffff);
+  }
+  
+  /* the animated line itself */
+  #stats-scroll-line {
+      stroke-width: 40; 
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+  }
+</style>
+
+<!-- FINAL JAVASCRIPT for stats animation (Tapering + Scroll Offset) -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+      const statsPath = document.querySelector('#stats-scroll-line');
+      const statsSection = document.querySelector('#stats');
+
+      if (statsPath && statsSection) {
+          
+       
+          
+          // 1. scroll delay: when the anim starts
+          const scrollStartOffset = 0.25; 
+
+          // 2. max thickness: how thick the line is at the beginning
+          const maxStrokeWidth = 40; 
+
+          // 3. min thickness: how thin the line is at the end
+          const minStrokeWidth = 10;
+          
+          // 4. speed factor: how long the anim takes
+          //    1.0 = normal, > 1.0 = slower, < 1.0 = faster
+          const animationSpeedFactor = 0.8; // a little slower
+
+          // -- script works automatically from here --
+          const pathLength = statsPath.getTotalLength();
+          statsPath.style.strokeDasharray = pathLength + ' ' + pathLength;
+          statsPath.style.strokeDashoffset = pathLength;
+
+          const handleScroll = () => {
+              const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+              const sectionTop = statsSection.offsetTop;
+              const sectionHeight = statsSection.offsetHeight;
+              const viewportHeight = window.innerHeight;
+              const scrollDistance = scrollTop - sectionTop;
+
+              if (scrollDistance >= -viewportHeight && scrollDistance <= sectionHeight * animationSpeedFactor) {
+                  // calculate the raw progress, adjusted by our speed factor
+                  const progress = (scrollDistance + viewportHeight) / ((sectionHeight + viewportHeight) * animationSpeedFactor);
+                  
+                  // adjust progress based on your scroll delay
+                  const adjustedProgress = (progress - scrollStartOffset) / (1 - scrollStartOffset);
+
+                  // clamp the final progress between 0 and 1 to prevent errors
+                  const finalProgress = Math.max(0, Math.min(1, adjustedProgress));
+                  
+                  // calculate the draw length using the final progress
+                  const drawLength = pathLength * finalProgress;
+                  statsPath.style.strokeDashoffset = pathLength - drawLength;
+
+                  // calculate the new stroke width using the same final progress
+                  const currentStrokeWidth = maxStrokeWidth - (finalProgress * (maxStrokeWidth - minStrokeWidth));
+                  statsPath.style.strokeWidth = `${currentStrokeWidth}px`;
+              }
+          };
+          window.addEventListener('scroll', handleScroll);
+          handleScroll();
+      }
+  });
+</script>
+
+
+
+
+
+<section id="services" class="services section">
+  <div class="section-header">
+    <h2>Amenities</h2>
+    <p>Explore what PantherVenue has to offer.</p>
+  </div>
+  <div class="container" data-aos="fade-up">
+    <div class="row gy-4">
+
+      <!-- Amenity 1: Seating -->
+      <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-item amenity-box position-relative">
+          <div class="amenity-bg-container">
+            <img src="amenity1.jpg" class="amenity-bg-img" alt="Arena Seating">
+            <div class="amenity-overlay"></div>
+          </div>
+          <div class="amenity-content-wrapper">
+            <div class="icon-wrapper"><i class="bi bi-bounding-box-circles"></i></div>
+            <h4>Seating</h4>
+            <p>Comfortable bleachers for up to 3,500 attendees.</p>
+            <a href="https://www.mainguards.com/wp-content/uploads/2023/02/BRHS-MAIN-2023-Venue-Information-Form.pdf" target="_blank" class="plus-btn">
+              <i class="fa fa-plus"></i><span>View Form</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Amenity 2: Sound System -->
+      <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-item amenity-box position-relative">
+          <div class="amenity-bg-container">
+            <img src="amenity2.jpg" class="amenity-bg-img" alt="Professional Sound System">
+            <div class="amenity-overlay"></div>
+          </div>
+          <div class="amenity-content-wrapper">
+            <div class="icon-wrapper"><i class="bi bi-activity"></i></div>
+            <h4>Sound System</h4>
+            <p>High-quality audio systems for all types of events.</p>
+            <a href="https://www.mainguards.com/wp-content/uploads/2023/02/BRHS-MAIN-2023-Venue-Information-Form.pdf" target="_blank" class="plus-btn">
+              <i class="fa fa-plus"></i><span>View Form</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Amenity 3: Lighting -->
+      <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-item amenity-box position-relative">
+          <div class="amenity-bg-container">
+            <img src="amenity3.jpg" class="amenity-bg-img" alt="Stage Lighting">
+            <div class="amenity-overlay"></div>
+          </div>
+          <div class="amenity-content-wrapper">
+            <div class="icon-wrapper"><i class="bi bi-lightbulb"></i></div>
+            <h4>Lighting</h4>
+            <p>Adjustable light systems to suit any occasion.</p>
+            <a href="https://www.mainguards.com/wp-content/uploads/2023/02/BRHS-MAIN-2023-Venue-Information-Form.pdf" target="_blank" class="plus-btn">
+              <i class="fa fa-plus"></i><span>View Form</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Amenity 4: Video Screen -->
+      <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-item amenity-box position-relative">
+          <div class="amenity-bg-container">
+            <img src="amenity4.jpg" class="amenity-bg-img" alt="Large Video Screen">
+            <div class="amenity-overlay"></div>
+          </div>
+          <div class="amenity-content-wrapper">
+            <div class="icon-wrapper"><i class="bi bi-broadcast"></i></div>
+            <h4>Video Screen</h4>
+            <p>A large screen is available for presentations.</p>
+            <a href="https://www.mainguards.com/wp-content/uploads/2023/02/BRHS-MAIN-2023-Venue-Information-Form.pdf" target="_blank" class="plus-btn">
+              <i class="fa fa-plus"></i><span>View Form</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+      #services {
+      background: rgb(246, 247, 253);
+    }
+    </style>
+
+<style>
+
+.services .service-item.amenity-box {
+    background-color: var(--surface-color); /* white background */
+    box-shadow: 0px 0 30px 0 rgba(0, 0, 0, 0.1);
+    padding: 50px 30px;
+    transition: all ease-in-out 0.4s;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* image & overlay container - sits in the background */
+.services .amenity-box .amenity-bg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0; /* hidden by default */
+    transition: opacity 0.5s ease-in-out;
+}
+.services .amenity-box:hover .amenity-bg-container {
+    opacity: 1; /* revealed on hover */
+}
+
+/* background image - inside the container, ready to animate */
+.services .amenity-box .amenity-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.15); /* start zoomed in */
+    transition: transform 0.5s ease-in-out;
+}
+.services .amenity-box:hover .amenity-bg-img {
+    transform: scale(1); /* zoom out on hover */
+}
+
+/* darkening overlay for text readability */
+.services .amenity-box .amenity-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(25, 25, 25, 0.6); /* semi-transparent dark layer */
+}
+
+/* content wrapper - this holds all visible text and icons */
+.services .amenity-box .amenity-content-wrapper {
+    position: relative;
+    z-index: 3; /* sits on top of everything */
+}
+
+/* layered corner circles - from the original design */
+.services .service-item.amenity-box::before,
+.services .service-item.amenity-box::after {
+    content: "";
+    position: absolute;
+    background: color-mix(in srgb, var(--accent-color), transparent 96%);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    transition: all 0.5s;
+    z-index: 2; /* sits above the white box, below the content */
+}
+.services .service-item.amenity-box::before {
+    right: -80px;
+    top: -80px;
+}
+.services .service-item.amenity-box::after {
+    background: color-mix(in srgb, var(--accent-color), transparent 97%);
+    right: -140px;
+    top: -140px;
+    width: 250px;
+    height: 250px;
+}
+.services .service-item.amenity-box:hover::before,
+.services .service-item.amenity-box:hover::after {
+    background: var(--accent-color); /* the circles become solid red on hover */
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    opacity: 0; /* then fade out to reveal the image underneath */
+}
+
+/* Icon & Text Styling */
+.services .amenity-box .icon-wrapper {
+    background: var(--accent-color);
+    color: var(--contrast-color);
+    font-size: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.services .amenity-box h4, .services .amenity-box p,
+.services .amenity-box .icon-wrapper i {
+    transition: color 0.4s ease-in-out;
+}
+
+.services .amenity-box h4 {
+    font-weight: 600;
+    margin: 0 0 15px 0;
+    font-size: 20px;
+    color: var(--heading-color);
+}
+
+.services .amenity-box p {
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: var(--default-color);
+}
+
+/* text color change on hover */
+.services .service-item.amenity-box:hover .icon-wrapper i {
+    color: #c71c3a;
+}
+
+.services .service-item.amenity-box:hover h4 {
+    color: #fff;
+}
+
+.services .service-item.amenity-box:hover p {
+  color: #fff;
+}
+
+.services .service-item.amenity-box:hover .icon-wrapper {
+    background-color: #feebee; /* light red background */
+    border: 4px solid #c71c3a; /* darker red border */
+}
+
+/* square-to-rectangle plus button */
+.services .amenity-box .plus-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #feebee; /* light red background */
+    overflow: hidden;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: width 0.4s ease-in-out;
+    border-radius: 4px;
+    position: relative;
+}
+
+.services .amenity-box .plus-btn i {
+    color: #c71c3a; /* darker red plus sign */
+    font-size: 16px;
+    margin-left: 6px;
+}
+
+.services .amenity-box .plus-btn span {
+    max-width: 0;
+    opacity: 0;
+    transition: max-width 0.3s ease-in-out 0.1s, opacity 0.3s ease-in-out 0.1s;
+    padding-left: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #c71c3a;
+}
+
+.services .service-item.amenity-box:hover .plus-btn {
+    width: 140px;
+}
+
+.services .service-item.amenity-box:hover .plus-btn span {
+    max-width: 100px;
+    opacity: 1;
+}
+
+/* remove the old :hover h4 a rule to prevent color conflicts */
+.services .service-item:hover h4 a {
+    color: inherit;
+}
+</style>
+
+<!-- Seating Charts Section -->
+<section id="seating" class="section">
+  <div class="container" data-aos="fade-up">
+    <div class="section-header">
+      <h2>Seating Charts</h2>
+      <p>Explore our venue layouts for different event types</p>
+    </div>
+
+    <div class="row g-5">
+      <!-- Gym Layout Box -->
+      <div class="col-md-6">
+        <div class="seating-chart-box" data-aos="fade-up" data-aos-delay="100">
+          <div class="chart-header">
+            <h3>Standard Gym Layout</h3>
+            <p class="chart-description">Ideal for sports events and large gatherings</p>
+          </div>
+          <div class="arena-container2">
+            <div class="capacity-section north">NORTH STAND • 1000 SEATS</div>
+            <div class="capacity-section south">SOUTH STAND • 1000 SEATS</div>
+            <div class="capacity-section east">EAST STAND • 750 SEATS</div>
+            <div class="capacity-section west">WEST STAND • 750 SEATS</div>
+            <div class="main-floor2">
+              <div class="court-display">
+                <div class="court-text">MAIN COURT</div>
+                <div class="court-subtext">Performance-ready surface</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Graduation Layout Box -->
+<div class="col-md-6">
+  <div class="seating-chart-box" data-aos="fade-up" data-aos-delay="100">
+    <div class="chart-header">
+      <h3>Seating Layout</h3>
+      <p class="chart-description">Optimized for ceremonies and presentations</p>
+    </div>
+    <div class="arena-container">
+      <div class="capacity-section north">NORTH STAND • 1000 SEATS</div>
+      <div class="capacity-section south">SOUTH STAND • 1000 SEATS</div>
+      <div class="capacity-section east">EAST STAND • 750 SEATS</div>
+      <div class="capacity-section west">WEST STAND • 750 SEATS</div>
+      <div class="stage-container">
+        <div class="stage">MAIN STAGE</div>
+      </div>
+      <div class="main-floor">
+        <div class="seating-chart-scroll-wrapper">
+          <div class="seating-grid" style="display: flex; padding-left: 10px; padding-top: 10px;">
+            <div class="seat-group"></div>
+            <div class="seat-group"></div>
+            <div class="seat-group"></div>
+            <div class="seat-group"></div>
+            <div class="seat-group"></div>
+            <div class="seat-group"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- iPad replacement image -->
+    <img src="/ipadpic.png" alt="Seating Layout for iPad" class="ipad-seating-replacement">
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+
+
+  /* hide the iPad replacement image by default */
+.ipad-seating-replacement {
+  display: none;
+}
+
+/* show the image and hide arena-container only on iPad-sized screens */
+@media screen and (min-width: 768px) and (max-width: 1024px) and (pointer: coarse) and (-webkit-device-pixel-ratio: 2) {  .ipad-seating-replacement {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 12px;
+  }
+  .arena-container {
+    display: none !important;
+  }
+}
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const seatGroups = document.querySelectorAll('.seat-group');
+    const rows = ['A', 'B', 'C', 'D', 'E', 'F']; // Adjust number of rows as needed
+
+    seatGroups.forEach((group, colIndex) => {
+        if (colIndex >= rows.length) return; // prevents undefined errors
+
+        for (let i = 0; i < 7; i++) {
+            const seatRow = document.createElement('div');
+            seatRow.className = 'seat-row';
+
+            for (let seatNum = 1; seatNum <= 2; seatNum++) {
+                const seat = document.createElement('div');
+                seat.className = 'seat';
+                const rowLetter = rows[colIndex];
+                seat.textContent = `${rowLetter}${i * 2 + seatNum}`;
+                seatRow.appendChild(seat);
+            }
+            group.appendChild(seatRow);
+        }
+    });
+});
+
+  </script>
+<style>
+  /* Seating Chart Section Styling */
+  .seating-chart-box {
+    background: var(--surface-color);
+    border: 2px solid rgba(224, 7, 47, 0.1);
+    border-radius: 15px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    height: 100%;
     
-    <div id="page-wrapper"></div>
+  }
+  
+  .seating-chart-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(224, 7, 47, 0.1);
+    border-color: rgba(224, 7, 47, 0.2);
+  }
+  
+  .chart-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .chart-header h3 {
+    color: var(--heading-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .chart-description {
+    color: color-mix(in srgb, var(--default-color), transparent 30%);
+    font-size: 0.9rem;
+  }
+  
+  /* Adjusted Arena Container Sizes */
+  .arena-container, .arena-container2 {
+    max-width: 100%;
+    min-height: 400px;
+    margin: 0 auto;
+    position: relative;
+    
+  }
+  
+  .main-floor, .main-floor2 {
+    top: 40px; /* moved up by decreasing this value */
+    left: 50px; /* moved right by increasing this value */
+    right: 30px;
+    bottom: 30px;
+    
+  }
+  
+  .capacity-section {
+    font-size: 0.8rem;
+    padding: 5px;
+  }
+  
+  .stage-container {
+    height: 30px;
+    top: 40px; /* moved up by decreasing this value */
+  }
+  
+  .court-text {
+    font-size: 1.5rem;
+  }
+  
+  .court-subtext {
+    font-size: 1rem;
+  }
+  
+  .seat {
+    width: 18px;
+    height: 18px;
+    font-size: 7px;
+  }
+  
+  </style>
 
-    <!-- The one and only script that runs the entire website fr lwk-->
-    <script src="app.js"></script>
 
+
+
+    <style>
+      #testimonials {
+      background: rgb(255, 242, 242);
+    }
+      .section-header > p {
+      color: #686868;
+    }
+    </style>
+
+    
+
+
+
+
+<!-- Schedule Section (Policies) -->
+<section id="schedule" class="section-with-bg">
+  <div class="container" data-aos="fade-up">
+    <div class="section-header">
+      <h2>Policies</h2>
+      <p>Important rules and guidelines for using PantherVenue.</p>
+    </div>
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" href="#day-2" role="tab" data-toggle="tab">General</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#day-3" role="tab" data-toggle="tab">Tickets</a>
+      </li>
+    </ul>
+    <h3 class="sub-heading">Please review these policies to ensure a safe and enjoyable experience at PantherVenue.</h3>
+    <div class="tab-content row justify-content-center">
+      <!-- General Policies -->
+      <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-2">
+        <div class="row schedule-item">
+          <div class="col-md-2"><strong>No Outside Food</strong></div>
+          <div class="col-md-10">
+            <p>Outside food and beverages are prohibited to maintain cleanliness and support venue concessions.</p>
+          </div>
+        </div>
+        <div class="row schedule-item">
+          <div class="col-md-2"><strong>Bag Checks</strong></div>
+          <div class="col-md-10">
+            <p>All bags are subject to search upon entry for safety and security purposes to ensure a safe environment.</p>
+          </div>
+        </div>
+        <div class="row schedule-item">
+          <div class="col-md-2"><strong>No Smoking</strong></div>
+          <div class="col-md-10">
+            <p>Smoking, including e-cigarettes, is strictly prohibited inside the venue to maintain air quality.</p>
+          </div>
+        </div>
+        <div class="row schedule-item">
+          <div class="col-md-2"><strong>Quiet Zones</strong></div>
+          <div class="col-md-10">
+            <p>Designated quiet zones are available for guests who wish to relax or have a private conversation.</p>
+          </div>
+        </div>
+        <div class="row schedule-item">
+          <div class="col-md-2"><strong>Alcohol</strong></div>
+          <div class="col-md-10">
+            <p>Alcoholic beverages may not be consumed at PantherVenue. Doing so will result in immediate removal.</p>
+
+          </div>
+        </div>
+        <div class="row schedule-item">
+          <div class="col-md-2"><strong>Pet Policy</strong></div>
+          <div class="col-md-10">
+            <p>Pets are not allowed on the premises, with the exception of service animals.</p>
+          </div>
+        </div>
+        <div class="row schedule-item">
+          <div class="col-md-2"><strong>Parking</strong></div>
+          <div class="col-md-10">
+            <p>Parking is available in designated lots. Parking fees apply depending on the event.</p>
+          </div>
+        </div>
+        <div class="row schedule-item">
+          <div class="col-md-2"><strong>Lost & Found</strong></div>
+          <div class="col-md-10">
+            <p>Items lost during an event can be found at the lost and found desk located near the main entrance.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Ticket Policies -->
+      <div role="tabpanel" class="col-lg-9 tab-pane fade" id="day-3">
+        <div class="row schedule-item">
+          <div class="col-md-2"><strong>Non-Refundable</strong></div>
+          <div class="col-md-10">
+            <p>Tickets are non-refundable unless the event is canceled by the venue, in which case full refunds will be issued.</p>
+          </div>
+        </div>
+        <div class="row schedule-item">
+          <div class="col-md-2"><strong>Purchase Limit</strong></div>
+          <div class="col-md-10">
+            <p>A maximum of 10 tickets can be purchased per transaction to ensure fair distribution.</p>
+          </div>
+        </div>
+        <div class="row schedule-item">
+          <div class="col-md-2"><strong>Lost Tickets</strong></div>
+          <div class="col-md-10">
+            <p>Lost or stolen tickets can be replaced at the box office with valid ID, but be sure to report it immediately.</p>
+          </div>
+        </div>
+        <div class="row schedule-item">
+          <div class="col-md-2"><strong>Transferable</strong></div>
+          <div class="col-md-10">
+            <p>Tickets are transferable, but you must notify the box office of any changes in ownership prior to the event.</p>
+          </div>
+        </div>
+        <div class="row schedule-item">
+          <div class="col-md-2"><strong>Special Discounts</strong></div>
+          <div class="col-md-10">
+            <p>Special discounts may be available for students and military personnel. Valid ID is required for verification.</p>
+          </div>
+        </div>
+        <div class="row schedule-item">
+          <div class="col-md-2"><strong>VIP Tickets</strong></div>
+          <div class="col-md-10">
+            <p>VIP tickets offer additional perks such as early entry, exclusive seating, and access to VIP-only areas.</p>
+          </div>
+        </div>
+        <div class="row schedule-item">
+          <div class="col-md-2"><strong>Group Tickets</strong></div>
+          <div class="col-md-10">
+            <p>Group ticket packages are available for parties of 10 or more at discounted rates. Please contact support.</p>
+          </div>
+        </div>
+        <div class="row schedule-item">
+          <div class="col-md-2"><strong>Cancellations</strong></div>
+          <div class="col-md-10">
+            <p>If an event is canceled, ticket holders will receive refunds or the option to exchange tickets for future events.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team Section -->
+<section id="team" class="team section">
+
+  <div class="section-header">
+    <h2>Team</h2>
+    <p>Take a quick glance at our group of hardworking individuals.</p>
+  </div>
+
+  <!-- SVG for the Team section line -->
+  <svg id="team-line-svg" viewBox="0 0 1200 700" preserveAspectRatio="none">
+    <defs>
+      <linearGradient id="teamRedGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#b01a35;" />
+        <stop offset="50%" style="stop-color:#e0072f;" />
+        <stop offset="100%" style="stop-color:#ff0936;" />
+      </linearGradient>
+    </defs>
+    <!-- this path is hand-crafted to follow the drawing's trajectory -->
+    <path id="team-scroll-line" stroke="url(#teamRedGradient)"
+          d="M 1229 51 C 1022 -51 748 309 984 539 S 349 99 429 453 S 19 80 -249 643" />
+  </svg>
+  <div class="container">
+  <div class="container">
+
+    <div class="row gy-4">
+
+      <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos-delay="100">
+        <div class="team-member">
+          <div class="member-img">
+            <img src="deniz.png" class="img-fluid" alt="Bill Deniz">
+            <div class="social">
+              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="member-info">
+            <h4>Bill Deniz</h4>
+            <span>Athletic Director</span>
+            <p>Bill runs the venue and oversees all athletic events for smooth operations.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos-delay="100">
+        <div class="team-member">
+          <div class="member-img">
+            <img src="fry.png" class="img-fluid" alt="Keri Fry">
+            <div class="social">
+              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="member-info">
+            <h4>Keri Fry</h4>
+            <span>Logistics and Business Manager</span>
+            <p>Keri runs the logistics and business side of the venue, and keeps operations efficient and profitable.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos-delay="100">
+        <div class="team-member">
+          <div class="member-img">
+            <img src="retiredath.png" class="img-fluid" alt="Daniel Hemberger">
+            <div class="social">
+              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="member-info">
+            <h4>Daniel Hemberger</h4>
+            <span>School Principal</span>
+            <p>Daniel oversees the school's operations to ensure a supportive environment for students and staff.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos-delay="100">
+        <div class="team-member">
+          <div class="member-img">
+            <img src="me.png" class="img-fluid" alt="Anvay Ajmera">
+            <div class="social">
+              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="member-info">
+            <h4>Anvay Ajmera</h4>
+            <span>Website Developer</span>
+            <p>Anvay coded the entire website for the venue, to create a perfect user experience.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  </div>
+
+</section>
+
+<!-- Preloader -->
+<div id="preloader"></div>
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+<script>
+
+
+  (function () {
+    "use strict";
+
+ 
+    function toggleScrolled() {
+      const selectBody = document.querySelector('body');
+      const selectHeader = document.querySelector('#header');
+      if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
+      window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
+    }
+
+    document.addEventListener('scroll', toggleScrolled);
+    window.addEventListener('load', toggleScrolled);
+
+ 
+
+    /**
+     * Hide mobile nav on same-page/hash links
+     */
+    document.querySelectorAll('#navmenu a').forEach(navmenu => {
+      navmenu.addEventListener('click', () => {
+        if (document.querySelector('.mobile-nav-active')) {
+          mobileNavToogle();
+        }
+      });
+
+    });
+
+    /**
+     * Toggle mobile nav dropdowns
+     */
+    document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
+      navmenu.addEventListener('click', function (e) {
+        e.preventDefault();
+        this.parentNode.classList.toggle('active');
+        this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
+        e.stopImmediatePropagation();
+      });
+    });
+
+    /**
+     * Preloader
+     */
+    const preloader = document.querySelector('#preloader');
+    if (preloader) {
+      window.addEventListener('load', () => {
+        preloader.remove();
+      });
+    }
+
+    /**
+     * Animation on scroll function and init
+     */
+    function aosInit() {
+      AOS.init({
+        duration: 600,
+        easing: 'ease-in-out',
+        once: false,
+        mirror: false
+      });
+    }
+    window.addEventListener('load', aosInit);
+
+    /**
+     * Initiate glightbox
+     */
+    const glightbox = GLightbox({
+      selector: '.glightbox'
+    });
+
+    /**
+     * Initiate Pure Counter
+     */
+    new PureCounter();
+
+    /**
+     * Init swiper sliders
+     */
+    function initSwiper() {
+      document.querySelectorAll(".init-swiper").forEach(function (swiperElement) {
+        let config = JSON.parse(
+          swiperElement.querySelector(".swiper-config").innerHTML.trim()
+        );
+
+        if (swiperElement.classList.contains("swiper-tab")) {
+          initSwiperWithCustomPagination(swiperElement, config);
+        } else {
+          new Swiper(swiperElement, config);
+        }
+      });
+    }
+
+    window.addEventListener("load", initSwiper);
+
+    /**
+     * Init isotope layout and filters
+     */
+    document.querySelectorAll('.isotope-layout').forEach(function (isotopeItem) {
+      let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
+      let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
+      let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
+
+      let initIsotope;
+      imagesLoaded(isotopeItem.querySelector('.isotope-container'), function () {
+        initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
+          itemSelector: '.isotope-item',
+          layoutMode: layout,
+          filter: filter,
+          sortBy: sort
+        });
+      });
+
+      isotopeItem.querySelectorAll('.isotope-filters li').forEach(function (filters) {
+        filters.addEventListener('click', function () {
+          isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
+          this.classList.add('filter-active');
+          initIsotope.arrange({
+            filter: this.getAttribute('data-filter')
+          });
+          if (typeof aosInit === 'function') {
+            aosInit();
+          }
+        }, false);
+      });
+
+    });
+
+    
+    window.addEventListener('load', function (e) {
+      // Start the typing effect for the hero section
+      type();
+
+      if (window.location.hash) {
+        if (document.querySelector(window.location.hash)) {
+          setTimeout(() => {
+            let section = document.querySelector(window.location.hash);
+            let scrollMarginTop = getComputedStyle(section).scrollMarginTop;
+            window.scrollTo({
+              top: section.offsetTop - parseInt(scrollMarginTop),
+              behavior: 'smooth'
+            });
+          }, 100);
+        }
+      }
+    });
+
+    /**
+     * Navmenu Scrollspy
+     */
+    let navmenulinks = document.querySelectorAll('.navmenu a');
+
+    function navmenuScrollspy() {
+      navmenulinks.forEach(navmenulink => {
+        if (!navmenulink.hash) return;
+        let section = document.querySelector(navmenulink.hash);
+        if (!section) return;
+        let position = window.scrollY + 200;
+        if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+          document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
+          navmenulink.classList.add('active');
+        } else {
+          navmenulink.classList.remove('active');
+        }
+      })
+    }
+    window.addEventListener('load', navmenuScrollspy);
+    document.addEventListener('scroll', navmenuScrollspy);
+
+  })();
+</script>
+
+
+<style>
+
+  :root {
+    --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --heading-font: "Raleway", sans-serif;
+    --nav-font: "Poppins", sans-serif;
+  }
+
+  /* global colors - changing these will change the whole site's scheme */
+  :root {
+    --background-color: #ffffff;
+    /* bg color for the whole site */
+    --default-color: #444444;
+    /* default text color */
+    --heading-color: #222222;
+    /* color for headings, titles, etc */
+    --accent-color: #f82249;
+    /* accent color for brand, buttons, links, etc */
+    --surface-color: #ffffff;
+    /* bg for boxed elements like cards, icon boxes, etc */
+    --contrast-color: #ffffff;
+    /* contrast color for text on dark backgrounds */
+  }
+
+ 
+  /* color presets - these classes override global colors */
+  .light-background {
+    --background-color: #f4fafd;
+    --surface-color: #ffffff;
+  }
+
+  .dark-background {
+    --background-color: #060606;
+    --default-color: #ffffff;
+    --heading-color: #ffffff;
+    --surface-color: #ffd5d5;
+    --contrast-color: #ffffff;
+  }
+
+  /* smooth scroll */
+  :root {
+    scroll-behavior: smooth;
+  }
+
+  /* General Styling & Shared Classes */
+  body {
+    color: var(--default-color);
+    background-color: var(--background-color);
+    font-family: var(--default-font);
+  }
+
+  a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  a:hover {
+    color: color-mix(in srgb, var(--accent-color), transparent 25%);
+    text-decoration: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--heading-color);
+    font-family: var(--heading-font);
+  }
+
+
+
+
+  /* disable aos animation delay on mobile */
+  @media screen and (max-width: 768px) {
+    [data-aos-delay] {
+      transition-delay: 0 !important;
+    }
+  }
+
+  /* Global Page Titles & Breadcrumbs */
+  .page-title {
+    --background-color: color-mix(in srgb, var(--default-color), transparent 96%);
+    color: var(--default-color);
+    background-color: var(--background-color);
+    padding: 20px 0;
+    position: relative;
+  }
+
+  .page-title h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .page-title .breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0 0 10px 0;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .page-title .breadcrumbs ol li+li {
+    padding-left: 10px;
+  }
+
+  .page-title .breadcrumbs ol li+li::before {
+    content: "/";
+    display: inline-block;
+    padding-right: 10px;
+    color: color-mix(in srgb, var(--default-color), transparent 70%);
+  }
+
+  /* Global Sections */
+  section,
+  .section {
+    color: var(--default-color);
+    background-color: var(--background-color);
+    padding: 60px 0;
+    scroll-margin-top: 90px;
+    overflow: clip;
+  }
+
+  @media (max-width: 1199px) {
+
+    section,
+    .section {
+      scroll-margin-top: 66px;
+    }
+  }
+
+  /* Global Section Titles */
+  .section-title {
+    text-align: center;
+    padding-bottom: 60px;
+    position: relative;
+  }
+
+  .section-title h2 {
+    font-size: 32px;
+    font-weight: 700;
+    position: relative;
+  }
+
+  .section-title h2:before,
+  .section-title h2:after {
+    content: "";
+    width: 50px;
+    height: 2px;
+    background: var(--accent-color);
+    display: inline-block;
+  }
+
+  .section-title h2:before {
+    margin: 0 15px 10px 0;
+  }
+
+  .section-title h2:after {
+    margin: 0 0 10px 15px;
+  }
+
+  .section-title p {
+    margin-bottom: 0;
+  }
+
+
+
+  /* Clients Section */
+  .clients {
+    padding: 20px 0;
+  }
+
+  .clients .client-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .clients .client-logo img {
+    padding: 20px 40px;
+    max-width: 90%;
+    transition: 0.3s;
+    opacity: 0.5;
+    filter: grayscale(100);
+  }
+
+  .clients .client-logo img:hover {
+    filter: none;
+    opacity: 1;
+  }
+
+  @media (max-width: 640px) {
+    .clients .client-logo img {
+      padding: 20px;
+    }
+  }
+
+  /* About Section */
+  .about .content h3 {
+    font-weight: 700;
+    font-size: 34px;
+    margin-bottom: 30px;
+  }
+
+  .about .content p {
+    margin-bottom: 30px;
+  }
+
+  .about .content .about-btn {
+    padding: 8px 30px 9px 30px;
+    color: var(--accent-color);
+    border-radius: 50px;
+    transition: 0.3s;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    border: 2px solid var(--accent-color);
+  }
+
+  .about .content .about-btn i {
+    font-size: 16px;
+    padding-left: 5px;
+  }
+
+  .about .content .about-btn:hover {
+    background: var(--accent-color);
+    color: var(--contrast-color);
+  }
+
+  .about .icon-box i {
+    font-size: 40px;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+  }
+
+  .about .icon-box h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+  }
+
+  .about .icon-box h4 a {
+    color: var(--heading-color);
+    transition: 0.3s;
+  }
+
+  .about .icon-box p {
+    font-size: 15px;
+    color: color-mix(in srgb, var(--default-color), transparent 40%);
+    margin-bottom: 0;
+  }
+
+  .about .icon-box:hover h4 a {
+    color: var(--accent-color);
+  }
+
+  /* Stats Section */
+  .stats .stats-item {
+    padding: 10px;
+  }
+
+  .stats .stats-item i {
+    font-size: 44px;
+    color: var(--accent-color);
+    line-height: 0;
+    margin-right: 15px;
+  }
+
+  .stats .stats-item .purecounter {
+    color: var(--heading-color);
+    font-size: 40px;
+    display: block;
+    font-weight: 700;
+    line-height: 40px;
+  }
+
+  .stats .stats-item p {
+    color: color-mix(in srgb, var(--default-color), transparent 40%);
+    padding: 15px 0 0 0;
+    margin: 0;
+    font-family: var(--heading-font);
+    font-size: 14px;
+  }
+
+  
+
+  
+
+
+  /* Testimonials Section */
+  .testimonials .testimonial-wrap {
+    padding-left: 50px;
+  }
+
+  .testimonials .testimonials-carousel,
+  .testimonials .testimonials-slider {
+    overflow: hidden;
+  }
+
+  .testimonials .testimonial-item {
+    background-color: var(--surface-color);
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    box-sizing: content-box;
+    padding: 30px 30px 30px 60px;
+    margin: 30px 15px;
+    min-height: 200px;
+    position: relative;
+  }
+
+  .testimonials .testimonial-item .testimonial-img {
+    width: 90px;
+    border-radius: 10px;
+    border: 6px solid var(--background-color);
+    position: absolute;
+    left: -45px;
+  }
+
+  .testimonials .testimonial-item h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0 5px 0;
+  }
+
+  .testimonials .testimonial-item h4 {
+    color: color-mix(in srgb, var(--default-color), transparent 50%);
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .testimonials .testimonial-item .stars {
+    margin: 10px 0;
+  }
+
+  .testimonials .testimonial-item .stars i {
+    color: #ffc107;
+    margin: 0 1px;
+  }
+
+  .testimonials .testimonial-item .quote-icon-left,
+  .testimonials .testimonial-item .quote-icon-right {
+    color: color-mix(in srgb, var(--accent-color), transparent 60%);
+    font-size: 26px;
+    line-height: 0;
+  }
+
+  .testimonials .testimonial-item .quote-icon-left {
+    display: inline-block;
+    left: -5px;
+    position: relative;
+  }
+
+  .testimonials .testimonial-item .quote-icon-right {
+    display: inline-block;
+    right: -5px;
+    position: relative;
+    top: 10px;
+    transform: scale(-1, -1);
+  }
+
+  .testimonials .testimonial-item p {
+    font-style: italic;
+    margin: 15px auto 15px auto;
+  }
+
+  .testimonials .swiper-wrapper {
+    height: auto;
+  }
+
+  .testimonials .swiper-pagination {
+    margin-top: 20px;
+    position: relative;
+  }
+
+  .testimonials .swiper-pagination .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background-color: var(--background-color);
+    opacity: 1;
+    border: 1px solid var(--accent-color);
+  }
+
+  .testimonials .swiper-pagination .swiper-pagination-bullet-active {
+    background-color: var(--accent-color);
+  }
+
+  @media (max-width: 767px) {
+    .testimonials .testimonial-wrap {
+      padding-left: 0;
+    }
+
+    .testimonials .testimonials-carousel,
+    .testimonials .testimonials-slider {
+      overflow: hidden;
+    }
+
+    .testimonials .testimonial-item {
+      padding: 30px;
+      margin: 15px;
+    }
+
+    .testimonials .testimonial-item .testimonial-img {
+      position: static;
+      left: auto;
+    }
+  }
+
+
+
+  /* Pricing Section */
+  .pricing .pricing-item {
+    background-color: var(--surface-color);
+    box-shadow: 0 3px 20px -2px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid var(--background-color);
+    padding: 60px 40px;
+    height: 100%;
+    border-radius: 5px;
+  }
+
+  .pricing h3 {
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+
+  .pricing h4 {
+    color: var(--accent-color);
+    font-size: 48px;
+    font-weight: 400;
+    font-family: var(--heading-font);
+    margin-bottom: 0;
+  }
+
+  .pricing h4 sup {
+    font-size: 28px;
+  }
+
+  .pricing h4 span {
+    color: color-mix(in srgb, var(--default-color), transparent 50%);
+    font-size: 18px;
+  }
+
+  .pricing ul {
+    padding: 20px 0;
+    list-style: none;
+    color: color-mix(in srgb, var(--default-color), transparent 30%);
+    text-align: left;
+    line-height: 20px;
+  }
+
+  .pricing ul li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .pricing ul i {
+    color: #059652;
+    font-size: 24px;
+    padding-right: 3px;
+  }
+
+  .pricing ul .na {
+    color: color-mix(in srgb, var(--default-color), transparent 60%);
+  }
+
+  .pricing ul .na i {
+    color: color-mix(in srgb, var(--default-color), transparent 60%);
+  }
+
+  .pricing ul .na span {
+    text-decoration: line-through;
+  }
+
+  .pricing .buy-btn {
+    color: var(--accent-color);
+    display: inline-block;
+    padding: 8px 35px 10px 35px;
+    border-radius: 50px;
+    transition: none;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--heading-font);
+    transition: 0.3s;
+    border: 1px solid var(--accent-color);
+  }
+
+  .pricing .buy-btn:hover {
+    background: var(--accent-color);
+    color: var(--contrast-color);
+  }
+
+  .pricing .featured {
+    border-top-color: var(--accent-color);
+  }
+
+  .pricing .featured .buy-btn {
+    background: var(--accent-color);
+    color: var(--contrast-color);
+  }
+
+  @media (max-width: 992px) {
+    .pricing .box {
+      max-width: 60%;
+      margin: 0 auto 30px auto;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .pricing .box {
+      max-width: 80%;
+      margin: 0 auto 30px auto;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .pricing .box {
+      max-width: 100%;
+      margin: 0 auto 30px auto;
+    }
+  }
+</style>
+
+
+      <!-- Hotels CSS -->
+<style>
+  .hotels-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 2rem 0;
+  }
+  
+  .hotel-image-wrapper {
+      overflow: hidden;
+      height: 350px;
+      width: 325px;
+      position: relative;
+      cursor: pointer;
+      margin: 15px;
+      box-shadow: 0 0 25px 1px rgba(0, 0, 0, .1);
+      transition: .5s;
+      border-radius: 8px;
+  }
+  
+  .hotel-image-wrapper:after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      width: 600px;
+      height: 600px;
+      transform: translate(-140%, -50%);
+      background-color: rgba(224, 7, 47, 0.8); /* Panther Red */
+      border-radius: 50%;
+      transition: .8s;
+  }
+  
+  .hotel-image-wrapper:hover:after {
+      transform: translate(-50%, -50%);
+  }
+  
+  .hotel-image-wrapper:hover .hotel-img {
+      transform: scale(1.2) rotate(5deg);
+  }
+  
+  .hotel-img {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      transition: .8s;
+  }
+  
+  .hotel-search-icon {
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      left: 50%;
+      transform: translate(-2000px, -50%);
+      color: #fff;
+      transition: .8s;
+      transition-timing-function: ease-in;
+      font-size: 2.5rem;
+  }
+  
+  .hotel-image-wrapper:hover .hotel-search-icon {
+      transform: translate(-50%, -50%);
+      transition-timing-function: ease;
+  }
+  </style>
+  
+  <!-- Hotels Section -->
+  <section id="hotels" class="section-with-bg wow fadeInUp">
+      <div class="container" data-aos="fade-up">
+          <div class="section-header">
+              <h2>Hotels</h2>
+              <p>Traveling far? Find nearby accommodations.</p>
+          </div>
+          <div class="hotels-row">
+              <!-- Hilton Garden Inn -->
+              <a href="https://www.hilton.com/en/hotels/ewrbwhx-hampton-suites-bridgewater/?SEO_id=GMB-AMER-HX-EWRBWHX&y_source=1_NjAxNzY1OS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D" target="_blank">
+              <div class="hotel">
+                
+                <div class="hotel-image-wrapper">
+
+                        <img src="img/hotels/1.jpg" alt="Hilton Garden Inn" class="hotel-img">
+           
+                    <i class="fas fa-search hotel-search-icon"></i>
+                 
+                </div>
+              </a>
+                <h3><a href="#">Hampton Inn Bridgewater</a></h3>
+                <div class="stars">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <p>0.8 Miles from Venue</p>
+            </div>
+            
+              <!-- Fairfield Inn -->
+              <a href="https://www.hyatt.com/hyatt-house/en-US/erwxa-hyatt-house-branchburg-bridgewater?src=corp_lclb_google_seo_erwxa&utm_source=google&utm_medium=organic&utm_campaign=lmr" target="_blank">
+              <div class="hotel">
+
+                  <div class="hotel-image-wrapper">
+                      <img src="img/hotels/2.jpg" alt="Fairfield Inn" class="hotel-img">
+                      <i class="fas fa-search hotel-search-icon"></i>
+                   
+                  </div>
+                </a>
+                  <h3><a href="#">Hyatt House Bridgewater</a></h3>
+                  <div class="stars">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star-half-o" aria-hidden="true"></i>
+
+                      
+                  </div>
+                  <p>1.2 Miles from Venue</p>
+              </div>
+  
+              <!-- Hampton Inn -->
+              <div class="hotel">
+                <a href="https://www.marriott.com/en-us/hotels/ewrtv-towneplace-suites-bridgewater-branchburg/overview/?scid=f2ae0541-1279-4f24-b197-a979c79310b0" target="_blank">
+                  <div class="hotel-image-wrapper">
+                      <img src="img/hotels/3.jpg" alt="Hampton Inn" class="hotel-img">
+                      <i class="fas fa-search hotel-search-icon"></i>
+                    </a>
+                  </div>
+                  <h3><a href="#">TownePlace Bridgewater</a></h3>
+                  <div class="stars">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                  </div>
+                  <p>1.5 Miles from Venue</p>
+              </div>
+          </div>
+      </div>
+  </section>
+
+
+  
+  
+  <style>
+    /* F.A.Q Section */
+    #faq-list {
+      padding: 0;
+      list-style: none;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    #faq-list li {
+      background: #fff;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.03);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+    
+    /* FAQ question styling */
+    #faq-list a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 30px;
+      color: #2a2a2a;
+      font-family: "Raleway", sans-serif;
+      font-weight: 600;
+      font-size: 17px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    
+    /* prevent the icon from shifting */
+    #faq-list a i {
+      color: #f82249;
+      font-size: 22px;
+      margin-left: 20px;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      flex-shrink: 0;
+    }
+    
+    #faq-list a:hover {
+      color: #f82249;
+    }
+    
+    /* when expanded, rotate the icon */
+    #faq-list a[aria-expanded="true"] i {
+      transform: rotate(135deg);
+    }
+    
+    /* Search Container */
+    .faq-search-container {
+      max-width: 800px;
+      margin: 0 auto 50px;
+      position: relative;
+    }
+    
+    #faq-search {
+      width: 100%;
+      padding: 18px 30px;
+      border: 3px solid #f82249;
+      border-radius: 50px;
+      font-size: 18px;
+      font-family: "Raleway", sans-serif;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    #faq-search:focus {
+      outline: none;
+      box-shadow: 0 0 20px rgba(248, 34, 73, 0.15);
+    }
+    
+    .search-icon {
+      position: absolute;
+      right: 25px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #f82249;
+      font-size: 20px;
+    }
+    
+    /* Answer Styling */
+    .collapse {
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+    
+    .collapse:not(.show) {
+      display: block;
+      overflow: hidden;
+      max-height: 0;
+    }
+    
+    .collapse.show {
+      max-height: 500px;
+    }
+    
+    /* FIX: padding is on the static wrapper div to prevent text reflow during animation */
+    .faq-answer-content {
+        padding: 0 30px 25px;
+    }
+    
+    /* FIX: padding and its transition removed from the p tag itself */
+    .collapse p {
+        padding: 0;
+        color: #555;
+        line-height: 1.7;
+        font-size: 16px;
+        margin: 0;
+    }
+    
+    /* Highlighting */
+    .highlight {
+      background: rgba(248, 34, 73, 0.15);
+      border-bottom: 2px solid #f82249;
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
+    
+    /* ensure our dedicated text spans behave nicely */
+    .question-text,
+    .answer-text {
+      display: inline-block;
+    }
+  </style>
+
+
+ <!-- Testimonials Section -->
+ <section id="testimonials" class="testimonials section light-background">
+  <div class="section-header">
+    <h2>Testimonials</h2>
+    <p class="testspecial">Read what our clients say about us.</p>
+  </div>
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="swiper init-swiper">
+      <script type="application/json" class="swiper-config">
+        {
+          "loop": true,
+          "speed": 600,
+          "autoplay": {
+            "delay": 5000
+          },
+          "slidesPerView": "auto",
+          "pagination": {
+            "el": ".swiper-pagination",
+            "type": "bullets",
+            "clickable": true
+          },
+          "breakpoints": {
+            "320": {
+              "slidesPerView": 1,
+              "spaceBetween": 40
+            },
+            "1200": {
+              "slidesPerView": 2,
+              "spaceBetween": 20
+            }
+          }
+        }
+      </script>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+              <h3>Mark Palazzi</h3>
+              <h4>Event Organizer</h4>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span>The PantherVenue was perfect for our graduation ceremony. The staff was incredibly supportive, and the modern facilities made the event unforgettable.</span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+              <h3>Jane Chang</h3>
+              <h4>Coach</h4>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span>Hosting our basketball tournament at PantherVenue was a slam dunk! The spacious gym and excellent sound system elevated the experience.</span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Frequently Asked Questions Section -->
+<section id="faq">
+
+  <!-- decorations container is now INSIDE the FAQ section -->
+  <div class="background-decorations">
+      <!-- Left Side Icons -->
+      <i class="fas fa-paw decor-icon red"></i>
+      <i class="fas fa-star decor-icon" id="decor2"></i>
+      <i class="fas fa-basketball-ball decor-icon red" id="decor3"></i>
+      <i class="fas fa-trophy decor-icon" id="decor4"></i>
+      <i class="fas fa-whistle decor-icon red" id="decor5"></i>
+      <i class="fas fa-graduation-cap decor-icon" id="decor6"></i>
+      <i class="fas fa-paw decor-icon red" id="decor7"></i>
+      <i class="fas fa-star decor-icon" id="decor8"></i>
+      <i class="fas fa-ticket-alt decor-icon" id="decor9"></i>
+      <i class="fas fa-microphone-alt decor-icon red" id="decor10"></i>
+      <i class="fas fa-music decor-icon" id="decor21"></i>
+      <i class="fas fa-gamepad decor-icon red" id="decor22"></i>
+      <i class="fas fa-medal decor-icon" id="decor25"></i>
+
+      <!-- Right Side Icons -->
+      <i class="fas fa-basketball-ball decor-icon red" id="decor11"></i>
+      <i class="fas fa-paw decor-icon" id="decor12"></i>
+      <i class="fas fa-trophy decor-icon red" id="decor13"></i>
+      <i class="fas fa-graduation-cap decor-icon" id="decor14"></i>
+      <i class="fas fa-ticket-alt decor-icon" id="decor15"></i>
+      <i class="fas fa-microphone-alt decor-icon red" id="decor16"></i>
+      <i class="fas fa-star decor-icon" id="decor17"></i>
+      <i class="fas fa-whistle decor-icon" id="decor18"></i>
+      <i class="fas fa-paw decor-icon red" id="decor19"></i>
+      <i class="fas fa-star decor-icon" id="decor20"></i>
+      <i class="fas fa-music decor-icon" id="decor23"></i>
+      <i class="fas fa-gamepad decor-icon red" id="decor24"></i>
+      <i class="fas fa-flag-checkered decor-icon red" id="decor26"></i>
+  </div>
+
+  <div class="container" data-aos="fade-up">
+    <div class="section-header">
+      <h2>Frequently Asked Questions</h2>
+      <p>Learn everything you need to know about PantherVenue.</p>
+    </div>
+
+    <div class="faq-search-container">
+      <input type="text" id="faq-search" placeholder="Search questions...">
+      <i class="fas fa-search search-icon"></i>
+    </div>
+
+    <ul id="faq-list">
+<!-- Question 1: Venue Location & Directions -->
+      <li>
+        <a data-toggle="collapse" href="#faq1" aria-expanded="false" class="collapsed">
+          <span class="question-text">Where is PantherVenue located?</span>
+          <i class="fas fa-plus"></i>
+        </a>
+        <div class="collapse" id="faq1" data-parent="#faq-list">
+          <div class="faq-answer-content">
+            <p>
+              <span class="answer-text">
+                  Finding us is simple. PantherVenue is located at 600 Garretson Road, inside Bridgewater-Raritan High School in Bridgewater, New Jersey. For turn-by-turn directions, please visit the "Contact Us" section at the bottom of our home page, where you will find an integrated Google Maps tool.
+              </span>
+            </p>
+          </div>
+        </div>
+      </li>
+
+      <!-- Question 2: Purchasing Tickets -->
+      <li>
+        <a data-toggle="collapse" href="#faq2" aria-expanded="false" class="collapsed">
+          <span class="question-text">What is the process for purchasing event tickets?</span>
+          <i class="fas fa-plus"></i>
+        </a>
+        <div class="collapse" id="faq2" data-parent="#faq-list">
+          <div class="faq-answer-content">
+            <p><span class="answer-text">To purchase tickets, you must first create an account and log in. Once logged in, you can navigate to the "Events" page, select your desired event, and click "Register." This will open a customized box office where you can complete your secure purchase. A confirmation and your tickets will then be available in your user dashboard.</span></p>
+          </div>
+        </div>
+      </li>
+
+      <!-- Question 3: Renting the Venue -->
+      <li>
+        <a data-toggle="collapse" href="#faq3" aria-expanded="false" class="collapsed">
+          <span class="question-text">How do I rent the venue for a private event?</span>
+          <i class="fas fa-plus"></i>
+        </a>
+        <div class="collapse" id="faq3" data-parent="#faq-list">
+          <div class="faq-answer-content">
+            <p><span class="answer-text">We would be delighted to host your event. The "Rent Venue" page provides all the necessary information and directions for submitting a request. You can fill out our multi-step form to provide details about your event, and our administrative team will review your submission. You can track the status of your request directly from your user dashboard.</span></p>
+          </div>
+        </div>
+      </li>
+
+      <!-- Question 4: Mobile Experience -->
+      <li>
+        <a data-toggle="collapse" href="#faq4" aria-expanded="false" class="collapsed">
+          <span class="question-text">Is this website optimized for mobile devices?</span>
+          <i class="fas fa-plus"></i>
+        </a>
+        <div class="collapse" id="faq4" data-parent="#faq-list">
+          <div class="faq-answer-content">
+            <p><span class="answer-text">Yes, PantherVenue is designed with a mobile-first approach to ensure a seamless experience on any device. The layout, navigation, and all interactive features automatically adapt to fit your screen, whether you are using a desktop, tablet, or smartphone.</span></p>
+          </div>
+        </div>
+      </li>
+  
+      <!-- Question 5: Data Security -->
+      <li>
+        <a data-toggle="collapse" href="#faq5" aria-expanded="false" class="collapsed">
+          <span class="question-text">How is my personal information kept secure?</span>
+          <i class="fas fa-plus"></i>
+        </a>
+        <div class="collapse" id="faq5" data-parent="#faq-list">
+          <div class="faq-answer-content">
+            <p><span class="answer-text">We take your security very seriously. All user data, including login credentials and rental requests, is managed through Google Firebase, a secure and reliable backend service. This ensures that your personal information is handled according to the highest industry standards.</span></p>
+          </div>
+        </div>
+      </li>
+
+      <!-- Question 6: Event Flyer -->
+      <li>
+        <a data-toggle="collapse" href="#faq6" aria-expanded="false" class="collapsed">
+          <span class="question-text">What is the downloadable event flyer?</span>
+          <i class="fas fa-plus"></i>
+        </a>
+        <div class="collapse" id="faq6" data-parent="#faq-list">
+          <div class="faq-answer-content">
+            <p><span class="answer-text">On the day of an event for which you have purchased a ticket, you will be able to download a personalized event flyer from your dashboard. This flyer includes a unique QR code for fast and easy check-in, as well as essential event details and directions, providing maximum convenience for our guests.</span></p>
+          </div>
+        </div>
+      </li>
+
+      <!-- Question 7: User Dashboard -->
+      <li>
+        <a data-toggle="collapse" href="#faq7" aria-expanded="false" class="collapsed">
+          <span class="question-text">What can I do from my user dashboard?</span>
+          <i class="fas fa-plus"></i>
+        </a>
+        <div class="collapse" id="faq7" data-parent="#faq-list">
+          <div class="faq-answer-content">
+            <p><span class="answer-text">Your personal dashboard is your central hub for managing your PantherVenue experience. From here, you can view your ticket purchase history, see your upcoming events, check the status of your venue rental requests, and access your event-day flyers.</span></p>
+          </div>
+        </div>
+      </li>
+
+      <!-- Question 8: Admin Dashboard -->
+      <li>
+          <a data-toggle="collapse" href="#faq8" aria-expanded="false" class="collapsed">
+            <span class="question-text">What is the Admin Dashboard?</span>
+            <i class="fas fa-plus"></i>
+          </a>
+          <div class="collapse" id="faq8" data-parent="#faq-list">
+            <div class="faq-answer-content">
+              <p><span class="answer-text">The Admin Dashboard is a private, secure portal for PantherVenue staff. It serves as our command center for operations, allowing administrators to review and approve rental requests, manage the public event calendar, and monitor key site analytics to ensure we are always improving our services.</span></p>
+            </div>
+          </div>
+      </li>
+      
+      <!-- Question 9: 360-degree Tour -->
+      <li>
+          <a data-toggle="collapse" href="#faq9" aria-expanded="false" class="collapsed">
+            <span class="question-text">How does the 360-degree virtual tour work?</span>
+            <i class="fas fa-plus"></i>
+          </a>
+          <div class="collapse" id="faq9" data-parent="#faq-list">
+            <div class="faq-answer-content">
+              <p><span class="answer-text">Our 360-degree tour provides an immersive, interactive view of the gymnasium. You can access it from the button on our home page. This feature allows potential renters and guests to explore the space from their own device, giving them a true sense of the venue's scale and features before they even arrive. It's the next best thing to getting in-person directions and walking through the doors yourself.</span></p>
+            </div>
+          </div>
+      </li>
+      
+      <!-- Question 10: AI Chatbot Directions -->
+      <li>
+          <a data-toggle="collapse" href="#faq10" aria-expanded="false" class="collapsed">
+            <span class="question-text">Can I get directions from the AI Chatbot?</span>
+            <i class="fas fa-plus"></i>
+          </a>
+          <div class="collapse" id="faq10" data-parent="#faq-list">
+            <div class="faq-answer-content">
+              <p><span class="answer-text">Yes, our AI assistant, PantherBot, is fully trained on all venue information. You can ask it for the address, parking information, or any other questions you may have. PantherBot is available 24/7 by clicking the chat icon at the bottom-right of your screen.</span></p>
+            </div>
+          </div>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const faqItems = document.querySelectorAll('#faq-list li');
+    const searchInput = document.getElementById('faq-search');
+    
+    // cache original text for search highlighting
+    faqItems.forEach(item => {
+      const questionTextElem = item.querySelector('.question-text');
+      const answerTextElem = item.querySelector('.answer-text');
+      questionTextElem.dataset.originalText = questionTextElem.innerHTML;
+      if (answerTextElem) {
+        answerTextElem.dataset.originalText = answerTextElem.innerHTML;
+      }
+    });
+
+    function highlightText(text, searchTerm) {
+      if (!searchTerm) return text;
+      const regex = new RegExp(`(${searchTerm})`, 'gi');
+      return text.replace(regex, '<span class="highlight">$1</span>');
+    }
+
+    function manageSearch(searchTerm) {
+      faqItems.forEach(item => {
+        const questionTextElem = item.querySelector('.question-text');
+        const answerTextElem = item.querySelector('.answer-text');
+        const originalQuestion = questionTextElem.dataset.originalText;
+        const originalAnswer = answerTextElem ? answerTextElem.dataset.originalText : '';
+
+        questionTextElem.innerHTML = originalQuestion;
+        if (answerTextElem) answerTextElem.innerHTML = originalAnswer;
+        item.classList.remove('search-highlight');
+
+        const qText = questionTextElem.textContent.toLowerCase();
+        const aText = answerTextElem ? answerTextElem.textContent.toLowerCase() : '';
+        const searchTermLower = searchTerm.toLowerCase();
+        const collapseElem = item.querySelector('.collapse');
+
+        if (searchTerm && (qText.includes(searchTermLower) || aText.includes(searchTermLower))) {
+          questionTextElem.innerHTML = highlightText(originalQuestion, searchTerm);
+          if (answerTextElem) answerTextElem.innerHTML = highlightText(originalAnswer, searchTerm);
+          item.classList.add('search-highlight');
+          item.style.display = 'block';
+
+          if (collapseElem) {
+            bootstrap.Collapse.getOrCreateInstance(collapseElem).show();
+          }
+        } else if (searchTerm) {
+          item.style.display = 'none';
+        } else {
+          item.style.display = 'block';
+          if (collapseElem) {
+            bootstrap.Collapse.getOrCreateInstance(collapseElem).hide();
+          }
+        }
+      });
+    }
+
+    searchInput.addEventListener('input', function() {
+      manageSearch(this.value.trim());
+    });
+
+    // FIX: changed event listeners from 'shown/hidden' to 'show/hide'
+    // this makes the icon animation start immediately with the accordion
+    faqItems.forEach(item => {
+      const aElem = item.querySelector('a');
+      const collapseElem = item.querySelector('.collapse');
+
+      if (collapseElem && aElem) {
+        collapseElem.addEventListener('show.bs.collapse', function() {
+          aElem.setAttribute('aria-expanded', 'true');
+          aElem.classList.remove('collapsed');
+        });
+
+        collapseElem.addEventListener('hide.bs.collapse', function() {
+          aElem.setAttribute('aria-expanded', 'false');
+          aElem.classList.add('collapsed');
+        });
+      }
+    });
+  });
+</script>
+
+
+<section id="subscribe">
+  <video autoplay loop muted playsinline>
+    <source src="video.mp4" type="video/mp4">
+
+  </video>
+  <div class="overlay"></div>
+  <div class="container wow fadeInUp">
+    <div class="section-header">
+      <h2>Newsletter</h2>
+      <p>Stay in the loop about more upcoming events!</p>
+    </div>
+    <form method="POST" action="#">
+      <div class="form-row justify-content-center">
+        <div class="col-auto">
+          <input type="text" class="form-control" placeholder="Enter your Email">
+        </div>
+        <div class="col-auto">
+          <button type="submit">Subscribe</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+    
+
+ <!-- Contact Section -->
+<section id="contact" class="section-bg wow fadeInUp">
+  <div class="container">
+    <div class="section-header">
+      <h2>Contact Us</h2>
+      <p>We will get back to you in 2-7 business days.</p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row contact-info">
+          <div class="col-md-4">
+            <div class="contact-box">
+              <i class="fas fa-map-marker-alt"></i>
+              <h3>Address</h3>
+              <address>600 Garretson Rd</address>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-box">
+              <i class="fas fa-phone-alt"></i>
+              <h3>Phone Number</h3>
+              <p>+1 908-524-4059</p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-box">
+              <i class="fas fa-envelope"></i>
+              <h3>Email</h3>
+              <p>hs@brrsd.k12.nj.us</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="form">
+          <div id="sendmessage">Your message has been sent. Thank you!</div>
+          <div id="errormessage"></div>
+          <form action="" method="post" role="form" class="contactForm">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group col-md-6">
+                <input type="email" class="form-control" name="email" id="email-contact" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                <div class="validation"></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+              <div class="validation"></div>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+              <div class="validation"></div>
+            </div>
+ <!-- form action points to where user is sent -->
+<form action="/404">
+    <div class="text-center">
+        <!-- submit triggers the form action -->
+        <button type="submit">Send Message</button>
+    </div>
+</form>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <iframe
+      src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=600%20garretson%20road+(Panther%20Venue)&t=s&z=17&ie=UTF8&iwloc=B&output=embed"
+      width="100%"
+      height="400"
+      frameborder="0"
+      style="border:3px solid #ac1833; padding: 0; margin: 0;"
+      allowfullscreen=""
+      aria-hidden="false"
+      tabindex="0">
+    </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+  </main>
+
+<!-- FINAL FOOTER -->
+<footer id="panther-footer-final">
+  
+  <!-- the new, reliable wave -->
+  <div class="footer-shape-divider">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z" class="shape-fill"></path>
+      </svg>
+  </div>
+
+  <div class="panther-footer-content-area">
+    <div class="container">
+           <div class="row gy-4 justify-content-between">
+
+        <div class="col-lg-4 col-md-12 panther-footer-info">
+          <a href="/" class="panther-footer-logo d-flex align-items-center">
+            <img src="logo2.png" alt="PantherVenue Logo">
+          </a>
+          <p>The premier venue at Bridgewater-Raritan High School, perfect for sports, ceremonies, and community events. <br><br>Venue Credits: BRRSD Board of Education & Athletics <br><br> PantherVenue Website Credits: Bootstrap, Tailwind, Panolens, Google Firebase, Google Fonts, jQuery</p>
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-6 panther-footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="/">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#about">About Us</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="/events">Events</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#schedule">Project Sources</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="https://www.brrsd.org/fs/pages/500" target="_blank">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-6 panther-footer-links">
+          <h4>BRHS Resources</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="https://www.brrsd.org/athletics" target="_blank">Athletics Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="https://www.brrsd.org/high-school" target="_blank">High School Page</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="https://www.brrsd.org/calendars" target="_blank">District Calendar</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="https://www.brrsd.org/community" target="_blank">Community Page</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="https://www.brrsd.org/board-of-education" target="_blank">Board of Ed</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-12 panther-footer-links">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#contact"><strong>Location</strong>: BRHS Gym</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="tel:+19082318660"><strong>Phone:</strong> +1 908-231-8660</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="mailto:hs@brrsd.k12.nj.us"><strong>Email:</strong> hs@brrsd.k12.us</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="panther-footer-bottom-bar">
+    <div class="container d-flex justify-content-center align-items-center">
+      <div class="copyright-credits-wrapper">
+        <div class="copyright">
+          © Copyright <strong><span>PantherVenue</span></strong>. All Rights Reserved
+        </div>
+      </div>
+    </div>
+    <div class="footer-social-container"> 
+      <svg class="footer-social-blob-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 236 54">
+        <path class="footer-social-blob-path" d="M223.06,43.32c-.77-7.2,1.87-28.47-20-32.53C187.78,8,180.41,18,178.32,20.7s-5.63,10.1-4.07,16.7-.13,15.23-4.06,15.91-8.75-2.9-6.89-7S167.41,36,167.15,33a18.93,18.93,0,0,0-2.64-8.53c-3.44-5.5-8-11.19-19.12-11.19a21.64,21.64,0,0,0-18.31,9.18c-2.08,2.7-5.66,9.6-4.07,16.69s.64,14.32-6.11,13.9S108.35,46.5,112,36.54s-1.89-21.24-4-23.94S96.34,0,85.23,0,57.46,8.84,56.49,24.56s6.92,20.79,7,24.59c.07,2.75-6.43,4.16-12.92,2.38s-4-10.75-3.46-12.38c1.85-6.6-2-14-4.08-16.69a21.62,21.62,0,0,0-18.3-9.18C13.62,13.28,9.06,19,5.62,24.47A18.81,18.81,0,0,0,3,33a21.85,21.85,0,0,0,1.58,9.08,16.58,16.58,0,0,1,1.06,5A6.75,6.75,0,0,1,0,54H236C235.47,54,223.83,50.52,223.06,43.32Z"></path>
+      </svg>
+      <a href="https://twitter.com/brhs_panthers" target="_blank" class="social-link"><i class="bi bi-twitter"></i></a>
+      <a href="https://www.facebook.com/BRHSNJ/" target="_blank" class="social-link"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.instagram.com/brpantherathletics/" target="_blank" class="social-link"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.linkedin.com/school/bridgewater-raritan-high-school/" target="_blank" class="social-link"><i class="bi bi-linkedin"></i></a>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+<style>
+/* CSS for PantherVenue Final Footer */
+
+/* main footer container, needs to be relative so the wave can be positioned */
+#panther-footer-final {
+  background-color: #000000;
+  color: rgba(255, 255, 255, 0.75);
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  position: relative;
+  /* no top padding here, moved it to the content area */
+}
+
+/* NEW WAVE STYLING */
+.footer-shape-divider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: translateY(-1px); /* trick to prevent pixel gaps */
+}
+
+.footer-shape-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 110px; /* adjust height of the wave */
+}
+
+.footer-shape-divider .shape-fill {
+  /* IMPORTANT: wave color has to match the section above it. contact section is a light grey */
+  fill: #f8f9fa;
+}
+
+/* we push the content area down to make room for the wave */
+.panther-footer-content-area {
+  padding: 100px 0 40px 0; /* increased top padding to clear the wave */
+  position: relative;
+  z-index: 2; /* ensures content is above the footer's black background */
+}
+
+.panther-footer-content-area .container {
+  padding-left: 15px;
+  padding-right: 15px; /* standard bootstrap padding */
+}
+
+/* Info Column */
+#panther-footer-final .panther-footer-info .panther-footer-logo img {
+  max-height: 40px;
+  margin-bottom: 15px;
+}
+
+#panther-footer-final .panther-footer-info p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Links Columns */
+#panther-footer-final .panther-footer-links h4 {
+  font-size: 15px; font-weight: 900; color: #fff; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 20px;
+}
+#panther-footer-final .panther-footer-links ul { list-style: none; padding: 0; margin: 0; }
+#panther-footer-final .panther-footer-links ul i { color: #b01a35; padding-right: 5px; font-size: 12px; }
+#panther-footer-final .panther-footer-links ul a { color: rgba(255, 255, 255, 0.7); transition: 0.3s; }
+#panther-footer-final .panther-footer-links ul a:hover { color: #fff; }
+#panther-footer-final .panther-footer-links ul li { padding: 6px 0; }
+
+/* Contact Column */
+#panther-footer-final .panther-footer-contact h4 {
+  font-size: 15px; font-weight: 900; color: #fff; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 20px;
+}
+#panther-footer-final .panther-footer-contact p { line-height: 26px; }
+
+/* Bottom Bar */
+.panther-footer-bottom-bar {
+  background-color: #b01a35;
+  padding: 15px 0;
+  position: relative;
+  z-index: 2;
+  min-height: 54px;
+}
+
+.copyright-credits-wrapper {
+  color: #fff; text-align: center; font-size: 13px; font-weight: 400;
+}
+
+/* Social Links Blob Container */
+.footer-social-container {
+  position: absolute;
+  right: 60px;
+  bottom: 0;
+  width: 236px;
+  height: 54px;
+}
+
+.footer-social-blob-svg {
+    position: absolute;
+    /* adjusted the blob to stick out a bit */
+    top: -50px; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+}
+
+.footer-social-blob-path {
+  fill: #b01a35; /* match the bottom bar color */
+}
+
+.footer-social-container .social-link {
+  position: absolute; display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 18px; transition: 0.3s;
+}
+d
+.footer-social-container .social-link:hover {
+  transform: translateY(-3px);
+}
+
+.footer-social-container .social-link:nth-of-type(1) { top: -30px; left: 15px; }
+.footer-social-container .social-link:nth-of-type(2) { top: -35px; left: 75px; }
+.footer-social-container .social-link:nth-of-type(3) { top: -30px; left: 135px; }
+.footer-social-container .social-link:nth-of-type(4) { top: -30px; left: 190px; }
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .panther-footer-info, .panther-footer-contact { text-align: center; }
+  .panther-footer-logo { justify-content: center; }
+  .panther-footer-content-area .container {
+    padding-left: 30px; 
+    padding-right: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .panther-footer-bottom-bar .container {
+    flex-direction: column; gap: 10px; padding-bottom: 70px;
+  }
+  .footer-social-container {
+    position: absolute;
+    left: 50%; transform: translateX(-50%); bottom: 15px;
+  }
+  .panther-footer-content-area .container {
+    padding-left: 15px; 
+    padding-right: 15px;
+  }
+}
+
+</style>
+
+
+<style> 
+/* FIX: stack contact info/form and map vertically on iPad-sized touch devices */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #contact .container > .row {
+    flex-direction: column;
+    align-items: center; /* center the columns vertically */
+  }
+
+  #contact .col-md-6 {
+    flex: 0 0 100%;
+    max-width: 90%; /* use more width but not full */
+    width: 100%;
+    margin-bottom: 40px; /* space between form/info and map */
+  }
+
+  /* make the contact info boxes display side-by-side */
+  #contact .contact-info {
+    display: flex;
+    flex-wrap: nowrap; /* force them to stay in a single row */
+    justify-content: space-around; /* distribute them evenly */
+    text-align: center;
+    margin-bottom: 30px; /* space between info and form */
+  }
+
+  #contact .contact-info .col-md-4 {
+    flex: 1; /* allow them to share space */
+    max-width: 30%; /* control their max width */
+  }
+
+  /* center the form and map */
+  #contact .form {
+    max-width: 80%; /* control form width */
+    margin: 0 auto;
+  }
+  
+  #contact .col-md-6:last-child {
+    display: flex;
+    justify-content: center;
+  }
+
+  #contact iframe {
+    width: 100%;
+    max-width: 80%; /* match form width for alignment */
+    height: 350px;
+  }
+}
+
+/* for smaller screens where they should stack nicely */
+@media screen and (max-width: 767px) {
+    #contact .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+    #contact .contact-info .col-md-4 {
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 300px;
+    }
+}
+</style>
+
+
+
+
+
+
+
+  <style>
+  .arena-container {
+    position: relative;
+    border: 4px solid #e0072f; /* outer border */
+    background: rgba(224, 7, 47, 0.276);
+    border-radius: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    min-height: 600px;
+    margin: 2rem auto;
+    max-width: 1200px;
+    max-width: 800px;  /* smaller width */
+    min-height: 400px; /* smaller height */
+    
+    
+    
+}
+
+.arena-container2 {
+    position: relative;
+    border: 4px solid #e0072f; /* outer border */
+    background: rgba(224, 7, 47, 0.276);
+    border-radius: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    min-height: 600px;
+    margin: 2rem auto;
+    max-width: 1200px;
+    max-width: 800px;  /* smaller width */
+    min-height: 400px; /* smaller height */
+    
+    
+    
+}
+/* inner border pseudo-element */
+.arena-container::after {
+    content: '';
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    right: 60px;
+    bottom: 60px;
+    
+    pointer-events: none;
+    z-index: 1;
+    border-radius: 2px;
+    background: #fff; /* ensure white background */
+    background: rgb(255, 242, 242);
+   
+}
+
+.arena-container2::after {
+    content: '';
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    right: 60px;
+    bottom: 60px;
+    border: 4px solid #e0072f; /* outer border */
+    pointer-events: none;
+    z-index: 1;
+    border-radius: 2px;
+    background: #fff; /* ensure white background */
+    
+   
+}
+
+/* capacity sections styling */
+.capacity-section {
+    position: absolute;
+    background: transparent !important;
+    color: #490b15;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    z-index: 2;
+    padding: 8px;
+    border: none !important;
+}
+
+/* position adjustments */
+.north { 
+    top: 4px;
+    left: 60px;
+    right: 60px;
+    height: 40px;
+}
+
+.south { 
+    bottom: 4px;
+    left: 60px;
+    right: 60px;
+    height: 40px;
+}
+
+.east, .west {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    width: 40px;
+    top: 60px;
+    bottom: 60px;
+}
+
+.east { 
+    right: 4px;
+    padding-left: 8px;
+}
+
+.west { 
+    left: 4px;
+    padding-right: 8px;
+}
+
+/* main floor adjustments */
+.main-floor {
+    position: absolute;
+    top: 130px; /* 60px north + 60px stage + 20px */
+    left: 85px;
+    right: 60px;
+    bottom: 60px;
+    background: #fff;
+    z-index: 0;
+    background: rgb(255, 242, 242);
+    z-index: 2; /* change from 0 to 2 */
+    
+
+    
+}
+
+.main-floor2 {
+    position: absolute;
+    top: 60px; /* changed from 60px */
+    left: 60px;
+    right: 60px;
+    bottom: 60px; /* keep original */
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    background: rgb(255, 242, 242);
+}
+.court-text {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #e0072f;
+        z-index: 10;
+        text-align: center;
+    }
+
+    .court-subtext {
+        font-size: 1.2rem;
+        color: #666;
+        z-index: 10;
+        text-align: center;
+    }
+    .stage-container {
+    position: absolute;
+    top: 81px; /* keep as is, adjust if needed */
+    left: 80px;
+    right: 80px;
+    height: 40px;
+    z-index: 2;
+    border-radius: 15px;
+    background: #e0072f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: -20px;  /* adjust negative margin to reduce gap between stage and seat group */
+}
+
+.stage {
+    background: #d8526b;
+    color: white;
+    height: 100%;
+    width: 100%; /* new width rule */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.3rem;
+    border-radius: 15px;
+}
+
+.seat-group {
+    display: grid;
+    grid-template-rows: repeat(9, auto);
+    gap: 8px;  /* smaller gap between rows */
+    margin-right: 10px;  /* less space between seat groups */
+    margin-top: 0;  /* ensure no top margin */
+}
+
+.seat-row {
+    display: flex;
+    gap: 8px;  /* smaller horizontal spacing */
+    justify-content: center;
+    height: min-content;
+    align-items: flex-start;
+}
+
+.seat {
+    width: 20px;  /* smaller seats */
+    height: 20px;
+    flex-shrink: 0;
+    background: #ffffff;
+    border-radius: 3px;  /* optional, slightly less rounded */
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;  /* smaller text */
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+    overflow: hidden;
+    padding: 2px;  /* less padding */
+}
+
+.seat:hover {
+    background: #e0072f;
+    color: white !important;
+    cursor: pointer;
+    transform: scale(1.1); /* keep the hover effect */
+}
+
+
+    @media (max-width: 768px) {
+        .seat {
+            width: 20px;
+            height: 20px;
+        }
+        
+        .capacity-section {
+            font-size: 0.8rem;
+        }
+        
+        .north, .south { height: 40px; }
+        .east, .west { width: 40px; }
+        
+        .main-floor {
+            top: 40px;
+            left: 40px;
+            right: 40px;
+            bottom: 40px;
+        }
+    }
+
+/* north border - top and bottom borders only (no sides) */
+.north {
+    border-top: 2px solid #e0072f;
+    border-bottom: 2px solid #e0072f;
+    border-left: none;
+    border-right: none;
+    left: 60px;  /* match west border width */
+    right: 60px; /* match east border width */
+    height: 60px;
+}
+
+/* south border - bottom and top borders only (no sides) */
+.south {
+    border-bottom: 2px solid #e0072f;
+    border-top: 2px solid #e0072f;
+    border-left: none;
+    border-right: none;
+    left: 60px;
+    right: 60px;
+    height: 60px;
+}
+
+/* east border - right and left borders only (no top/bottom) */
+.east {
+    border-right: 2px solid #e0072f;
+    border-left: 2px solid #e0072f;
+    border-top: none;
+    border-bottom: none;
+    top: 60px;    /* match north border height */
+    bottom: 60px; /* match south border height */
+    width: 60px;
+}
+
+/* west border - left and right borders only (no top/bottom) */
+.west {
+    border-left: 2px solid #e0072f;
+    border-right: 2px solid #e0072f;
+    border-top: none;
+    border-bottom: none;
+    top: 60px;
+    bottom: 60px;
+    width: 60px;
+}
+
+    
+</style>
+
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/venobox/venobox.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+  <!-- script to redirect the contact form -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // find the contact form
+      const contactForm = document.querySelector('.contactForm');
+
+      // check if the form exists before proceeding
+      if (contactForm) {
+        
+        // wait for the form to be submitted
+        contactForm.addEventListener('submit', function(event) {
+          
+          // 1. prevent the form from doing anything else
+          event.preventDefault();
+          
+          // 2. immediately redirect the user
+          window.location.href = '/404';
+
+        });
+      }
+    });
+  </script>
+
+  <!-- main javascript file -->
+  <script src="js/main.js"></script>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"91836870a82c2326","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.1.0","token":"cd0b4b3a733644fc843ef0b185f98241"}' crossorigin="anonymous"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+      <!-- Vendor JS Files -->
+  
+    
+<style>
+  /*
+  CUSTOM RESPONSIVE FIXES FOR UNIVERSAL COMPATIBILITY
+  this block contains targeted fixes for various devices
+  */
+
+  /* PARALLAX FIX: disable fixed background on tablets/mobile to prevent zoom/performance issues */
+  @media (max-width: 1024px) {
+    #intro {
+      background-attachment: scroll !important;
+    }
+    #intro h1 {
+      font-size: 2.8rem;
+    }
+    .hero-waves {
+      height: 100px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+      #intro h1 {
+        font-size: 2.2rem;
+      }
+      .hero-waves {
+        height: 80px;
+      }
+  }
+
+  /* hide the stray "hamburger" icon */
+  .mobile-nav-toggle.d-xl-none.bi.bi-list {
+    display: none !important;
+  }
+
+  /* iPad View Hotel Fix */
+  @media (min-width: 768px) and (max-width: 1199px) {
+    .hotels-row {
+      display: flex;
+      flex-wrap: nowrap;
+    }
+    #hotels .hotel {
+      flex: 1;
+      min-width: 0;
+      padding: 0 10px;
+    }
+     #hotels .hotel-image-wrapper {
+       width: 90%;
+       height: 200px;
+     }
+  }
+  
+  /* FAQ Content Shift Fix */
+  .faq-answer-content {
+      padding: 0 30px 25px 30px;
+  }
+  #faq-list .collapse p {
+      padding: 0 !important;
+      margin: 0 !important;
+  }
+
+/* Seating Chart Responsive Fix */
+@media (max-width: 991px) {
+  #seating .row > div.col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* Seating Grid Layout Fix */
+.seating-grid {
+  display: flex;
+  justify-content: space-between;
+  margin-left: -25px;
+}
+.seat-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.seat-row {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
+
+/* iPad Seating Replacement */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .ipad-seating-replacement {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 12px;
+  }
+
+  .arena-container {
+    display: none !important;
+  }
+}
+</style>
+
+<!-- SCRIPT for video parallax effect -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const video = document.querySelector('#subscribe video');
+    const section = document.querySelector('#subscribe');
+
+    if (video && section) {
+        window.addEventListener('scroll', () => {
+            // get the position of the top of the section relative to the viewport
+            const rect = section.getBoundingClientRect();
+            // calculate how much the video should move. It should move slower than the scroll.
+            const speed = 0.4;
+            let offset = rect.top * speed;
+            
+            // apply the transform to the video
+            video.style.transform = `translateY(${offset}px)`;
+        });
+    }
+});
+</script>
+
+<style>
+#subscribe {
+  position: relative;
+  overflow: hidden;
+  height: auto; /* keeps section height driven by content */
+  min-height: 300px; /* fallback for minimal visibility */
+}
+
+#subscribe video {
+  position: absolute;
+  top: -300px;
+  left: 0;
+  width: 100%;
+  height: 250%; /* oversized for parallax, adjust as needed */
+  object-fit: cover;
+
+  z-index: 0;
+}
+</style>
+
+
+
+<!-- SCRIPT for TEAM section animation -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+      const teamPath = document.querySelector('#team-scroll-line');
+      const teamSection = document.querySelector('#team');
+
+      if (teamPath && teamSection) {
+          
+          const scrollStartOffset = 0.2;
+          const maxStrokeWidth = 25; 
+          const minStrokeWidth = 15;
+          const animationSpeedFactor = 0.75; 
+
+          const pathLength = teamPath.getTotalLength();
+          teamPath.style.strokeDasharray = pathLength + ' ' + pathLength;
+          teamPath.style.strokeDashoffset = pathLength;
+
+          const handleScroll = () => {
+              const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+              const sectionTop = teamSection.offsetTop;
+              const sectionHeight = teamSection.offsetHeight;
+              const viewportHeight = window.innerHeight;
+              const scrollDistance = scrollTop - sectionTop;
+
+              if (scrollDistance >= -viewportHeight && scrollDistance <= sectionHeight * animationSpeedFactor) {
+                  const progress = (scrollDistance + viewportHeight) / ((sectionHeight + viewportHeight) * animationSpeedFactor);
+                  const adjustedProgress = (progress - scrollStartOffset) / (1 - scrollStartOffset);
+                  const finalProgress = Math.max(0, Math.min(1, adjustedProgress));
+                  
+                  const drawLength = pathLength * finalProgress;
+                  teamPath.style.strokeDashoffset = pathLength - drawLength;
+
+                  const currentStrokeWidth = maxStrokeWidth - (finalProgress * (maxStrokeWidth - minStrokeWidth));
+                  teamPath.style.strokeWidth = `${currentStrokeWidth}px`;
+              }
+          };
+          window.addEventListener('scroll', handleScroll);
+          handleScroll();
+      }
+  });
+</script>
+
+
+  <!-- START: Chatbot Integration Body -->
+<!-- Chatbot Toggler -->
+<button id="chatbot-toggler">
+  <span class="material-symbols-rounded">mode_comment</span>
+  <span class="material-symbols-rounded">close</span>
+</button>
+<div class="chatbot-popup" style="opacity: 0; ">
+  <!-- Chatbot Header -->
+  <div class="chat-header">
+    <div class="header-info">
+      <img src="aiprofile.png" alt="AI Profile Logo" class="chatbot-logo" />
+      <h2 class="logo-text">PantherBot</h2>
+    </div>
+    <button id="close-chatbot" class="material-symbols-rounded">keyboard_arrow_down</button>
+  </div>
+  <!-- Chatbot Body -->
+  <div class="chat-body">
+    <div class="message bot-message">
+      <img src="aiprofile.png" alt="AI Profile Logo" class="bot-avatar" />
+      <div class="message-text">Nice to meet you! I'm PantherBot, your AI chatbot for PantherVenue. How can I help you today?</div>
+    </div>
+  </div>
+  <!-- Chatbot Footer -->
+  <div class="chat-footer">
+    <form action="#" class="chat-form">
+      <textarea placeholder="Type a message..." class="message-input" required></textarea>
+      <div class="chat-controls">
+        <button type="button" id="emoji-picker" class="material-symbols-outlined">sentiment_satisfied</button>
+        <button type="submit" id="send-message" class="material-symbols-rounded">arrow_upward</button>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- Linking Emoji Mart script for emoji picker -->
+<script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
+
+<script>
+  // Select DOM elements
+const chatBody = document.querySelector(".chat-body");
+const messageInput = document.querySelector(".message-input");
+const sendMessageButton = document.querySelector("#send-message");
+const chatForm = document.querySelector(".chat-form");
+const chatbotToggler = document.querySelector("#chatbot-toggler");
+const closeChatbot = document.querySelector("#close-chatbot");
+const chatbotPopup = document.querySelector(".chatbot-popup");
+const initialInputHeight = messageInput.scrollHeight;
+
+const API_URL = "https://ai.hackclub.com/chat/completions";
+let chatHistory;
+
+const createMessageElement = (content, ...classNames) => {
+    const div = document.createElement("div");
+    div.classList.add("message", ...classNames); // This can now handle multiple classes
+    div.innerHTML = content;
+    return div;
+};
+// Function to display chat history
+const displayChatHistory = () => {
+    chatBody.innerHTML = ''; // Clear existing messages
+    chatHistory.forEach(msg => {
+        if (msg.role === "user") {
+            const userMessageContent = `<div class="message-text">${msg.content}</div>`;
+            const outgoingMessageDiv = createMessageElement(userMessageContent, "user-message");
+            chatBody.appendChild(outgoingMessageDiv);
+        } else if (msg.role === "assistant") {
+            const botMessageContent = `<img src="aiprofile.png" alt="AI Profile Logo" class="bot-avatar" />
+            <div class="message-text">${marked.parse(msg.content)}</div>`;
+            const incomingMessageDiv = createMessageElement(botMessageContent, "bot-message");
+            chatBody.appendChild(incomingMessageDiv);
+        }
+    });
+    chatBody.scrollTo({ top: chatBody.scrollHeight, behavior: "smooth" });
+};
+
+// Function to generate bot response
+const generateBotResponse = async (incomingMessageDiv) => {
+    const messageElement = incomingMessageDiv.querySelector(".message-text");
+    const requestOptions = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            messages: chatHistory,
+        }),
+    };
+    try {
+        const response = await fetch(API_URL, requestOptions);
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error("API Error Response:", errorData);
+            throw new Error(`API request failed with status: ${response.status}. ${errorData.error?.message || ''}`);
+        }
+        const data = await response.json();
+        const apiResponseText = data.choices[0].message.content.trim();
+        messageElement.innerHTML = marked.parse(apiResponseText);
+        chatHistory.push({
+            role: "assistant",
+            content: apiResponseText,
+        });
+        localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+    } catch (error) {
+        console.error("API Error:", error);
+        messageElement.innerText = "Oops! Something went wrong. The AI service might be temporarily unavailable. Please try again later.";
+        messageElement.style.color = "#dc3545";
+    } finally {
+        incomingMessageDiv.classList.remove("thinking");
+        chatBody.scrollTo({ top: chatBody.scrollHeight, behavior: "smooth" });
+    }
+};
+
+// Function to handle outgoing messages
+const handleOutgoingMessage = (e) => {
+    e.preventDefault();
+    const userMessage = messageInput.value.trim();
+    if (!userMessage) return;
+    messageInput.value = "";
+    messageInput.style.height = `${initialInputHeight}px`;
+    chatHistory.push({ role: "user", content: userMessage });
+    localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+    const userMessageContent = `<div class="message-text">${userMessage}</div>`;
+    const outgoingMessageDiv = createMessageElement(userMessageContent, "user-message");
+    chatBody.appendChild(outgoingMessageDiv);
+    chatBody.scrollTo({ top: chatBody.scrollHeight, behavior: "smooth" });
+    setTimeout(() => {
+        const botMessageContent = `<img src="aiprofile.png" alt="AI Profile Logo" class="bot-avatar" />
+        <div class="message-text">
+          <div class="thinking-indicator">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+        </div>`;
+                const incomingMessageDiv = createMessageElement(botMessageContent, "bot-message", "thinking");
+        chatBody.appendChild(incomingMessageDiv);
+        chatBody.scrollTo({ top: chatBody.scrollHeight, behavior: "smooth" });
+        generateBotResponse(incomingMessageDiv);
+    }, 600);
+};
+
+// Event listeners for input and form
+messageInput.addEventListener("input", () => {
+    messageInput.style.height = `${initialInputHeight}px`;
+    const newHeight = messageInput.scrollHeight;
+    messageInput.style.height = `${newHeight}px`;
+});
+
+messageInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && !e.shiftKey && window.innerWidth > 768) {
+        handleOutgoingMessage(e);
+    }
+});
+
+chatForm.addEventListener("submit", handleOutgoingMessage);
+
+// Emoji picker setup
+const picker = new EmojiMart.Picker({
+    theme: "light",
+    skinTonePosition: "none",
+    previewPosition: "none",
+    onEmojiSelect: (emoji) => {
+        const { selectionStart: start, selectionEnd: end } = messageInput;
+        messageInput.setRangeText(emoji.native, start, end, "end");
+        messageInput.focus();
+    },
+    onClickOutside: (e) => {
+        if (e.target.id === "emoji-picker") {
+            document.body.classList.toggle("show-emoji-picker");
+        } else if (document.body.classList.contains("show-emoji-picker")) {
+            document.body.classList.remove("show-emoji-picker");
+        }
+    },
+});
+document.querySelector(".chat-footer").appendChild(picker);
+
+document.querySelector("#emoji-picker").addEventListener("click", (e) => {
+    e.stopPropagation();
+    document.body.classList.toggle("show-emoji-picker");
+});
+
+// Toggle and close functions
+function toggleChatbot() {
+    document.body.classList.toggle("show-chatbot");
+    const isOpen = document.body.classList.contains("show-chatbot");
+    localStorage.setItem('chatbotOpen', isOpen);
+}
+
+function closeChatbotFunc() {
+    document.body.classList.remove("show-chatbot");
+    localStorage.setItem('chatbotOpen', false);
+}
+
+chatbotToggler.addEventListener("click", toggleChatbot);
+closeChatbot.addEventListener("click", closeChatbotFunc);
+
+// Initialize chatbot state and history on page load
+document.addEventListener('DOMContentLoaded', () => {
+    chatbotPopup.classList.add('no-transition');
+    const savedHistory = localStorage.getItem('chatHistory');
+    if (savedHistory) {
+        chatHistory = JSON.parse(savedHistory);
+    } else {
+        chatHistory = [
+            {
+                role: "system",
+                content: `You are PantherBot, an expert AI assistant for PantherVenue. Your goal is to answer user questions accurately and helpfully based on the following information about the venue, its policies, and its website. Use Markdown for clear formatting.
+
+---
+### General Venue Information
+- **Name:** PantherVenue
+- **Location:** Inside Bridgewater-Raritan High School, 600 Garretson Road, Bridgewater, New Jersey.
+- **Capacity:** Seats up to 3,500 people.
+- **Features:** A premier gymnasium renovated in 2024 with a high-quality sound system, adjustable lighting, a large video screen, new bleachers, and a resurfaced floor.
+- **Primary Use:** Ideal for sports events, graduations, performances, workshops, and community gatherings.
+- **Amenities:** Comfortable bleacher seating, top-tier audio system, adjustable lighting, large video screen for presentations.
+- **Layouts:**
+    - **Standard Gym Layout:** For sports. Uses all four stands (North/South: 1000 seats each, East/West: 750 seats each).
+    - **Ceremony Layout:** For graduations/presentations. Features a main stage, with seating in the stands and potentially on the floor.
+
+---
+### How the Website Works
+- **Events Page (/events):**
+    - Users can see a list of all upcoming events, such as "Varsity Basketball Finals," "Fall Dance Recital," and "Yoga Wellness Workshop."
+    - Users can filter events by category, price, and date.
+    - **To purchase tickets, users must log in to their account.** A popup allows them to select seats and complete the purchase.
+- **Rent Venue Page (/rent):**
+    - Users can request to rent the venue for their own private event.
+    - **Users must be logged in to submit a request.**
+    - The process is a 6-step form: 1. Personal Details, 2. Event Details, 3. Category, 4. Venue Choice, 5. Image Upload, 6. Confirmation.
+    - After submission, the request becomes "pending" and is reviewed by an administrator.
+- **User Accounts (/login):**
+    - Users can sign up for an account or log in.
+    - After logging in, users see a personal dashboard.
+    - **User Dashboard:** Shows their purchased tickets, total money spent, and the status (pending, accepted, declined) of their venue rental requests.
+    - **Admin Dashboard:** Staff can view site analytics and manage all venue rental requests.
+
+---
+### Important Policies & FAQs
+- **General Rules:** No outside food or drink. All bags are subject to search. The venue is strictly non-smoking (including vapes/e-cigarettes). No alcohol. No pets are allowed, except for service animals.
+- **Parking:** Available in designated lots. Fees may apply depending on the event.
+- **Ticket Policy:** Tickets are non-refundable unless the event is canceled by the venue. There is a 10-ticket limit per transaction. Tickets are transferable if the box office is notified.
+- **Team & Contact:**
+    - Key Staff: Bill Deniz (Athletic Director), Keri Fry (Logistics and Business Manager).
+    - Phone: +1 908-524-4059
+    - Email: hs@brrsd.k12.nj.us (expect a response in 2-7 business days).
+- **Nearby Hotels:** Hampton Inn, Hyatt House, and TownePlace suites are all within 1.5 miles.
+
+---
+### Your Persona & Instructions
+- Be friendly, professional, and enthusiastic.
+- Your name is PantherBot.
+- Refer to the information above to answer questions. If you don't know the answer, politely state that you don't have that information and suggest contacting the venue directly via phone or email.`
+            },
+            {
+                role: "assistant",
+                content: "Nice to meet you! I'm PantherBot, your AI chatbot for PantherVenue. How can I help you today?"
+            }
+        ];
+    }
+    displayChatHistory();
+    const isOpen = localStorage.getItem('chatbotOpen') === 'true';
+    if (isOpen) {
+        document.body.classList.add('show-chatbot');
+    } else {
+        document.body.classList.remove('show-chatbot');
+    }
+    setTimeout(() => {
+        chatbotPopup.classList.remove('no-transition');
+    }, 0);
+});
+</script>
+
+
+
+
+
+
+  <style>
+    /* Importing Google Fonts - Inter for Chatbot */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
+    
+    /* --- Chatbot Styles --- */
+    #chatbot-toggler {
+      position: fixed;
+      bottom: 30px;
+      right: 35px;
+      border: none;
+      height: 50px;
+      width: 50px;
+      display: flex;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #dc3545; /* Red */
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease;
+      z-index: 1000; /* Ensure it's above other content */
+    }
+    body.show-chatbot #chatbot-toggler {
+      transform: rotate(90deg);
+    }
+    #chatbot-toggler span {
+      color: #fff;
+      position: absolute;
+    }
+    #chatbot-toggler span:last-child,
+    body.show-chatbot #chatbot-toggler span:first-child {
+      opacity: 0;
+    }
+    body.show-chatbot #chatbot-toggler span:last-child {
+      opacity: 1;
+    }
+    .chatbot-popup {
+      position: fixed;
+      right: 35px;
+      bottom: 90px;
+      width: 400px; 
+      overflow: hidden;
+      background: #fff;
+      border-radius: 15px;
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0.2);
+      transform-origin: bottom right;
+      box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
+        0 32px 64px -48px rgba(0, 0, 0, 0.5);
+      transition: all 0.1s ease;
+      z-index: 1000;
+     visibility: hidden;
+    }
+    body.show-chatbot .chatbot-popup {
+      opacity: 1 !important;
+      pointer-events: auto;
+      transform: scale(1);
+      visibility: visible;
+   
+    }
+
+    .chatbot-popup.no-transition {
+    transition: none !important; /* Prevents animation on page load */
+}
+    .chat-header {
+      display: flex;
+      align-items: center;
+      padding: 15px 22px;
+      background: #dc3545; /* Red */
+      border-bottom: 1px solid #d4d4d4;
+      justify-content: space-between;
+    }
+    .chat-header .header-info {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .header-info .chatbot-logo {
+      width: 35px;
+      height: 35px;
+      padding: 2px;
+      object-fit: cover;
+      flex-shrink: 0;
+      background: #fff;
+      border-radius: 50%;
+    }
+    .header-info .logo-text {
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.31rem;
+      letter-spacing: 0.02rem;
+      font-family: "Inter", sans-serif;
+    }
+    .chat-header #close-chatbot {
+      border: none;
+      color: #fff;
+      height: 40px;
+      width: 40px;
+      font-size: 1.9rem;
+      margin-right: -10px;
+      padding-top: 2px;
+      cursor: pointer;
+      border-radius: 50%;
+      background: none;
+      transition: 0.2s ease;
+    }
+    .chat-header #close-chatbot:hover {
+      background: rgba(0, 0, 0, 0.1);
+    }
+    .chat-body {
+      font-family: "Inter", sans-serif;
+      padding: 25px 22px;
+      gap: 20px;
+      display: flex;
+      height: 400px; 
+      overflow-y: auto;
+      margin-bottom: 75px;
+      flex-direction: column;
+      scrollbar-width: thin;
+      scrollbar-color: #ccc transparent;
+    }
+    .chat-body::-webkit-scrollbar {
+      width: 6px;
+    }
+    .chat-body::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 3px;
+    }
+    .chat-body .message {
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+    }
+    .chat-body .message .bot-avatar {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      align-self: flex-start;
+    }
+    .chat-body .message .message-text {
+      font-family: "Inter", sans-serif;
+      padding: 12px 16px;
+      max-width: 75%;
+      font-size: 0.95rem;
+      word-wrap: break-word;
+    }
+    .chat-body .bot-message.thinking .message-text {
+      padding: 2px 16px;
+    }
+    .chat-body .bot-message .message-text {
+      background: #f0f0f0; /* Light Gray */
+      color: #000;
+      border-radius: 13px 13px 13px 3px;
+    }
+    .chat-body .user-message {
+      justify-content: flex-end;
+    }
+    .chat-body .user-message .message-text {
+      color: #fff;
+      background: #dc3545; /* Red */
+      border-radius: 13px 13px 3px 13px;
+    }
+    /* Markdown formatting inside bot message */
+     .bot-message .message-text p,
+     .bot-message .message-text h1,
+     .bot-message .message-text h2,
+     .bot-message .message-text h3,
+     .bot-message .message-text ul,
+     .bot-message .message-text ol,
+     .bot-message .message-text li {
+        font-family: "Inter", sans-serif;
+        margin-bottom: 0.5em;
+        font-size: 0.95rem;
+     }
+     .bot-message .message-text p:last-child {
+        margin-bottom: 0;
+     }
+     .bot-message .message-text ul, .bot-message .message-text ol {
+        padding-left: 20px;
+     }
+    .chat-body .bot-message .thinking-indicator {
+      display: flex;
+      gap: 4px;
+      padding-block: 15px;
+    }
+    .chat-body .bot-message .thinking-indicator .dot {
+      height: 7px;
+      width: 7px;
+      opacity: 0.7;
+      border-radius: 50%;
+      background: #dc3545; /* Red */
+      animation: dotPulse 1.8s ease-in-out infinite;
+    }
+    .chat-body .bot-message .thinking-indicator .dot:nth-child(1) { animation-delay: 0.2s; }
+    .chat-body .bot-message .thinking-indicator .dot:nth-child(2) { animation-delay: 0.3s; }
+    .chat-body .bot-message .thinking-indicator .dot:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes dotPulse {
+      0%, 44% { transform: translateY(0); }
+      28% { opacity: 0.4; transform: translateY(-4px); }
+      44% { opacity: 0.2; }
+    }
+    .chat-footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: #fff;
+      padding: 10px 22px 15px;
+      border-top: 1px solid #d4d4d4;
+    }
+    .chat-footer .chat-form {
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: #fff;
+      border-radius: 32px;
+      outline: 1px solid #ccc;
+      transition: 0s ease;
+    }
+    .chat-form:focus-within {
+      outline: 2px solid #dc3545; /* Red */
+    }
+    .chat-form .message-input {
+      font-family: "Inter", sans-serif;
+      width: 100%;
+      height: 47px;
+      outline: none;
+      resize: none;
+      border: none;
+      max-height: 180px;
+      scrollbar-width: none;
+      border-radius: inherit;
+      font-size: 0.95rem;
+      padding: 14px 0 12px 18px;
+    }
+    .chat-form .message-input::-webkit-scrollbar {
+        display: none;
+    }
+    .chat-form .chat-controls {
+      gap: 3px;
+      height: 47px;
+      display: flex;
+      padding-right: 6px;
+      align-items: center;
+      align-self: flex-end;
+    }
+    .chat-form .chat-controls button {
+      height: 35px;
+      width: 35px;
+      border: none;
+      cursor: pointer;
+      color: #555; /* Dark Gray */
+      border-radius: 50%;
+      font-size: 1.15rem;
+      background: none;
+      transition: 0.2s ease;
+    }
+    .chat-form .chat-controls button:hover,
+    body.show-emoji-picker .chat-controls #emoji-picker {
+      color: #dc3545; /* Red */
+      background: #fdeaea; /* Light Red */
+    }
+    .chat-form .chat-controls #send-message {
+      color: #fff;
+      background: #dc3545; /* Red */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .chat-form .chat-controls #send-message:hover {
+      background: #b02a37; /* Darker Red */
+    }
+    .chat-form .message-input:valid~.chat-controls #send-message {
+      display: flex; /* Changed from block to flex for centering fix */
+    }
+    em-emoji-picker {
+      position: absolute;
+      left: 50%;
+      bottom: 55px; /* Position above the input bar */
+      width: 100%;
+      max-width: 350px;
+      visibility: hidden;
+      max-height: 330px;
+      transform: translateX(-50%);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    body.show-emoji-picker em-emoji-picker {
+      visibility: visible;
+    }
+
+    /* IPAD/MOBILE FIX: Make chatbot fullscreen on tablets (portrait) and phones */
+    @media (max-width: 768px) {
+      #chatbot-toggler {
+        right: 20px;
+        bottom: 20px;
+      }
+      .chatbot-popup {
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        border-radius: 0;
+        width: 100%;
+      }
+      .chatbot-popup .chat-header {
+        padding: 12px 15px;
+      }
+      .chat-body {
+        height: calc(100% - 130px); /* Adjusted for full screen */
+        padding: 25px 15px;
+      }
+      .chat-footer {
+        padding: 10px 15px 15px;
+      }
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+  <!-- Marked.js for Markdown parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+  
+    const urlParams = new URLSearchParams(window.location.search);
+    const shouldPlay = urlParams.get('action') === 'play';
+
+    if (shouldPlay) {
+
+      const playButton = document.getElementById('play-button');
+
+      if (playButton) {
+        playButton.click();
+      }
+    }
+  });
+</script>
+
+
+<style>
+html {
+  scroll-behavior: smooth;
+}</style>
+
+<!-- =======================================================
+  EMERGENCY SMOOTH SCROLL FIX
+  This script overrides old libraries to ensure instant scrolling.
+======================================================== -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Find all navigation links that point to a section on the current page
+    const navLinks = document.querySelectorAll('#nav-menu-container a[href*="#"]');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(event) {
+        // 1. STOP all other old, slow scripts from running
+        event.preventDefault();
+
+        // 2. Get the target section's ID from the link's href
+        const targetId = this.hash;
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+          // 3. Use the modern, fast, native browser method to scroll
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  });
+</script>
+
+<script src="js/pretty-routes.js"></script>
 </body>
 </html>
+
