@@ -1,0 +1,1988 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- google analytics tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G1N2QCDNHH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-G1N2QCDNHH');
+  </script>
+
+  <meta charset="utf-8">
+  <title>PantherVenue - Rent</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="Rent our gymnasium for your events" name="keywords">
+  <meta content="Host sporting events, concerts, and more at PantherVenue" name="description">
+
+  <!-- Favicons -->
+  <link href="logo.jpg" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800" rel="stylesheet">
+  
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- TailwindCSS is the goat here-->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Embedded Main CSS -->
+  <style>
+   
+    :root {
+      --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      --heading-font: "Raleway", sans-serif;
+      --nav-font: "Poppins", sans-serif;
+    }
+
+    :root {
+      --background-color: #f1f5f7;
+      --default-color: #2f3138; 
+      --heading-color: #060c22; 
+      --accent-color: #f82249; 
+      --surface-color: #ffffff;
+      --contrast-color: #ffffff;
+    }
+    main {
+  padding-top: 60px; /* Adjusts all main content down by 30px */
+}
+
+    body {
+      color: var(--default-color);
+      background-color: var(--background-color);
+      font-family: var(--default-font);
+    }
+
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      color: color-mix(in srgb, var(--accent-color), transparent 25%);
+      text-decoration: none;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--heading-color);
+      font-family: var(--heading-font);
+    }
+
+    /*
+      ================================================================================
+      --- START: CSS FOR OLD NAVBAR (FROM old code) ---
+      ================================================================================
+    */
+
+        .btn-group-toggle > .btn input[type="radio"] {
+        position: absolute;
+        clip: rect(0, 0, 0, 0);
+        pointer-events: none;
+    }
+    .btn:focus, .btn.focus, .btn:active, .btn.active {
+        box-shadow: none !important;
+        outline: 0 !important;
+    }
+    #header {
+      height: 70px;
+      padding: 15px 0;
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      background: rgba(6, 12, 34, 0.98);
+      transition: all 0.5s;
+      z-index: 997;
+    }
+    #header #logo img {
+      padding: 0;
+      margin: 0;
+      max-height: 40px;
+      padding-left: 80px;
+    }
+    #nav-menu-container {
+      float: right;
+      margin: 0;
+      padding-right: 65px;
+    }
+    .nav-menu, .nav-menu * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .nav-menu ul {
+      position: absolute;
+      display: none;
+      top: 100%;
+      left: 0;
+      z-index: 99;
+    }
+    .nav-menu li {
+      position: relative;
+      white-space: nowrap;
+    }
+    .nav-menu > li {
+      float: left;
+    }
+    .nav-menu li:hover > ul, .nav-menu li.sfHover > ul {
+      display: block;
+    }
+    .nav-menu ul ul {
+      top: 0;
+      left: 100%;
+    }
+    .nav-menu ul li {
+      min-width: 180px;
+    }
+    .nav-menu a {
+      padding: 8px;
+      text-decoration: none;
+      display: inline-block;
+      color: rgba(255, 255, 255, 0.8);
+      font-family: "Raleway";
+      font-weight: 700;
+      font-size: 14px;
+      outline: none;
+    }
+
+    
+    .nav-menu .menu-active a, .nav-menu a:hover {
+      color: #fff;
+    }
+    .nav-menu > li {
+      margin-left: 8px;
+    }
+    .nav-menu > li > a:before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #f82249;
+      visibility: hidden;
+      transition: all 0.3s ease-in-out 0s;
+    }
+    .nav-menu a:hover:before, .nav-menu li:hover > a:before, .nav-menu .menu-active > a:before {
+      visibility: visible;
+      width: 100%;
+    }
+    .nav-menu li.buy-tickets a {
+      color: #fff;
+      background: #f82249;
+      padding: 7px 22px;
+      border-radius: 50px;
+      border: 2px solid #f82249;
+      transition: all ease-in-out 0.3s;
+      font-weight: 500;
+      margin-left: 8px;
+      margin-top: 2px;
+      line-height: 1;
+      font-size: 13px;
+    }
+    .nav-menu li.buy-tickets a:hover {
+      background: none;
+      text-decoration: none;
+    }
+    .nav-menu li.buy-tickets a:before {
+      content: none;
+    }
+    #mobile-nav-toggle {
+      position: fixed;
+      right: 0;
+      top: 0;
+      z-index: 999;
+      margin: 15px 15px 0 0;
+      border: 0;
+      background: none;
+      font-size: 24px;
+      display: none;
+      transition: all 0.4s;
+      outline: none;
+      cursor: pointer;
+    }
+
+    /* --- GLOBAL SECTIONS --- */
+    section, .section {
+      color: var(--default-color);
+      background-color: var(--background-color);
+      padding: 60px 0;
+      scroll-margin-top: 70px;
+      overflow: clip;
+    }
+    @media (max-width: 1199px) {
+      section, .section { scroll-margin-top: 70px; }
+    }
+    .section-header { margin-bottom: 60px; position: relative; padding-bottom: 20px; }
+    .section-header::before { content: ''; position: absolute; display: block; width: 60px; height: 5px; background: #f82249; bottom: 0; left: calc(50% - 30px); }
+    .section-header h2 { font-size: 32px; text-transform: uppercase; text-align: center; font-weight: 700; margin-bottom: 10px; }
+    .section-header p { text-align: center; padding: 0; margin: 0; font-size: 18px; font-weight: 400; color: #444444; }
+
+    /* --- HERO SECTION --- */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 0px;
+
+      background-size: cover;
+    }
+    .hero::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+    .hero .hero-wrapper { 
+      padding: 80px; 
+      position: relative;
+      z-index: 2;
+    }
+    @media (max-width: 992px) {
+      .hero .hero-wrapper { padding: 100px 0 60px; text-align: center; }
+    }
+    .hero .hero-wrapper .hero-content h1 { font-size: 3.2rem; font-weight: 800; margin-bottom: 1.5rem; line-height: 1.2; }
+    @media (max-width: 992px) { .hero .hero-wrapper .hero-content h1 { font-size: 2.5rem; } }
+    @media (max-width: 576px) { .hero .hero-wrapper .hero-content h1 { font-size: 2rem; } }
+    .hero .hero-wrapper .hero-content p { font-size: 1.1rem; margin-bottom: 2rem; line-height: 1.6; }
+    .hero .hero-wrapper .hero-content .stats-row { display: flex; margin-bottom: 2rem; }
+    @media (max-width: 992px) { .hero .hero-wrapper .hero-content .stats-row { justify-content: center; flex-wrap: wrap; } }
+    .hero .hero-wrapper .hero-content .stats-row .stat-item { margin-right: 2.5rem; }
+    @media (max-width: 992px) { .hero .hero-wrapper .hero-content .stats-row .stat-item { margin: 0 1.5rem 1rem; } }
+    .hero .hero-wrapper .hero-content .stats-row .stat-item .stat-number { display: block; font-size: 2rem; font-weight: 700; color: var(--accent-color); }
+    .hero .hero-wrapper .hero-content .stats-row .stat-item .stat-label { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+    .hero .hero-wrapper .hero-content .action-buttons { display: flex; gap: 15px; }
+    @media (max-width: 992px) { .hero .hero-wrapper .hero-content .action-buttons { justify-content: center; flex-wrap: wrap; } }
+    .hero .hero-wrapper .hero-content .action-buttons a { padding: 14px 28px; font-weight: 600; border-radius: 8px; font-size: 1rem; text-align: center; transition: all 0.3s ease; }
+    @media (max-width: 576px) { .hero .hero-wrapper .hero-content .action-buttons a { width: 100%; } }
+    .hero .hero-wrapper .hero-content .action-buttons .btn-primary { background: var(--accent-color); color: var(--contrast-color); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); }
+    .hero .hero-wrapper .hero-content .action-buttons .btn-primary:hover { background: color-mix(in srgb, var(--accent-color), transparent 15%); transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); }
+    .hero .hero-wrapper .hero-content .action-buttons .btn-secondary { background: var(--surface-color); color: var(--default-color); box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05); }
+    .hero .hero-wrapper .hero-content .action-buttons .btn-secondary:hover { color: var(--heading-color); transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); }
+    .hero .hero-wrapper .hero-media { position: relative; }
+    @media (max-width: 992px) { .hero .hero-wrapper .hero-media { margin-top: 3rem; max-width: 80%; margin-left: auto; margin-right: auto; } }
+    .hero .hero-wrapper .hero-media .main-image { border-radius: 20px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); transform: perspective(1000px) rotateY(-10deg); transition: all 0.5s ease; }
+    .hero .hero-wrapper .hero-media .main-image:hover { transform: perspective(1000px) rotateY(0); }
+    .hero .hero-wrapper .hero-media .image-overlay { position: absolute; bottom: -20px; right: -20px; }
+    @media (max-width: 992px) { .hero .hero-wrapper .hero-media .image-overlay { right: 0; } }
+    .hero .hero-wrapper .hero-media .image-overlay .badge-accredited { background: var(--accent-color); color: var(--contrast-color); padding: 12px 20px; border-radius: 50px; font-weight: 600; display: flex; align-items: center; gap: 10px; box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); }
+    .hero .hero-wrapper .hero-media .image-overlay .badge-accredited i { font-size: 1.3rem; }
+    .hero .feature-cards-wrapper { margin-top: -40px; padding-bottom: 40px; position: relative; z-index: 10; }
+    .hero .feature-cards-wrapper .feature-card { background: var(--surface-color); border-radius: 15px; padding: 2rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06); display: flex; align-items: flex-start; gap: 1.5rem; height: 100%; transition: all 0.3s ease; }
+    .hero .feature-cards-wrapper .feature-card:hover, .hero .feature-cards-wrapper .feature-card.active { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); }
+    .hero .feature-cards-wrapper .feature-card.active { background: var(--surface-color); border-left: 4px solid var(--accent-color); }
+    .hero .feature-cards-wrapper .feature-card.active .feature-icon { background: var(--accent-color); color: var(--contrast-color); }
+    .hero .feature-cards-wrapper .feature-card .feature-icon { width: 60px; height: 60px; background: color-mix(in srgb, var(--heading-color), transparent 90%); color: var(--heading-color); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; transition: all 0.3s ease; }
+    .hero .feature-cards-wrapper .feature-card .feature-content { flex: 1; }
+    .hero .feature-cards-wrapper .feature-card .feature-content h3 { font-size: 1.25rem; margin-bottom: 0.75rem; font-weight: 700; }
+    .hero .feature-cards-wrapper .feature-card .feature-content p { font-size: 0.9rem; color: color-mix(in srgb, var(--default-color), transparent 20%); margin: 0; }
+    .hero .upcoming-event { background: #060c22; color: var(--contrast-color); padding: 0; margin: 30px 0 0; }
+    .hero .upcoming-event .event-content { display: flex; align-items: center; flex-wrap: wrap; padding: 20px; position: relative; border-radius: 10px; overflow: hidden; }
+    @media (max-width: 992px) { .hero .upcoming-event .event-content { flex-direction: column; text-align: center; } }
+    .hero .upcoming-event .event-content>* { position: relative; z-index: 1; }
+    .hero .upcoming-event .event-content .event-date { display: flex; flex-direction: column; background: var(--accent-color); color: var(--contrast-color); text-align: center; padding: 15px; border-radius: 8px; margin-right: 30px; min-width: 100px; }
+    @media (max-width: 992px) { .hero .upcoming-event .event-content .event-date { margin: 0 auto 20px; } }
+    /* FIXED "BOOK NOW" FONT SIZES */
+    .hero .upcoming-event .event-content .event-date .day { font-size: 1.2rem; font-weight: 800; line-height: 1.2; }
+    .hero .upcoming-event .event-content .event-date .month { font-size: 1.2rem; font-weight: 800; text-transform: uppercase; }
+    .hero .upcoming-event .event-content .event-info { flex: 1; margin-right: 30px; }
+    @media (max-width: 992px) { .hero .upcoming-event .event-content .event-info { margin-right: 0; margin-bottom: 20px; } }
+    .hero .upcoming-event .event-content .event-info h3 { font-size: 1.6rem; color: var(--contrast-color); margin-bottom: 10px; font-weight: 700; }
+    @media (max-width: 576px) { .hero .upcoming-event .event-content .event-info h3 { font-size: 1.3rem; } }
+    .hero .upcoming-event .event-content .event-info p { font-size: 1rem; margin: 0; }
+    .hero .upcoming-event .event-content .event-action { display: flex; flex-direction: column; align-items: center; }
+    .hero .upcoming-event .event-content .event-action .btn-event { background: var(--accent-color); color: var(--contrast-color); padding: 12px 30px; border-radius: 8px; font-weight: 600; display: inline-block; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; transition: all 0.3s ease; }
+    .hero .upcoming-event .event-content .event-action .btn-event:hover { background: color-mix(in srgb, var(--accent-color), transparent 15%); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); }
+    .hero .upcoming-event .event-content .event-action .countdown { font-size: 0.9rem; opacity: 0.8; }
+    
+    /* --- "FROM PAPERS TO AUTONOMY" SECTION --- */
+    .alt-features .icon-box { display: flex; }
+    .alt-features .icon-box h4 { font-family: "Raleway", sans-serif; font-size: 20px; font-weight: 700; margin: 0 0 10px 0; color: var(--heading-color); }
+    .alt-features .icon-box i { font-size: 44px; line-height: 44px; color: var(--accent-color); margin-right: 15px; }
+    .alt-features .icon-box p { font-size: 15px; color: color-mix(in srgb, var(--default-color), transparent 30%); margin-bottom: 0; }
+    #alt-features .icon-box a { color: var(--accent-color); text-decoration: underline !important; }
+    #alt-features .icon-box a:hover { color: color-mix(in srgb, var(--accent-color), #000 20%); }
+
+    
+    /* new styles for the phone animation */
+    *, *:before, *:after {
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    #alt-features *, #alt-features *:before, #alt-features *:after {
+      transform-style: preserve-3d;
+    }
+    
+    #alt-features {
+        --duration: 3.2s;
+        --stagger: .8s;
+        --easing: cubic-bezier(.36,.07,.25,1);
+        --offscreen: 40vmax;
+        --color-card: #c61032;
+        --color-border: #000000;
+        --color-shadow: #333333;
+    }
+
+    #app {
+        height: 45vmin;
+        width: 28vmin;
+        max-height: 360px;
+        max-width: 210px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: rotateX(-20deg) rotateY(-55deg);
+        background: var(--color-card);
+        border-radius: 2vmin;
+        perspective: 10000px;
+        margin-left: 15rem;
+    }
+
+    #app:before {
+        border: 5vmin solid var(--color-border);
+        border-left-width: 1.5vmin;
+        border-right-width: 1.5vmin;
+        border-radius: inherit;
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: var(--color-card);
+    }
+
+    #app > .papers, #app:before {
+        transform: translateZ(3vmin);
+    }
+
+    #app:after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: inherit;
+        border-radius: inherit;
+        transform: translateZ(1.5vmin);
+    }
+
+    #app > .shadow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform-origin: bottom center;
+        transform: rotateX(90deg);
+        background: var(--color-shadow);
+        border-radius: inherit;
+    }
+
+    .paper-shadow {
+        background: var(--color-shadow);
+        height: 50%;
+        width: 100%;
+        position: absolute;
+        top: calc(100% + 3vmin);
+        left: 0;
+        transform-origin: top center;
+        animation: shadow-in var(--duration) var(--easing) infinite;
+        animation-delay: calc(var(--i) * var(--stagger));
+        animation-fill-mode: both;
+    }
+
+    @keyframes shadow-in {
+        0%, 5% {
+            transform: scale(.8, 1) translateY(var(--offscreen));
+        }
+        100% {
+            transform: scale(.8, 0);
+        }
+    }
+
+    .papers {
+        width: 20vmin;
+        height: 30vmin;
+        max-width: 160px;
+        max-height: 230px;
+        background: #f0f0f0;
+    }
+
+    .paper {
+        --segments: 5;
+        --segment: calc(100% * 1 / var(--segments));
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: calc(var(--total) - var(--i));
+        animation: fly-in var(--duration) var(--easing) infinite,
+                   paper-fade-in var(--duration) var(--easing) infinite;
+        animation-delay: calc(var(--i) * var(--stagger));
+    }
+    
+    @keyframes paper-fade-in {
+        0%, 15% { opacity: 0.2; }
+        80%, 100% { opacity: 1; }
+    }
+
+
+    @keyframes fly-in {
+        0%, 2% {
+            transform: translateZ(var(--offscreen)) translateY(80%) rotateX(30deg);
+        }
+        80%, 100% {
+            transform: translateZ(0px) translateY(0%) rotateX(0deg);
+        }
+    }
+
+    .paper > .segment {
+        height: var(--segment);
+    }
+
+    .segment {
+        --rotate: 20deg;
+        height: 100%;
+        transform-origin: top center;
+        background: #f0f0f0;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-top: none;
+        border-bottom: none;
+        animation: inherit;
+        animation-name: curve-paper;
+    }
+
+    .segment > .segment {
+        top: 98%;
+    }
+
+    @keyframes curve-paper {
+        0%, 2% { transform: rotateX(var(--rotate, 0deg)); }
+        90%, 100% { transform: rotateX(0deg); }
+    }
+
+    .paper.-rogue {
+        transform-origin: top center -5vmin;
+    }
+
+    .paper.-rogue .segment {
+        --rotate: 30deg;
+        animation-name: curve-rogue-paper;
+    }
+
+    @keyframes curve-rogue-paper {
+        0%, 50% { transform: rotateX(var(--rotate)); }
+        100% { transform: rotateX(0deg); }
+    }
+
+    .paper.-rogue > .segment {
+        animation: inherit;
+        animation-name: rogue-paper;
+        transform-origin: left top 20vmin;
+    }
+
+    @keyframes rogue-paper {
+        0%, 2% {
+            transform: rotateX(1turn);
+        }
+        80%, 100% {
+            transform: rotateX(0turn);
+        }
+    }
+
+    .paper .content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 2vmin;
+        color: #000000;
+        font-family: 'Courier New', monospace;
+        font-size: 2vmin;
+        line-height: 1.5;
+        transform: translateZ(0.1px);
+        opacity: 0.4;
+        animation: fade-in-text var(--duration) var(--easing) infinite;
+        animation-delay: calc(var(--i) * var(--stagger));
+    }
+
+    @keyframes fade-in-text {
+        0%, 20% { opacity: 0; }
+        40%, 100% { opacity: 1; }
+    }
+
+    .paper.-rogue .content {
+        font-weight: bold;
+        color: #C8102E; 
+    }
+    
+
+      /* --- RENTAL PROCESS STEPS (INSIDE FORM) --- */
+    .rental-steps .icon-box { 
+      text-align: center; 
+      padding: 30px 20px; 
+      background: var(--surface-color); /* This is now white */
+      border: 1px solid #f0f0f0;      /* A subtle border to define the box */
+      border-radius: 12px; 
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+      transition: all 0.3s ease-in-out; 
+      height: 100%; 
+    }
+    .rental-steps .icon-box:hover { 
+      transform: translateY(-10px); 
+      box-shadow: 0 8px 30px rgba(248,34,73,0.1); 
+    }
+    .rental-steps .icon-box .icon { 
+      margin: 0 auto; 
+      width: 64px; 
+      height: 64px; 
+      background: var(--accent-color); 
+      border-radius: 50%; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      margin-bottom: 20px; 
+      transition: all 0.3s; 
+    }
+    .rental-steps .icon-box .icon i { 
+      color: var(--contrast-color); 
+      font-size: 28px; 
+    }
+    .rental-steps .icon-box h4 { 
+      font-weight: 700; 
+      margin-bottom: 15px; 
+      font-size: 22px; 
+      color: var(--heading-color); 
+    }
+    .rental-steps .icon-box p { 
+      line-height: 24px; 
+      font-size: 14px; 
+      margin-bottom: 0; 
+      color: #6c757d; 
+    }
+    /* --- RENTAL FORM (FROM old code) --- */
+    .step { display: none; opacity: 0; transition: opacity 0.5s ease, transform 0.5s ease; transform: translateX(50px); }
+    .step.active { display: block; opacity: 1; transform: translateX(0); }
+    .step.exiting { opacity: 0; transform: translateX(-50px); }
+    .form-control { border-radius: 50px; }
+    .form-control:focus { box-shadow: 0 0 0 2px #f82249; border-color: #f82249; }
+    .custom-file-label { border-radius: 50px; background-color: #f0f0f0; color: #2f3138; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; max-width: 100%; }
+    .custom-file-input:focus ~ .custom-file-label { box-shadow: 0 0 0 2px #f82249; }
+    .btn-outline-danger { border-color: #f82249; color: #f82249; }
+    .btn-outline-danger:hover { background-color: #f82249; color: #fff; }
+    .btn-group-toggle > .btn-outline-danger.active, .btn-group-toggle > .btn-outline-danger.selected { background-color: #f82249; color: #fff; }
+    #step-indicators { position: relative; }
+    .progress-fill { position: absolute; top: 50%; transform: translateY(-50%); left: 0; height: 2px; background: #f82249; transition: width 0.5s ease; z-index: -1; }
+    .btn-primary { background-color: #f82249; border-color: #f82249; }
+    .btn-primary:hover { background-color: #e61e40; border-color: #e61e40; }
+    #confirmation-details { background-color: #f9fafb; border: 1px solid #e5e7eb; }
+    .custom-radio input:checked + .btn-outline-danger, .custom-radio.selected { background-color: #f82249; color: #fff; }
+
+  </style>
+</head>
+
+<body class="index-page">
+
+  <!-- Header (FROM old code) -->
+  <header id="header">
+    <div class="container">
+      <div id="logo" class="pull-left">
+        <a href="/" class="scrollto">
+          <img src="logo2.png" alt="PantherVenue Logo" title="">
+        </a>
+      </div>
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/events">Events</a></li>
+          <li class="menu-active"><a href="/rent">Rent Venue</a></li>
+          <li class="buy-tickets"><a href="/login" id="loginButton">Log In</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+      <div class="hero-wrapper">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-6 hero-content" data-aos="fade-right" data-aos-delay="100">
+              <h1>Host Your Next Event at PantherVenue</h1>
+              <p>From sporting events to trade shows, the PantherVenue facility has everything you need to host a successful event.</p>
+              <div class="stats-row">
+                <div class="stat-item">
+                  <span class="stat-number">100K+</span>
+                  <span class="stat-label">Donated</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">80+</span>
+                  <span class="stat-label">Events Held</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">25K</span>
+                  <span class="stat-label">Square Feet</span>
+                </div>
+              </div>
+              <div class="action-buttons">
+                <a href="#rental-form" class="btn-primary">Start Your Rental Request</a>
+               <a href="/?action=play" class="btn-secondary">Virtual Tour</a>
+              </div>
+            </div>
+            <div class="col-lg-6 hero-media" data-aos="zoom-in" data-aos-delay="200">
+              <img src="rentimg.jpeg" alt="PantherVenue Gymnasium" class="img-fluid main-image">
+              <div class="image-overlay">
+                <div class="badge-accredited">
+                  <i class="bi bi-patch-check-fill"></i>
+                  <span>State-of-the-Art Facility</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-cards-wrapper" data-aos="fade-up" data-aos-delay="300">
+        <div class="container">
+          <div class="row gy-4">
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="bi bi-calendar-event"></i>
+                </div>
+                <div class="feature-content">
+                  <h3>Check Availability</h3>
+                  <p>View our calendar to secure your preferred event date.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="feature-card active">
+                <div class="feature-icon">
+                  <i class="bi bi-cash-coin"></i>
+                </div>
+                <div class="feature-content">
+                  <h3>Rental Pricing</h3>
+                  <p>Explore our rental rates, packages, and additional fees.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="bi bi-tools"></i>
+                </div>
+                <div class="feature-content">
+                  <h3>Setup & Equipment</h3>
+                  <p>Learn about available seating, A/V setups, and more.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="upcoming-event"  data-aos-delay="100">
+        <div class="container">
+          <div class="event-content">
+            <div class="event-date">
+              <span class="day">BOOK</span>
+              <span class="month">NOW</span>
+            </div>
+            <div class="event-info">
+              <h3>Secure Your Date for an Unforgettable Event</h3>
+              <p>Our calendar fills up fast. Contact us today to start planning your event at PantherVenue.</p>
+            </div>
+            <div class="event-action">
+              <a href="#rental-form" class="btn-event">Start Rental Process</a>
+              <span class="countdown">Limited Dates Available</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alt Features Section (From old rent.html) -->
+    <section id="alt-features" class="alt-features section">
+      <div class="container">
+        <div class="section-header">
+          <h2>From Papers to Autonomy</h2>
+          <p>Find everything you need to book and plan your event with ease.</p>
+        </div>
+        <div class="row gy-5">
+          <div class="col-xl-7 d-flex order-2 order-xl-1" data-aos="fade-up" data-aos-delay="200">
+            <div class="row align-self-center gy-5">
+                           <!-- ADD THIS NEW BLOCK -->
+              <div class="col-md-6 icon-box">
+                <i class="bi bi-cup-straw"></i>
+                <div>
+                  <h4>Catering & Vendors</h4>
+                  <p>Information on our preferred vendor list and policies for outside catering services.</p>
+                </div>
+              </div>
+
+              <!-- ADD THIS NEW BLOCK -->
+              <div class="col-md-6 icon-box">
+                <i class="bi bi-megaphone"></i>
+                <div>
+                  <h4>Event Promotion</h4>
+                  <p>Guidelines for marketing your event, including on-site signage and promotion.</p>
+                </div>
+              </div>
+
+              <!-- ADD THIS NEW BLOCK -->
+              <div class="col-md-6 icon-box">
+                <i class="bi bi-clipboard-check"></i>
+                <div>
+                  <h4>Day-of-Event Logistics</h4>
+                  <p>Details on load-in/load-out times, staff parking, and on-site support.</p>
+                </div>
+              </div>
+              <div class="col-md-6 icon-box">
+                <i class="bi bi-file-earmark-text"></i>
+                <div>
+                  <h4>Rental Policies</h4>
+                  <p>Review our rental terms, cancellation policies, and security rules.</p>
+                </div>
+              </div>
+              <div class="col-md-6 icon-box">
+                <i class="bi bi-envelope"></i>
+                <div>
+                  <h4>Rental Contacts</h4>
+                  <p>If you have questions, visit the <a href="/#questions">F.A.Q.</a> or <a href="/#contactus">Contact Us</a>.</p>
+                </div>
+              </div>
+              <div class="col-md-6 icon-box">
+                <i class="bi bi-map"></i>
+                <div>
+                  <h4>Venue Directions</h4>
+                  <p>Get directions and venue details on the <a href="/">Home Page</a>.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-5 d-flex align-items-center justify-content-center order-1 order-xl-2" data-aos="fade-up" data-aos-delay="100">
+            <div class="d-none d-lg-block">
+              <div id="app">
+                <div class="papers" style="--total: 5">
+                  <div class="paper" style="--i: 0"><div class="content"></div><div class="segment"><div class="segment"><div class="segment"><div class="segment"><div class="segment"></div></div></div></div></div></div>
+                  <div class="paper" style="--i: 1"><div class="content"></div><div class="segment"><div class="segment"><div class="segment"><div class="segment"><div class="segment"></div></div></div></div></div></div>
+                  <div class="paper" style="--i: 2"><div class="content"></div><div class="segment"><div class="segment"><div class="segment"><div class="segment"><div class="segment"></div></div></div></div></div></div>
+                  <div class="paper" style="--i: 3"><div class="content"></div><div class="segment"><div class="segment"><div class="segment"><div class="segment"><div class="segment"></div></div></div></div></div></div>
+                  <div class="paper" style="--i: 4"><div class="content"></div><div class="segment"><div class="segment"><div class="segment"><div class="segment"><div class="segment"></div></div></div></div></div></div>
+                </div>
+                <div class="shadow">
+                  <div class="paper-shadow" style="--i: 0"></div><div class="paper-shadow" style="--i: 1"></div><div class="paper-shadow" style="--i: 2"></div><div class="paper-shadow" style="--i: 3"></div><div class="paper-shadow" style="--i: 4"></div>
+                </div>
+              </div>
+            </div>
+            <img src="assets/img/alt-features.png" class="img-fluid d-lg-none" alt="" style="max-width: 250px; margin-bottom: 2rem;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section id="rental-form" class="section bg-light py-12">
+  <div class="container">
+
+    <div class="section-header">
+      <h2>Rent Our Venue</h2>
+      <p>Fill out this form to request an event at PantherVenue.</p>
+    </div>
+
+          <!-- Rental Process Steps -->
+      <div class="rental-steps mb-8">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-pencil-square"></i></div>
+              <h4>1. Fill Out Form</h4>
+              <p>Complete the steps below.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-person-check"></i></div>
+              <h4>2. Admin Review</h4>
+              <p>We'll review your request.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-calendar-check"></i></div>
+              <h4>3. Confirmation</h4>
+              <p>Your event is booked!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="w-full max-w-3xl mx-auto p-8 bg-white rounded-lg shadow-lg" id="form-container">
+      <!-- Progress Bar -->
+      <div id="progress-bar" class="flex items-center justify-between mb-8">
+        <div id="step-indicators" class="flex items-center w-full relative">
+          <div class="progress-fill" id="progress-fill" style="width: 0%;"></div>
+          <div class="w-10 h-10 bg-red-600 text-white rounded-full flex items-center justify-center">1</div>
+          <div class="flex-1 h-1 bg-gray-300"></div>
+          <div class="w-10 h-10 border-2 border-gray-300 text-gray-500 rounded-full flex items-center justify-center">2</div>
+          <div class="flex-1 h-1 bg-gray-300"></div>
+          <div class="w-10 h-10 border-2 border-gray-300 text-gray-500 rounded-full flex items-center justify-center">3</div>
+          <div class="flex-1 h-1 bg-gray-300"></div>
+          <div class="w-10 h-10 border-2 border-gray-300 text-gray-500 rounded-full flex items-center justify-center">4</div>
+          <div class="flex-1 h-1 bg-gray-300"></div>
+          <div class="w-10 h-10 border-2 border-gray-300 text-gray-500 rounded-full flex items-center justify-center">5</div>
+          <div class="flex-1 h-1 bg-gray-300"></div>
+          <div class="w-10 h-10 border-2 border-gray-300 text-gray-500 rounded-full flex items-center justify-center">6</div>
+        </div>
+      </div>
+
+      <!-- Step 1: Personal Details -->
+      <div id="step1" class="step active">
+        <h2 class="text-2xl font-semibold mb-6">Step 1: Personal Details</h2>
+        <p class="text-gray-600 mb-4">Log in to pre-fill your details.</p>
+        <form>
+          <div class="mb-4">
+            <label for="first-name" class="block text-sm font-medium mb-1">First Name <span class="text-red-500">*</span></label>
+            <input type="text" id="first-name" class="form-control rounded-full" required>
+          </div>
+          <div class="mb-4">
+            <label for="last-name" class="block text-sm font-medium mb-1">Last Name <span class="text-red-500">*</span></label>
+            <input type="text" id="last-name" class="form-control rounded-full" required>
+          </div>
+          <div class="mb-6">
+            <label for="email" class="block text-sm font-medium mb-1">Email <span class="text-red-500">*</span></label>
+            <input type="email" id="email" class="form-control rounded-full" required>
+          </div>
+          <button type="button" class="btn btn-primary rounded-full px-8 py-2" onclick="nextStep()">Next <i class="fas fa-arrow-right ml-2"></i></button>
+        </form>
+      </div>
+
+      <!-- Step 2: Event Details -->
+      <div id="step2" class="step">
+        <h2 class="text-2xl font-semibold mb-6">Step 2: Event Details</h2>
+        <form>
+          <div class="mb-4">
+            <label for="event-name" class="block text-sm font-medium mb-1">Event Name <span class="text-red-500">*</span></label>
+            <input type="text" id="event-name" class="form-control rounded-full" required>
+          </div>
+          <div class="mb-4">
+            <label for="event-date" class="block text-sm font-medium mb-1">Event Date <span class="text-red-500">*</span></label>
+            <input type="date" id="event-date" class="form-control rounded-full" required>
+          </div>
+                   <div class="mb-4">
+            <label for="event-price" class="block text-sm font-medium mb-1">Event Price <span class="text-red-500">*</span></label>
+            <div class="position-relative">
+              <span class="position-absolute" style="top: 50%; left: 18px; transform: translateY(-50%); color: #6c757d; z-index:2;">$</span>
+              <input type="number" step="0.01" id="event-price" class="form-control rounded-full" style="padding-left: 35px;" required>
+            </div>
+          </div>
+          <div class="mb-6">
+            <label for="event-description" class="block text-sm font-medium mb-1">Event Description <span class="text-red-500">*</span></label>
+            <textarea id="event-description" class="form-control rounded-lg" rows="3" placeholder="Describe your event (recommended: 3 sentences)" required></textarea>
+          </div>
+          <div class="d-flex justify-content-between">
+            <button type="button" class="btn btn-secondary rounded-full px-8 py-2" onclick="prevStep()"><i class="fas fa-arrow-left mr-2"></i> Back</button>
+            <button type="button" class="btn btn-primary rounded-full px-8 py-2" onclick="nextStep()">Next <i class="fas fa-arrow-right ml-2"></i></button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Step 3: Event Category -->
+      <div id="step3" class="step">
+        <h2 class="text-2xl font-semibold mb-6">Step 3: Event Category</h2>
+        <p class="text-gray-600 mb-4">Select one category for your event.</p>
+        <div class="mb-6 btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-outline-danger rounded-full custom-radio">
+            <input type="radio" name="category" value="Athletics" required> Athletics
+          </label>
+          <label class="btn btn-outline-danger rounded-full custom-radio">
+            <input type="radio" name="category" value="Performances"> Performances
+          </label>
+          <label class="btn btn-outline-danger rounded-full custom-radio">
+            <input type="radio" name="category" value="Workshops"> Workshops
+          </label>
+          <label class="btn btn-outline-danger rounded-full custom-radio">
+            <input type="radio" name="category" value="Gatherings"> Gatherings
+          </label>
+          <label class="btn btn-outline-danger rounded-full custom-radio">
+            <input type="radio" name="category" value="Competitions"> Competitions
+          </label>
+        </div>
+        <div class="d-flex justify-content-between">
+          <button type="button" class="btn btn-secondary rounded-full px-8 py-2" onclick="prevStep()"><i class="fas fa-arrow-left mr-2"></i> Back</button>
+          <button type="button" class="btn btn-primary rounded-full px-8 py-2" onclick="nextStep()">Next <i class="fas fa-arrow-right ml-2"></i></button>
+        </div>
+      </div>
+
+    <!-- Step 4: Venue Selection -->
+<div id="step4" class="step">
+  <h2 class="text-2xl font-semibold mb-6">Step 4: Venue Selection</h2>
+  <p class="text-gray-600 mb-4">Choose the venue for your event.</p>
+  <div class="mb-6 btn-group btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-outline-danger rounded-full custom-radio">
+      <input type="radio" name="venue" value="Large Gym" required> Large Gym
+    </label>
+    <label class="btn btn-outline-danger rounded-full custom-radio">
+      <input type="radio" name="venue" value="Small Gym" required> Small Gym
+    </label>
+  </div>
+  <div class="d-flex justify-content-between">
+    <button type="button" class="btn btn-secondary rounded-full px-8 py-2" onclick="prevStep()"><i class="fas fa-arrow-left mr-2"></i> Back</button>
+    <button type="button" class="btn btn-primary rounded-full px-8 py-2" onclick="nextStep()">Next <i class="fas fa-arrow-right ml-2"></i></button>
+  </div>
+</div>
+<!-- Step 5: Event Image (NEW AND IMPROVED) -->
+<div id="step5" class="step">
+  <h2 class="text-2xl font-semibold mb-6">Step 5: Event Image</h2>
+  <p class="text-gray-600 mb-4 text-center">A great image can boost interest in your event! (Optional)</p>
+  
+  <!-- Custom File Upload Area -->
+  <div class="file-upload-wrapper mb-6">
+    <input type="file" id="event-image" class="file-upload-input" accept="image/png, image/jpeg, image/gif">
+    <label for="event-image" class="file-upload-button btn btn-primary rounded-full">
+      <i class="fas fa-upload mr-2"></i> Choose Image
+    </label>
+    <span id="file-upload-name" class="file-upload-name text-gray-500">No file selected</span>
+  </div>
+  
+  <div class="d-flex justify-content-between">
+    <button type="button" class="btn btn-secondary rounded-full px-8 py-2" onclick="prevStep()"><i class="fas fa-arrow-left mr-2"></i> Back</button>
+    <button type="button" class="btn btn-primary rounded-full px-8 py-2" onclick="nextStep()">Next <i class="fas fa-arrow-right ml-2"></i></button>
+  </div>
+</div>
+
+      <!-- Step 6: Confirmation -->
+      <div id="step6" class="step">
+        <h2 class="text-2xl font-semibold mb-6">Step 6: Confirmation</h2>
+        <div id="confirmation-details" class="mb-6 p-4 bg-light rounded"></div>
+        <div class="d-flex justify-content-between">
+          <button type="button" class="btn btn-secondary rounded-full px-8 py-2" onclick="prevStep()"><i class="fas fa-arrow-left mr-2"></i> Back</button>
+          <button type="button" class="btn btn-success rounded-full px-8 py-2" id="confetti-button" onclick="submitForm()">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+  <!-- Firebase JS -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+  <!-- Embedded Main JS -->
+  <script>
+    (function() {
+      "use strict";
+      
+      /**
+       * Animation on scroll function and init
+       */
+      function aosInit() {
+        AOS.init({
+          duration: 600,
+          easing: 'ease-in-out',
+          once: true,
+          mirror: false
+        });
+      }
+      window.addEventListener('load', aosInit);
+
+    })();
+
+    /**
+     * PantherVenue Rental Form and Firebase Logic (FROM old code)
+     */
+    const firebaseConfig = {
+      apiKey: "AIzaSyC0BYFCxwgu3tHp_3oeLsxoMBpyDRnj8IA",
+      authDomain: "panthervenue.firebaseapp.com",
+      projectId: "panthervenue",
+      storageBucket: "panthervenue.appspot.com",
+      messagingSenderId: "15387964560",
+      appId: "1:15387964560:web:b9dbc68e3a97dd466b5415"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+  let currentStep = 1;
+const totalSteps = 6;
+let eventImageData = '';
+let currentUser = null;
+
+document.addEventListener('DOMContentLoaded', function() {
+  AOS.init({
+    once: true,
+    duration: 1000
+  });
+  auth.onAuthStateChanged(async (user) => {
+    const loginButton = document.getElementById('loginButton');
+    if (user) {
+      const userDoc = await db.collection('users').doc(user.uid).get();
+      if (userDoc.exists) {
+        currentUser = { uid: user.uid, ...userDoc.data() };
+        document.getElementById('first-name').value = currentUser.firstName || '';
+        document.getElementById('last-name').value = currentUser.lastName || '';
+        document.getElementById('email').value = currentUser.email || '';
+        if (loginButton) {
+          loginButton.textContent = 'Dashboard';
+          loginButton.href = '/login';
+        }
+      } else {
+        console.error("User exists in Auth, but not in Firestore.");
+        currentUser = null;
+        if (loginButton) {
+          loginButton.textContent = 'Log In';
+          loginButton.href = '/login';
+        }
+      }
+    } else {
+      currentUser = null;
+      console.log("No user is logged in.");
+      if (loginButton) {
+        loginButton.textContent = 'Log In';
+        loginButton.href = '/login';
+      }
+    }
+    document.querySelectorAll('input[name="venue"]').forEach(radio => {
+  radio.checked = false; // Corrected from 'input.checked' to 'radio.checked'
+  radio.parentElement.classList.remove('selected'); // Remove .selected class from parent label
+});
+  });
+
+  // Listener for the new custom file upload in Step 5
+  document.getElementById('event-image').addEventListener('change', function() {
+    const file = this.files[0];
+    const fileNameDisplay = document.getElementById('file-upload-name');
+    
+    if (file) {
+      // Display the selected file name and change text color
+      fileNameDisplay.textContent = file.name;
+      fileNameDisplay.classList.remove('text-gray-500');
+      fileNameDisplay.classList.add('text-black');
+      
+      // Read the file for the preview and data submission
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        eventImageData = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    } else {
+      // Reset if no file is chosen or the selection is cancelled
+      fileNameDisplay.textContent = 'No file selected';
+      fileNameDisplay.classList.add('text-gray-500');
+      fileNameDisplay.classList.remove('text-black');
+      eventImageData = '';
+    }
+  });
+
+  document.querySelectorAll('.custom-radio input[type="radio"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+      document.querySelectorAll('.custom-radio').forEach(label => label.classList.remove('selected'));
+      if (this.checked) {
+        this.parentElement.classList.add('selected');
+      }
+    });
+  });
+});
+
+function updateProgressBar() {
+  const indicators = document.querySelectorAll('#step-indicators > div:not(.progress-fill)');
+  indicators.forEach((indicator, index) => {
+    if (index < currentStep * 2 - 1) {
+      if (index % 2 === 0) {
+        indicator.className = "w-10 h-10 bg-red-600 text-white rounded-full flex items-center justify-center transition-all duration-500";
+      } else {
+        indicator.className = "flex-1 h-1 bg-red-600 transition-all duration-500";
+      }
+    } else {
+      if (index % 2 === 0) {
+        indicator.className = "w-10 h-10 border-2 border-gray-300 text-gray-500 rounded-full flex items-center justify-center";
+      } else {
+        indicator.className = "flex-1 h-1 bg-gray-300";
+      }
+    }
+  });
+  const progressFill = document.getElementById('progress-fill');
+  const stepPercentage = (currentStep - 1) / (totalSteps - 1) * 100;
+  progressFill.style.width = `${stepPercentage}%`;
+}
+
+function showStep() {
+  const steps = document.querySelectorAll('.step');
+  steps.forEach((step, index) => {
+    if (index === currentStep - 1) {
+      step.classList.add('active');
+      step.classList.remove('exiting');
+      if (currentStep === 6) {
+        const confirmationDetails = document.getElementById('confirmation-details');
+        const firstName = document.getElementById('first-name').value;
+        const lastName = document.getElementById('last-name').value;
+        const email = document.getElementById('email').value;
+        const eventName = document.getElementById('event-name').value;
+        const eventDate = document.getElementById('event-date').value;
+        const eventPrice = document.getElementById('event-price').value || 'N/A';
+        const eventDescription = document.getElementById('event-description').value;
+        const category = document.querySelector('input[name="category"]:checked')?.value || 'Not selected';
+        const venue = document.querySelector('input[name="venue"]:checked')?.value || 'Not selected';
+        const imagePreview = eventImageData ? `<img src="${eventImageData}" alt="Event Image" style="max-width: 100px; max-height: 100px;">` : 'No image uploaded';
+        confirmationDetails.innerHTML = `
+          <h3 class="text-xl font-semibold mb-4 text-red-700">Review Your Rental Request</h3>
+          <p class="mb-2"><span class="font-bold text-red-600">First Name:</span> <span class="text-gray-800">${firstName}</span></p>
+          <p class="mb-2"><span class="font-bold text-red-600">Last Name:</span> <span class="text-gray-800">${lastName}</span></p>
+          <p class="mb-4"><span class="font-bold text-red-600">Email:</span> <span class="text-gray-800">${email}</span></p>
+          <p class="mb-2"><span class="font-bold text-red-500">Event Name:</span> <span class="text-gray-800">${eventName}</span></p>
+          <p class="mb-2"><span class="font-bold text-red-500">Event Date:</span> <span class="text-gray-800">${eventDate}</span></p>
+          <p class="mb-2"><span class="font-bold text-red-500">Event Price:</span> <span class="text-gray-800">$${eventPrice}</span></p>
+          <p class="mb-2"><span class="font-bold text-red-500">Event Description:</span> <span class="text-gray-800">${eventDescription}</span></p>
+          <p class="mb-2"><span class="font-bold text-red-500">Event Category:</span> <span class="text-gray-800">${category}</span></p>
+          <p class="mb-2"><span class="font-bold text-red-500">Venue:</span> <span class="text-gray-800">${venue}</span></p>
+          <p class="mb-2"><span class="font-bold text-red-500">Event Image:</span> ${imagePreview}</p>
+        `;
+      }
+    } else {
+      step.classList.remove('active');
+    }
+  });
+}
+
+function nextStep() {
+  const steps = document.querySelectorAll('.step');
+  const current = steps[currentStep - 1];
+  
+  if (currentStep === 1 && !currentUser) {
+    alert('Please log in to rent the venue.');
+    window.location.href = '/login';
+    return;
+  }
+
+  const inputs = current.querySelectorAll('input[required], select[required], textarea[required]');
+  let allValid = true;
+  inputs.forEach(input => {
+    if (!input.value) {
+      allValid = false;
+      input.classList.add('is-invalid');
+    } else {
+      input.classList.remove('is-invalid');
+    }
+  });
+
+  if (!allValid) return;
+
+  if (currentStep === 3) {
+    const categorySelected = document.querySelector('input[name="category"]:checked');
+    if (!categorySelected) {
+      alert('Please select an event category');
+      return;
+    }
+  }
+  if (currentStep === 4) {
+    const venueSelected = document.querySelector('input[name="venue"]:checked');
+    if (!venueSelected) {
+      alert('Please select a venue');
+      return;
+    }
+  }
+
+  if (currentStep < totalSteps) {
+    current.classList.add('exiting');
+    setTimeout(() => {
+      current.classList.remove('active', 'exiting');
+      currentStep++;
+      updateProgressBar();
+      showStep();
+    }, 500);
+  }
+}
+
+function prevStep() {
+  if (currentStep > 1) {
+    const steps = document.querySelectorAll('.step');
+    const current = steps[currentStep - 1];
+    current.classList.add('exiting');
+    setTimeout(() => {
+      current.classList.remove('active', 'exiting');
+      currentStep--;
+      updateProgressBar();
+      showStep();
+    }, 500);
+  }
+}
+
+async function submitForm() {
+  if (!currentUser) {
+    alert('Your session has expired. Please log in again to submit your rental request.');
+    window.location.href = '/login';
+    return;
+  }
+
+  const firstName = document.getElementById('first-name').value;
+  const lastName = document.getElementById('last-name').value;
+  const email = document.getElementById('email').value;
+  const eventName = document.getElementById('event-name').value;
+  const eventDate = document.getElementById('event-date').value;
+  const eventPrice = document.getElementById('event-price').value || 0;
+  const eventDescription = document.getElementById('event-description').value;
+  const category = document.querySelector('input[name="category"]:checked')?.value || '';
+  const venue = document.querySelector('input[name="venue"]:checked')?.value || '';
+  const imageData = eventImageData || '';
+
+  const newRequest = {
+    userId: currentUser.uid,
+    username: currentUser.username,
+    firstName,
+    lastName,
+    email,
+    eventName,
+    eventDate,
+    eventPrice: parseFloat(eventPrice),
+    description: eventDescription,
+    category,
+    venue,
+    image: imageData,
+    status: 'pending',
+    created: firebase.firestore.FieldValue.serverTimestamp()
+  };
+
+  try {
+    await db.collection('requests').add(newRequest);
+    
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 },
+      colors: ['#ff0000', '#ffffff', '#000000']
+    });
+
+    setTimeout(function() {
+      alert('Rental request submitted successfully!');
+      window.location.href = '/rent';
+    }, 1000);
+
+  } catch (error) {
+    console.error("Error submitting request: ", error);
+    alert("There was an error submitting your request: " + error.message);
+  }
+}
+  </script>
+
+  
+
+    <!-- START: Chatbot Integration Body -->
+<!-- Chatbot Toggler -->
+<button id="chatbot-toggler">
+  <span class="material-symbols-rounded">mode_comment</span>
+  <span class="material-symbols-rounded">close</span>
+</button>
+<div class="chatbot-popup" style="opacity: 0; ">
+  <!-- Chatbot Header -->
+  <div class="chat-header">
+    <div class="header-info">
+      <img src="aiprofile.png" alt="AI Profile Logo" class="chatbot-logo" />
+      <h2 class="logo-text">PantherBot</h2>
+    </div>
+    <button id="close-chatbot" class="material-symbols-rounded">keyboard_arrow_down</button>
+  </div>
+  <!-- Chatbot Body -->
+  <div class="chat-body">
+    <div class="message bot-message">
+      <img src="aiprofile.png" alt="AI Profile Logo" class="bot-avatar" />
+      <div class="message-text">Nice to meet you! I'm PantherBot, your AI chatbot for PantherVenue. How can I help you today?</div>
+    </div>
+  </div>
+  <!-- Chatbot Footer -->
+  <div class="chat-footer">
+    <form action="#" class="chat-form">
+      <textarea placeholder="Type a message..." class="message-input" required></textarea>
+      <div class="chat-controls">
+        <button type="button" id="emoji-picker" class="material-symbols-outlined">sentiment_satisfied</button>
+        <button type="submit" id="send-message" class="material-symbols-rounded">arrow_upward</button>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- Linking Emoji Mart script for emoji picker -->
+<script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
+
+<script>
+  // Select DOM elements
+const chatBody = document.querySelector(".chat-body");
+const messageInput = document.querySelector(".message-input");
+const sendMessageButton = document.querySelector("#send-message");
+const chatForm = document.querySelector(".chat-form");
+const chatbotToggler = document.querySelector("#chatbot-toggler");
+const closeChatbot = document.querySelector("#close-chatbot");
+const chatbotPopup = document.querySelector(".chatbot-popup");
+const initialInputHeight = messageInput.scrollHeight;
+
+const API_URL = "https://ai.hackclub.com/chat/completions";
+let chatHistory;
+
+
+const createMessageElement = (content, ...classNames) => {
+    const div = document.createElement("div");
+    div.classList.add("message", ...classNames); 
+    div.innerHTML = content;
+    return div;
+};
+
+const displayChatHistory = () => {
+    chatBody.innerHTML = '';
+    chatHistory.forEach(msg => {
+        if (msg.role === "user") {
+            const userMessageContent = `<div class="message-text">${msg.content}</div>`;
+            const outgoingMessageDiv = createMessageElement(userMessageContent, "user-message");
+            chatBody.appendChild(outgoingMessageDiv);
+        } else if (msg.role === "assistant") {
+            const botMessageContent = `<img src="aiprofile.png" alt="AI Profile Logo" class="bot-avatar" />
+            <div class="message-text">${marked.parse(msg.content)}</div>`;
+            const incomingMessageDiv = createMessageElement(botMessageContent, "bot-message");
+            chatBody.appendChild(incomingMessageDiv);
+        }
+    });
+    chatBody.scrollTo({ top: chatBody.scrollHeight, behavior: "smooth" });
+};
+
+// Function to generate bot response
+const generateBotResponse = async (incomingMessageDiv) => {
+    const messageElement = incomingMessageDiv.querySelector(".message-text");
+    const requestOptions = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            messages: chatHistory,
+        }),
+    };
+    try {
+        const response = await fetch(API_URL, requestOptions);
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error("API Error Response:", errorData);
+            throw new Error(`API request failed with status: ${response.status}. ${errorData.error?.message || ''}`);
+        }
+        const data = await response.json();
+        const apiResponseText = data.choices[0].message.content.trim();
+        messageElement.innerHTML = marked.parse(apiResponseText);
+        chatHistory.push({
+            role: "assistant",
+            content: apiResponseText,
+        });
+        localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+    } catch (error) {
+        console.error("API Error:", error);
+        messageElement.innerText = "Oops! Something went wrong. The AI service might be temporarily unavailable. Please try again later.";
+        messageElement.style.color = "#dc3545";
+    } finally {
+        incomingMessageDiv.classList.remove("thinking");
+        chatBody.scrollTo({ top: chatBody.scrollHeight, behavior: "smooth" });
+    }
+};
+
+// Function to handle outgoing messages
+const handleOutgoingMessage = (e) => {
+    e.preventDefault();
+    const userMessage = messageInput.value.trim();
+    if (!userMessage) return;
+    messageInput.value = "";
+    messageInput.style.height = `${initialInputHeight}px`;
+    chatHistory.push({ role: "user", content: userMessage });
+    localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+    const userMessageContent = `<div class="message-text">${userMessage}</div>`;
+    const outgoingMessageDiv = createMessageElement(userMessageContent, "user-message");
+    chatBody.appendChild(outgoingMessageDiv);
+    chatBody.scrollTo({ top: chatBody.scrollHeight, behavior: "smooth" });
+    setTimeout(() => {
+        const botMessageContent = `<img src="aiprofile.png" alt="AI Profile Logo" class="bot-avatar" />
+        <div class="message-text">
+          <div class="thinking-indicator">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+        </div>`;
+                const incomingMessageDiv = createMessageElement(botMessageContent, "bot-message", "thinking");
+        chatBody.appendChild(incomingMessageDiv);
+        chatBody.scrollTo({ top: chatBody.scrollHeight, behavior: "smooth" });
+        generateBotResponse(incomingMessageDiv);
+    }, 600);
+};
+
+// Event listeners for input and form
+messageInput.addEventListener("input", () => {
+    messageInput.style.height = `${initialInputHeight}px`;
+    const newHeight = messageInput.scrollHeight;
+    messageInput.style.height = `${newHeight}px`;
+});
+
+messageInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && !e.shiftKey && window.innerWidth > 768) {
+        handleOutgoingMessage(e);
+    }
+});
+
+chatForm.addEventListener("submit", handleOutgoingMessage);
+
+// Emoji picker setup
+const picker = new EmojiMart.Picker({
+    theme: "light",
+    skinTonePosition: "none",
+    previewPosition: "none",
+    onEmojiSelect: (emoji) => {
+        const { selectionStart: start, selectionEnd: end } = messageInput;
+        messageInput.setRangeText(emoji.native, start, end, "end");
+        messageInput.focus();
+    },
+    onClickOutside: (e) => {
+        if (e.target.id === "emoji-picker") {
+            document.body.classList.toggle("show-emoji-picker");
+        } else if (document.body.classList.contains("show-emoji-picker")) {
+            document.body.classList.remove("show-emoji-picker");
+        }
+    },
+});
+document.querySelector(".chat-footer").appendChild(picker);
+
+document.querySelector("#emoji-picker").addEventListener("click", (e) => {
+    e.stopPropagation();
+    document.body.classList.toggle("show-emoji-picker");
+});
+
+// Toggle and close functions
+function toggleChatbot() {
+    document.body.classList.toggle("show-chatbot");
+    const isOpen = document.body.classList.contains("show-chatbot");
+    localStorage.setItem('chatbotOpen', isOpen);
+}
+
+function closeChatbotFunc() {
+    document.body.classList.remove("show-chatbot");
+    localStorage.setItem('chatbotOpen', false);
+}
+
+chatbotToggler.addEventListener("click", toggleChatbot);
+closeChatbot.addEventListener("click", closeChatbotFunc);
+
+// Initialize chatbot state and history on page load
+document.addEventListener('DOMContentLoaded', () => {
+    chatbotPopup.classList.add('no-transition');
+    const savedHistory = localStorage.getItem('chatHistory');
+    if (savedHistory) {
+        chatHistory = JSON.parse(savedHistory);
+    } else {
+        chatHistory = [
+            {
+                role: "system",
+                content: `You are PantherBot, an extreme expert AI assistant for PantherVenue. Your goal is to answer user questions accurately and helpfully based on the following information about the venue, its policies, and its website. Use Markdown for clear formatting.
+
+---
+### General Venue Information
+- **Name:** PantherVenue
+- **Location:** Inside Bridgewater-Raritan High School, 600 Garretson Road, Bridgewater, New Jersey.
+- **Capacity:** Seats up to 3,500 people.
+- **Features:** A premier gymnasium renovated in 2024 with a high-quality sound system, adjustable lighting, a large video screen, new bleachers, and a resurfaced floor.
+- **Primary Use:** Ideal for sports events, graduations, performances, workshops, and community gatherings.
+- **Amenities:** Comfortable bleacher seating, top-tier audio system, adjustable lighting, large video screen for presentations.
+- **Layouts:**
+    - **Standard Gym Layout:** For sports. Uses all four stands (North/South: 1000 seats each, East/West: 750 seats each).
+    - **Ceremony Layout:** For graduations/presentations. Features a main stage, with seating in the stands and potentially on the floor.
+
+---
+### How the Website Works
+- **Events Page (/events):**
+    - Users can see a list of all upcoming events, such as "Varsity Basketball Finals," "Fall Dance Recital," and "Yoga Wellness Workshop."
+    - Users can filter events by category, price, and date.
+    - **To purchase tickets, users must log in to their account.** A popup allows them to select seats and complete the purchase.
+- **Rent Venue Page (/rent):**
+    - Users can request to rent the venue for their own private event.
+    - **Users must be logged in to submit a request.**
+    - The process is a 6-step form: 1. Personal Details, 2. Event Details, 3. Category, 4. Venue Choice, 5. Image Upload, 6. Confirmation.
+    - After submission, the request becomes "pending" and is reviewed by an administrator.
+- **User Accounts (/login):**
+    - Users can sign up for an account or log in.
+    - After logging in, users see a personal dashboard.
+    - **User Dashboard:** Shows their purchased tickets, total money spent, and the status (pending, accepted, declined) of their venue rental requests.
+    - **Admin Dashboard:** Staff can view site analytics and manage all venue rental requests.
+
+---
+### Important Policies & FAQs
+- **General Rules:** No outside food or drink. All bags are subject to search. The venue is strictly non-smoking (including vapes/e-cigarettes). No alcohol. No pets are allowed, except for service animals.
+- **Parking:** Available in designated lots. Fees may apply depending on the event.
+- **Ticket Policy:** Tickets are non-refundable unless the event is canceled by the venue. There is a 10-ticket limit per transaction. Tickets are transferable if the box office is notified.
+- **Team & Contact:**
+    - Key Staff: Bill Deniz (Athletic Director), Keri Fry (Logistics and Business Manager).
+    - Phone: +1 908-524-4059
+    - Email: hs@brrsd.k12.nj.us (expect a response in 2-7 business days).
+- **Nearby Hotels:** Hampton Inn, Hyatt House, and TownePlace suites are all within 1.5 miles.
+
+---
+### Your Persona & Instructions
+- Be friendly, professional, and enthusiastic.
+- Your name is PantherBot.
+- Refer to the information above to answer questions. If you don't know the answer, politely state that you don't have that information and suggest contacting the venue directly via phone or email.`
+            },
+            {
+                role: "assistant",
+                content: "Nice to meet you! I'm PantherBot, your AI chatbot for PantherVenue. How can I help you today?"
+            }
+        ];
+    }
+    displayChatHistory();
+    const isOpen = localStorage.getItem('chatbotOpen') === 'true';
+    if (isOpen) {
+        document.body.classList.add('show-chatbot');
+    } else {
+        document.body.classList.remove('show-chatbot');
+    }
+    setTimeout(() => {
+        chatbotPopup.classList.remove('no-transition');
+    }, 0);
+});
+</script>
+
+
+
+
+
+
+  <style>
+    /* Importing Google Fonts - Inter for Chatbot */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
+    
+    /* --- Chatbot Styles --- */
+    #chatbot-toggler {
+      position: fixed;
+      bottom: 30px;
+      right: 35px;
+      border: none;
+      height: 50px;
+      width: 50px;
+      display: flex;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #dc3545; /* Red */
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease;
+      z-index: 1000; /* Ensure it's above other content */
+    }
+    body.show-chatbot #chatbot-toggler {
+      transform: rotate(90deg);
+    }
+    #chatbot-toggler span {
+      color: #fff;
+      position: absolute;
+    }
+    #chatbot-toggler span:last-child,
+    body.show-chatbot #chatbot-toggler span:first-child {
+      opacity: 0;
+    }
+    body.show-chatbot #chatbot-toggler span:last-child {
+      opacity: 1;
+    }
+    .chatbot-popup {
+      position: fixed;
+      right: 35px;
+      bottom: 90px;
+      width: 400px; 
+      overflow: hidden;
+      background: #fff;
+      border-radius: 15px;
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0.2);
+      transform-origin: bottom right;
+      box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
+        0 32px 64px -48px rgba(0, 0, 0, 0.5);
+      transition: all 0.1s ease;
+      z-index: 1000;
+     visibility: hidden;
+    }
+    body.show-chatbot .chatbot-popup {
+      opacity: 1 !important;
+      pointer-events: auto;
+      transform: scale(1);
+      visibility: visible;
+   
+    }
+
+    .chatbot-popup.no-transition {
+    transition: none !important; /* Prevents animation on page load */
+}
+    .chat-header {
+      display: flex;
+      align-items: center;
+      padding: 15px 22px;
+      background: #dc3545; /* Red */
+      border-bottom: 1px solid #d4d4d4;
+      justify-content: space-between;
+    }
+    .chat-header .header-info {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .header-info .chatbot-logo {
+      width: 35px;
+      height: 35px;
+      padding: 2px;
+      object-fit: cover;
+      flex-shrink: 0;
+      background: #fff;
+      border-radius: 50%;
+    }
+    .header-info .logo-text {
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.31rem;
+      letter-spacing: 0.02rem;
+      font-family: "Inter", sans-serif;
+    }
+    .chat-header #close-chatbot {
+      border: none;
+      color: #fff;
+      height: 40px;
+      width: 40px;
+      font-size: 1.9rem;
+      margin-right: -10px;
+      padding-top: 2px;
+      cursor: pointer;
+      border-radius: 50%;
+      background: none;
+      transition: 0.2s ease;
+    }
+    .chat-header #close-chatbot:hover {
+      background: rgba(0, 0, 0, 0.1);
+    }
+    .chat-body {
+      font-family: "Inter", sans-serif;
+      padding: 25px 22px;
+      gap: 20px;
+      display: flex;
+      height: 400px; 
+      overflow-y: auto;
+      margin-bottom: 75px;
+      flex-direction: column;
+      scrollbar-width: thin;
+      scrollbar-color: #ccc transparent;
+    }
+    .chat-body::-webkit-scrollbar {
+      width: 6px;
+    }
+    .chat-body::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 3px;
+    }
+    .chat-body .message {
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+    }
+    .chat-body .message .bot-avatar {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      align-self: flex-start;
+    }
+    .chat-body .message .message-text {
+      font-family: "Inter", sans-serif;
+      padding: 12px 16px;
+      max-width: 75%;
+      font-size: 0.95rem;
+      word-wrap: break-word;
+    }
+    .chat-body .bot-message.thinking .message-text {
+      padding: 2px 16px;
+    }
+    .chat-body .bot-message .message-text {
+      background: #f0f0f0; /* Light Gray */
+      color: #000;
+      border-radius: 13px 13px 13px 3px;
+    }
+    .chat-body .user-message {
+      justify-content: flex-end;
+    }
+    .chat-body .user-message .message-text {
+      color: #fff;
+      background: #dc3545; /* Red */
+      border-radius: 13px 13px 3px 13px;
+    }
+    /* Markdown formatting inside bot message */
+     .bot-message .message-text p,
+     .bot-message .message-text h1,
+     .bot-message .message-text h2,
+     .bot-message .message-text h3,
+     .bot-message .message-text ul,
+     .bot-message .message-text ol,
+     .bot-message .message-text li {
+        font-family: "Inter", sans-serif;
+        margin-bottom: 0.5em;
+        font-size: 0.95rem;
+     }
+     .bot-message .message-text p:last-child {
+        margin-bottom: 0;
+     }
+     .bot-message .message-text ul, .bot-message .message-text ol {
+        padding-left: 20px;
+     }
+    .chat-body .bot-message .thinking-indicator {
+      display: flex;
+      gap: 4px;
+      padding-block: 15px;
+    }
+    .chat-body .bot-message .thinking-indicator .dot {
+      height: 7px;
+      width: 7px;
+      opacity: 0.7;
+      border-radius: 50%;
+      background: #dc3545; /* Red */
+      animation: dotPulse 1.8s ease-in-out infinite;
+    }
+    .chat-body .bot-message .thinking-indicator .dot:nth-child(1) { animation-delay: 0.2s; }
+    .chat-body .bot-message .thinking-indicator .dot:nth-child(2) { animation-delay: 0.3s; }
+    .chat-body .bot-message .thinking-indicator .dot:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes dotPulse {
+      0%, 44% { transform: translateY(0); }
+      28% { opacity: 0.4; transform: translateY(-4px); }
+      44% { opacity: 0.2; }
+    }
+    .chat-footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: #fff;
+      padding: 10px 22px 15px;
+      border-top: 1px solid #d4d4d4;
+    }
+    .chat-footer .chat-form {
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: #fff;
+      border-radius: 32px;
+      outline: 1px solid #ccc;
+      transition: 0s ease;
+    }
+    .chat-form:focus-within {
+      outline: 2px solid #dc3545; /* Red */
+    }
+    .chat-form .message-input {
+      font-family: "Inter", sans-serif;
+      width: 100%;
+      height: 47px;
+      outline: none;
+      resize: none;
+      border: none;
+      max-height: 180px;
+      scrollbar-width: none;
+      border-radius: inherit;
+      font-size: 0.95rem;
+      padding: 14px 0 12px 18px;
+    }
+    .chat-form .message-input::-webkit-scrollbar {
+        display: none;
+    }
+    .chat-form .chat-controls {
+      gap: 3px;
+      height: 47px;
+      display: flex;
+      padding-right: 6px;
+      align-items: center;
+      align-self: flex-end;
+    }
+    .chat-form .chat-controls button {
+      height: 35px;
+      width: 35px;
+      border: none;
+      cursor: pointer;
+      color: #555; /* Dark Gray */
+      border-radius: 50%;
+      font-size: 1.15rem;
+      background: none;
+      transition: 0.2s ease;
+    }
+    .chat-form .chat-controls button:hover,
+    body.show-emoji-picker .chat-controls #emoji-picker {
+      color: #dc3545; /* Red */
+      background: #fdeaea; /* Light Red */
+    }
+    .chat-form .chat-controls #send-message {
+      color: #fff;
+      background: #dc3545; /* Red */
+      /* IPAD FIX: Perfect centering for the icon */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .chat-form .chat-controls #send-message:hover {
+      background: #b02a37; /* Darker Red */
+    }
+    .chat-form .message-input:valid~.chat-controls #send-message {
+      display: flex; /* Changed from block to flex for centering fix */
+    }
+    em-emoji-picker {
+      position: absolute;
+      left: 50%;
+      bottom: 55px; /* Position above the input bar */
+      width: 100%;
+      max-width: 350px;
+      visibility: hidden;
+      max-height: 330px;
+      transform: translateX(-50%);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    body.show-emoji-picker em-emoji-picker {
+      visibility: visible;
+    }
+
+    /* IPAD/MOBILE FIX: Make chatbot fullscreen on tablets (portrait) and phones */
+    @media (max-width: 768px) {
+      #chatbot-toggler {
+        right: 20px;
+        bottom: 20px;
+      }
+      .chatbot-popup {
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        border-radius: 0;
+        width: 100%;
+      }
+      .chatbot-popup .chat-header {
+        padding: 12px 15px;
+      }
+      .chat-body {
+        height: calc(100% - 130px); /* Adjusted for full screen */
+        padding: 25px 15px;
+      }
+      .chat-footer {
+        padding: 10px 15px 15px;
+      }
+    }
+  </style>
+  <!-- END: Chatbot Integration Head -->
+  <!-- Marked.js for Markdown parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <style>/*
+  ================================================================================
+  --- START: FIX FOR CUSTOM FILE UPLOAD (STEP 5) ---
+  ================================================================================
+*/
+.file-upload-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the upload button and text */
+  flex-direction: column; /* Stack button and text vertically */
+  padding: 2rem;
+  border: 2px dashed #e5e7eb; /* Gray dashed border */
+  border-radius: 12px; /* Rounded corners */
+  background-color: #f9fafb; /* Light gray background */
+}
+
+/* Visually hide the actual file input but keep it accessible */
+.file-upload-input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+/* Style the label as our custom button */
+.file-upload-button {
+  cursor: pointer;
+  padding: 0.75rem 2rem;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 1rem; /* Space between button and file name */
+  /* Re-uses existing button styles */
+}
+
+/* Style for the file name display area */
+.file-upload-name {
+  font-style: italic;
+  font-weight: 500;
+  word-break: break-all; /* Prevents long file names from breaking the layout */
+}
+</style>
+
+<script>
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+document.onkeydown = function(e) {
+
+  if (e.metaKey && e.altKey && e.key.toLowerCase() === 'i') {
+    e.preventDefault();
+  }
+
+ 
+  if (e.metaKey && e.shiftKey && e.key.toLowerCase() === 'c') {
+    e.preventDefault();
+  }
+
+
+  if (e.metaKey && e.shiftKey && e.key.toLowerCase() === 'j') {
+    e.preventDefault();
+  }
+
+
+  if (e.metaKey && e.altKey && e.key.toLowerCase() === 'u') {
+    e.preventDefault();
+  }
+
+
+  if (e.key === 'F12') {
+    e.preventDefault();
+  }
+};
+</script>
+</body>
+</html>

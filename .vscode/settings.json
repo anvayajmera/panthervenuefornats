@@ -1,0 +1,11 @@
+{
+  "_emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": ".*",
+        "cmd": "git add . && git commit -m \"Auto commit\" && git push origin main --force"
+      }
+    ]
+  },
+  "_liveServer.settings.port": 5501
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="prefetch" href="/viewer">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GEVGG1S2P0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GEVGG1S2P0');
+</script>
+<script>
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+document.onkeydown = function(e) {
+  // Block Cmd+Option+I (DevTools)
+  if (e.metaKey && e.altKey && e.key.toLowerCase() === 'i') {
+    e.preventDefault();
+  }
+
+  // Block Cmd+Shift+C (Element picker)
+  if (e.metaKey && e.shiftKey && e.key.toLowerCase() === 'c') {
+    e.preventDefault();
+  }
+
+  // Block Cmd+Shift+J (Console)
+  if (e.metaKey && e.shiftKey && e.key.toLowerCase() === 'j') {
+    e.preventDefault();
+  }
+
+  // Block Cmd+Option+U (View source)
+  if (e.metaKey && e.altKey && e.key.toLowerCase() === 'u') {
+    e.preventDefault();
+  }
+
+  // General: Block F12 (DevTools)
+  if (e.key === 'F12') {
+    e.preventDefault();
+  }
+};
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360 Viewer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/105/three.min.js"></script>
+    <script src="js/panolens.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        .panorama-container {
+            width: 100%;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div class="panorama-container"></div>
+    <script>
+        // Initialize Panolens viewer
+        const panoramaContainer = document.querySelector('.panorama-container');
+        const panoramaImage = new PANOLENS.ImagePanorama('images/image1.jpeg'); // Update with your 360 image path
+        const viewer = new PANOLENS.Viewer({
+            container: panoramaContainer,
+            autoRotate: true,
+            autoRotateSpeed: 0.3,
+            controlBar: false,
+        });
+
+        // Add the panorama to the viewer
+        viewer.add(panoramaImage);
+    </script>
+</body>
+</html>

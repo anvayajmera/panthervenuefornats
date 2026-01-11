@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Gradient Line Drawing Test</title>
+    <style>
+        /* --- Basic Page Setup --- */
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin: 0;
+            background-color: #111;
+            color: #eee;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; /* vh is viewport height */
+            padding: 4rem;
+            box-sizing: border-box;
+        }
+
+        .section h1 {
+            font-size: 4rem;
+            text-align: center;
+        }
+        .section p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            text-align: center;
+            line-height: 1.6;
+            color: #aaa;
+        }
+
+        #intro-section {
+            background-color: #1a1a1a;
+        }
+
+        /* --- The Important Section for the Drawing Effect --- */
+        #drawing-section {
+            position: relative; /* This is crucial for positioning the SVG inside */
+            background-color: #111;
+            min-height: 150vh; 
+        }
+
+        /* --- SVG and Path Styling --- */
+        #line-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; 
+            z-index: 10;
+        }
+
+        #scroll-line {
+            /* NEW: Increased thickness for a bolder look */
+            stroke-width: 20; 
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            /* 
+               REMOVED: The stroke color is no longer set here.
+               Instead, we apply the gradient directly in the SVG <path> element.
+            */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="section" id="intro-section">
+        <div>
+            <h1>Scroll Down</h1>
+            <p>The line is now much thicker and features a gradient that transitions between different reds from your website's theme.</p>
+        </div>
+    </div>
+
+    <div id="drawing-section">
+        <!-- The SVG container for our line -->
+        <svg id="line-svg" width="100%" height="100%" viewBox="0 0 800 1200" preserveAspectRatio="none">
+            
+            <!-- 
+                NEW: SVG Definitions (<defs>) for the Gradient.
+                We define our gradient here and give it a unique ID.
+                This gradient can then be applied to any SVG element by referencing its ID.
+            -->
+            <defs>
+                <linearGradient id="redGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <!-- Color Stop 1: Starts with the darker footer red -->
+                    <stop offset="0%" style="stop-color:#b01a35;" />
+                    <!-- Color Stop 2: Transitions to the main accent red in the middle -->
+                    <stop offset="50%" style="stop-color:#e0072f;" />
+                    <!-- Color Stop 3: Ends with the lighter accent red -->
+                    <stop offset="100%" style="stop-color:#f82249;" />
+                </linearGradient>
+            </defs>
+
+            <!-- 
+                The path is the same, but we've now applied our gradient to the stroke.
+                The `stroke` attribute is set to `url(#redGradient)`, which points to the
+                <linearGradient> we defined above.
+            -->
+            <path id="scroll-line" stroke="url(#redGradient)" d="M 100 0 C 400 300, 200 600, 700 750 C 1200 900, 500 1000, 200 1200" />
+        </svg>
+
+        <!-- You can still place content inside this section. -->
+        <div class="section">
+            <h1>The Gradient Drawing Area</h1>
+        </div>
+    </div>
+
+    <div class="section" id="end-section">
+        <div>
+            <h1>End of Page</h1>
+            <p>Scroll back up to see the gradient line erase itself.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // The JavaScript logic remains exactly the same!
+            // It only cares about the path's length, not its appearance (color, thickness, etc.).
+            // This is the power of separating structure, presentation, and behavior.
+
+            const path = document.querySelector('#scroll-line');
+            const drawingSection = document.querySelector('#drawing-section');
+
+            const pathLength = path.getTotalLength();
+
+            path.style.strokeDasharray = pathLength + ' ' + pathLength;
+            path.style.strokeDashoffset = pathLength;
+
+            const handleScroll = () => {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const sectionTop = drawingSection.offsetTop;
+                const sectionHeight = drawingSection.offsetHeight;
+                const viewportHeight = window.innerHeight;
+
+                const scrollDistance = scrollTop - sectionTop;
+                
+                if (scrollDistance >= -viewportHeight && scrollDistance <= sectionHeight) {
+                    const progress = (scrollDistance + viewportHeight) / (sectionHeight + viewportHeight);
+                    const drawLength = pathLength * progress;
+                    path.style.strokeDashoffset = pathLength - drawLength;
+                }
+            };
+
+            window.addEventListener('scroll', handleScroll);
+            handleScroll();
+        });
+    </script>
+
+</body>
+</html>

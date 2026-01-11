@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Carousel</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <style>
+        :root {
+            --optionDefaultColours: #ED5565, #FC6E51, #FFCE54, #2ECC71, #5D9CEC, #AC92EC;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: #fff;
+            color: #000;
+            transition: 0.25s;
+        }
+
+        .dark {
+            background: #232223;
+            color: white;
+        }
+
+        .credit {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            overflow: hidden;
+            min-width: 600px;
+            max-width: 900px;
+            width: calc(100% - 100px);
+            height: 400px;
+        }
+
+        @media screen and (max-width: 798px) {
+            .options {
+                min-width: 520px;
+            }
+            .option:nth-child(5) {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 718px) {
+            .options {
+                min-width: 440px;
+            }
+            .option:nth-child(4) {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 638px) {
+            .options {
+                min-width: 360px;
+            }
+            .option:nth-child(3) {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 558px) {
+            .options {
+                min-width: 280px;
+            }
+            .option:nth-child(2) {
+                display: none;
+            }
+        }
+
+        .option {
+            position: relative;
+            overflow: hidden;
+            min-width: 60px;
+            margin: 10px;
+            background: var(--optionBackground, var(--defaultBackground, #E6E9ED));
+            background-size: auto 120%;
+            background-position: center;
+            cursor: pointer;
+            transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+        }
+
+        .option:nth-child(1) { --defaultBackground: #ED5565; }
+        .option:nth-child(2) { --defaultBackground: #FC6E51; }
+        .option:nth-child(3) { --defaultBackground: #FFCE54; }
+        .option:nth-child(4) { --defaultBackground: #2ECC71; }
+        .option:nth-child(5) { --defaultBackground: #5D9CEC; }
+
+        .option.active {
+            flex-grow: 10000;
+            transform: scale(1);
+            max-width: 600px;
+            margin: 0;
+            border-radius: 40px;
+            background-size: auto 100%;
+        }
+
+        .option.active .shadow {
+            box-shadow: inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;
+        }
+
+        .option.active .label {
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .option.active .label .info > div {
+            left: 0;
+            opacity: 1;
+        }
+
+        .option:not(.active) {
+            flex-grow: 1;
+            border-radius: 30px;
+        }
+
+        .option:not(.active) .shadow {
+            bottom: -40px;
+            box-shadow: inset 0 -120px 0 -120px black, inset 0 -120px 0 -100px black;
+        }
+
+        .option:not(.active) .label {
+            bottom: 10px;
+            left: 10px;
+        }
+
+        .option:not(.active) .label .info > div {
+            left: 20px;
+            opacity: 0;
+        }
+
+        .shadow {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+        }
+
+        .label {
+            display: flex;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 40px;
+            transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+        }
+
+        .icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 40px;
+            max-width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: white;
+            color: var(--defaultBackground);
+        }
+
+        .info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 10px;
+            color: white;
+            white-space: nowrap;
+        }
+
+        .info > div {
+            position: relative;
+            transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
+        }
+
+        .main {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .sub {
+            transition-delay: 0.1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="options">
+        <div class="option active" style="--optionBackground: url('https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg');">
+            <div class="shadow"></div>
+            <div class="label">
+                <div class="icon">
+                    <i class="fas fa-walking"></i>
+                </div>
+                <div class="info">
+                    <div class="main">Blonkisoaz</div>
+                    <div class="sub">Omuke trughte a otufta</div>
+                </div>
+            </div>
+        </div>
+        <div class="option" style="--optionBackground: url('https://66.media.tumblr.com/8b69cdde47aa952e4176b4200052abf4/tumblr_o51p7mFFF21qho82wo1_1280.jpg');">
+            <div class="shadow"></div>
+            <div class="label">
+                <div class="icon">
+                    <i class="fas fa-snowflake"></i>
+                </div>
+                <div class="info">
+                    <div class="main">Oretemauw</div>
+                    <div class="sub">Omuke trughte a otufta</div>
+                </div>
+            </div>
+        </div>
+        <div class="option" style="--optionBackground: url('https://66.media.tumblr.com/5af3f8303456e376ceda1517553ba786/tumblr_o4986gakjh1qho82wo1_1280.jpg');">
+            <div class="shadow"></div>
+            <div class="label">
+                <div class="icon">
+                    <i class="fas fa-tree"></i>
+                </div>
+                <div class="info">
+                    <div class="main">Iteresuselle</div>
+                    <div class="sub">Omuke trughte a otufta</div>
+                </div>
+            </div>
+        </div>
+        <div class="option" style="--optionBackground: url('https://66.media.tumblr.com/5516a22e0cdacaa85311ec3f8fd1e9ef/tumblr_o45jwvdsL11qho82wo1_1280.jpg');">
+            <div class="shadow"></div>
+            <div class="label">
+                <div class="icon">
+                    <i class="fas fa-tint"></i>
+                </div>
+                <div class="info">
+                    <div class="main">Idiefe</div>
+                    <div class="sub">Omuke trughte a otufta</div>
+                </div>
+            </div>
+        </div>
+        <div class="option" style="--optionBackground: url('https://66.media.tumblr.com/f19901f50b79604839ca761cd6d74748/tumblr_o65rohhkQL1qho82wo1_1280.jpg');">
+            <div class="shadow"></div>
+            <div class="label">
+                <div class="icon">
+                    <i class="fas fa-sun"></i>
+                </div>
+                <div class="info">
+                    <div class="main">Inatethi</div>
+                    <div class="sub">Omuke trughte a otufta</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="http://victorofvalencia-blog.tumblr.com" target="_blank" class="credit">Photos from Victor of Valencia on tumblr</a>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".option").click(function() {
+                $(".option").removeClass("active");
+                $(this).addClass("active");
+            });
+        });
+    </script>
+</body>
+</html>

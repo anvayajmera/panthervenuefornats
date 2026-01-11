@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+    <script>
+        // --- THIS IS THE ROUTER SCRIPT ---
+
+        // 1. Map legacy file names and pretty paths to their new routes.
+        const routeMap = {
+            'index.html': '/',
+            'home.html': '/',
+            'event.html': '/events',
+            'rent.html': '/rent',
+            'gallery.html': '/gallery',
+            'gallery2.html': '/gallery',
+            'login.html': '/login',
+            'viewer.html': '/viewer',
+            'flyer.html': '/flyer',
+            'flyer3.html': '/flyer3',
+            '404.html': '/404',
+            'events': '/events',
+            'rent': '/rent',
+            'gallery': '/gallery',
+            'login': '/login',
+            'viewer': '/viewer',
+            'flyer': '/flyer',
+            'flyer3': '/flyer3',
+            '404': '/404'
+        };
+
+        // 2. Get the page name we are trying to visit from the URL.
+        const params = new URLSearchParams(window.location.search);
+        const requestedPage = params.get('page') || '';
+        const normalized = requestedPage.replace(/^\/+/, '');
+        const target = routeMap[normalized];
+
+        // 3. Check if the requested page is in our list of valid pages.
+        if (target) {
+            // If it's a REAL page, go there.
+            window.location.replace(target);
+        } else {
+            // If it's NOT a real page, go to /404. THIS IS THE REDIRECT.
+            window.location.replace('/404');
+        }
+    </script>
+</head>
+<body>
+    <p>Redirecting...</p>
+</body>
+</html> 
